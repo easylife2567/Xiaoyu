@@ -1,0 +1,160 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: #152033;
+  background: #f4f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(89, 118, 255, 0.16), transparent 28rem),
+    #f4f7fb;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.hero h1,
+.workbench-header h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+.eyebrow,
+.workbench-kind,
+.status-label {
+  color: #5870d8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero p,
+.workbench-header p,
+.workbench-card p {
+  color: #55627a;
+}
+
+.workbench-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.workbench-card,
+.status-panel,
+.empty-state {
+  border: 1px solid rgba(21, 32, 51, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 45px rgba(27, 45, 85, 0.08);
+}
+
+.workbench-card {
+  display: block;
+  padding: 24px;
+}
+
+.workbench-card h2 {
+  margin: 12px 0 8px;
+}
+
+.subtitle {
+  font-weight: 600;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #5870d8;
+}
+
+.status-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 20px;
+  padding: 18px 20px;
+}
+
+.empty-state {
+  padding: 28px;
+  color: #55627a;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.report-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.report-panel {
+  min-height: 170px;
+}
+
+@media (max-width: 720px) {
+  .report-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  border: 1px solid rgba(21, 32, 51, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 18px 45px rgba(27, 45, 85, 0.08);
+  padding: 22px;
+}
+
+.upload-box {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px dashed rgba(88, 112, 216, 0.5);
+  border-radius: 18px;
+  background: rgba(88, 112, 216, 0.06);
+  color: #4054b2;
+}
+
+.upload-box input {
+  width: 100%;
+}
+
+.primary-button {
+  margin-top: 14px;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #5870d8;
+  color: #fff;
+  font-weight: 700;
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

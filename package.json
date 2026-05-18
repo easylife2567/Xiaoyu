@@ -1,10 +1,14 @@
 {
-  "name": "xiaoyu-workbench-shell",
-  "version": "0.1.0",
+  "name": "xiaoyu",
   "private": true,
-  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "test": "node --test",
-    "check": "npm test"
+    "test": "node --import tsx --test apps/web/tests/*.test.js",
+    "build": "npm --workspace apps/web run build"
+  },
+  "devDependencies": {
+    "tsx": "^4.22.1"
   }
 }

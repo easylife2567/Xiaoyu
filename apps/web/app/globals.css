@@ -632,6 +632,27 @@ input {
   opacity: 0.55;
 }
 
+.secondary-button {
+  margin: 0 14px 12px;
+  border: 1px solid #d7def0;
+  border-radius: 6px;
+  background: #fff;
+  color: #44516a;
+  padding: 8px 12px;
+  font-size: 0.86rem;
+}
+
+.inline-error {
+  margin: 0 12px 12px;
+  color: #d92d20;
+  font-size: 0.82rem;
+}
+
+.inline-link {
+  margin-left: 10px;
+  color: #6558f5;
+}
+
 .compact-facts {
   margin: 0;
   padding: 0 14px 14px;

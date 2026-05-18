@@ -35,7 +35,7 @@ test('translation workbench renders as an operations console', async () => {
   assert.match(html, /处理流程/)
   assert.match(html, /输入识别/)
   assert.match(html, /结果交付/)
-  assert.match(html, /开始处理（能力待接入）/)
+  assert.match(html, /开始处理/)
   assert.doesNotMatch(html, /列位映射/)
   assert.doesNotMatch(html, /模型设置/)
 })

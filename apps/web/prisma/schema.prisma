@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TranslationTaskStatus {
+  ready
+  queued
+  processing
+  completed
+  failed
+}
+
+enum TranslationAttemptStatus {
+  queued
+  processing
+  completed
+  failed
+}
+
+model TranslationTask {
+  id              String                 @id
+  workflowSlug    String
+  status          TranslationTaskStatus
+  sourceFileName  String
+  sourceObjectKey String
+  validation      Json
+  summary         Json?
+  failure         Json?
+  createdAt       DateTime               @default(now())
+  updatedAt       DateTime               @updatedAt
+  attempts        TranslationTaskAttempt[]
+  uploads         TranslationUpload[]
+  artifacts       TranslationArtifact[]
+}
+
+model TranslationTaskAttempt {
+  id          String                   @id
+  taskId      String
+  status      TranslationAttemptStatus
+  startedAt   DateTime?
+  finishedAt  DateTime?
+  summary     Json?
+  failure     Json?
+  createdAt   DateTime                 @default(now())
+  task        TranslationTask          @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId])
+}
+
+model TranslationUpload {
+  id         String          @id
+  taskId     String
+  fileName   String
+  objectKey  String
+  sizeBytes  Int
+  createdAt  DateTime        @default(now())
+  task       TranslationTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId])
+}
+
+model TranslationArtifact {
+  id          String          @id
+  taskId      String
+  attemptId   String
+  fileName    String
+  objectKey   String
+  version     Int
+  sizeBytes   Int
+  createdAt   DateTime        @default(now())
+  task        TranslationTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId])
+}

@@ -1,6 +1,5 @@
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
-import { readFile } from 'node:fs/promises'
 import { TASK_STATUS, VALIDATION_CODE } from '../../../../packages/contracts/translation-processing.js'
 import {
   appendArtifact,
@@ -9,15 +8,16 @@ import {
   markAttemptCompleted,
   markAttemptFailed,
   markAttemptProcessing,
+  readTaskProgress,
   readTask,
 } from './store.js'
 import {
   getFileSize,
   persistUpload,
+  readArtifactBytes,
   reserveArtifactPath,
   resolveUploadPath,
 } from './files.js'
-import { ARTIFACT_ROOT } from './config.js'
 import { runWorker } from './python-worker.js'
 
 function assertSupportedFileName(fileName) {
@@ -49,7 +49,10 @@ export async function createTranslationTask({ fileName, buffer }) {
 }
 
 export async function getTranslationTask(taskId) {
-  return readTask(taskId)
+  const task = await readTask(taskId)
+  const latestAttempt = task.attempts.at(-1)
+  const progress = latestAttempt ? await readTaskProgress(taskId, latestAttempt.id) : null
+  return progress ? { ...task, progress } : task
 }
 
 export function describeTaskReadiness(task) {
@@ -76,9 +79,10 @@ async function processAttempt(taskId, attemptId) {
     await markAttemptFailed(taskId, attemptId, {
       code: result.code,
       message: result.message,
+      category: result.failureCategory ?? 'provider_error',
       retriable: Boolean(result.retriable),
       issues: result.issues ?? [],
-    })
+    }, result.aiCalls ?? [], result.events ?? [])
     return
   }
 
@@ -91,18 +95,23 @@ async function processAttempt(taskId, attemptId) {
     sizeBytes: await getFileSize(artifact.absolutePath),
     createdAt: new Date().toISOString(),
   })
-  await markAttemptCompleted(taskId, attemptId, result.summary)
+  await markAttemptCompleted(taskId, attemptId, result.summary, result.aiCalls ?? [], result.events ?? [])
 }
 
 function queueAttempt(taskId, attemptId) {
+  if (process.env.XIAOYU_TRANSLATION_DISABLE_BACKGROUND_QUEUE === '1') {
+    return
+  }
+
   queueMicrotask(() => {
     processAttempt(taskId, attemptId).catch(async (error) => {
       await markAttemptFailed(taskId, attemptId, {
         code: 'unexpected_worker_failure',
         message: error instanceof Error ? error.message : '处理失败。',
+        category: 'provider_error',
         retriable: true,
         issues: [],
-      })
+      }, [], [])
     })
   })
 }
@@ -138,6 +147,6 @@ export async function readLatestArtifact(taskId) {
 
   return {
     artifact,
-    bytes: await readFile(path.join(ARTIFACT_ROOT, artifact.objectKey)),
+    bytes: await readArtifactBytes(artifact.objectKey),
   }
 }

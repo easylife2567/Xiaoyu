@@ -549,6 +549,132 @@ input {
   background: #f4f2ff;
 }
 
+.workflow-status li.is-done {
+  color: #2f855a;
+}
+
+.workflow-status li.is-done span {
+  border-color: #9dd6b3;
+  background: #effaf3;
+}
+
+.live-workflow-status {
+  display: grid;
+  gap: 12px;
+}
+
+.live-workflow-status ol {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.workflow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+}
+
+.workflow-badge strong,
+.workflow-badge em {
+  font-style: normal;
+}
+
+.workflow-badge.is-live {
+  background: #f1f0ff;
+  color: #6558f5;
+}
+
+.workflow-badge.is-success {
+  background: #edf9f0;
+  color: #227a46;
+}
+
+.workflow-badge.is-danger {
+  background: #fff1f1;
+  color: #c24141;
+}
+
+.workflow-badge.is-neutral {
+  background: #f5f7fb;
+  color: #5b667d;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 0 0 rgba(101, 88, 245, 0.35);
+  animation: pulse-live 1.6s infinite;
+}
+
+.workflow-progressbar {
+  overflow: hidden;
+  height: 8px;
+  border-radius: 999px;
+  background: #eef2f8;
+}
+
+.workflow-progressbar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #6558f5 0%, #7d8cff 100%);
+  transition: width 220ms ease;
+}
+
+.workflow-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.workflow-progress-meta strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #24324b;
+}
+
+.workflow-progress-meta dl {
+  display: flex;
+  gap: 18px;
+  margin: 0;
+}
+
+.workflow-progress-meta dl div {
+  min-width: 72px;
+}
+
+.workflow-progress-meta dt,
+.workflow-progress-meta span {
+  color: #74809a;
+  font-size: 0.78rem;
+}
+
+.workflow-progress-meta dd {
+  margin: 4px 0 0;
+  color: #24324b;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.workflow-batch-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.workflow-batch-strip span {
+  border: 1px solid #e1e7f3;
+  border-radius: 999px;
+  background: #fafbff;
+  color: #556079;
+  padding: 4px 10px;
+  font-size: 0.76rem;
+}
+
 .workspace-grid,
 .report-console {
   display: grid;
@@ -594,6 +720,25 @@ input {
   border: 1px dashed #b4bdf8;
   background: #fafbff;
   padding: 14px;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.upload-console:hover,
+.upload-console:focus-within {
+  border-color: #8b82ff;
+  background: #fcfcff;
+  box-shadow: inset 0 0 0 1px rgba(101, 88, 245, 0.05);
+}
+
+.upload-console.is-dragging {
+  border-color: #6558f5;
+  background: #f6f5ff;
+  box-shadow: 0 8px 18px rgba(101, 88, 245, 0.08);
+  transform: translateY(-1px);
 }
 
 .upload-console strong {
@@ -619,13 +764,22 @@ input {
 }
 
 .primary-button {
-  margin: 12px 14px;
   border: 0;
   border-radius: 6px;
   background: #6558f5;
   color: #fff;
   padding: 8px 12px;
   font-size: 0.86rem;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.primary-button:hover:not(:disabled),
+.secondary-button:hover:not(:disabled),
+.tertiary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
 }
 
 .primary-button:disabled {
@@ -640,6 +794,36 @@ input {
   color: #44516a;
   padding: 8px 12px;
   font-size: 0.86rem;
+}
+
+.tertiary-button {
+  border: 1px solid #d7def0;
+  border-radius: 6px;
+  background: #f8faff;
+  color: #44516a;
+  padding: 8px 12px;
+  font-size: 0.86rem;
+}
+
+.action-stack {
+  padding: 12px 14px 6px;
+}
+
+.action-stack .primary-button {
+  width: 100%;
+  margin: 0;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.button-row .secondary-button,
+.button-row .tertiary-button {
+  flex: 1 1 0;
+  margin: 0;
 }
 
 .inline-error {
@@ -665,6 +849,15 @@ input {
   font-size: 0.82rem;
 }
 
+.upload-hints {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px 14px;
+  color: #74809a;
+  font-size: 0.78rem;
+}
+
 .console-subsection {
   padding: 14px;
 }
@@ -678,6 +871,123 @@ input {
 .console-subsection h3 {
   margin: 0 0 6px;
   font-size: 0.92rem;
+}
+
+.runtime-log {
+  grid-column: 1 / -1;
+}
+
+.process-insight,
+.live-delivery-card {
+  display: grid;
+  gap: 10px;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.metric-grid article {
+  border: 1px solid #eef2f7;
+  border-radius: 8px;
+  background: #fbfcff;
+  padding: 12px;
+}
+
+.metric-grid strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+}
+
+.metric-grid span {
+  color: #74809a;
+  font-size: 0.78rem;
+}
+
+.live-status-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #eef2f7;
+  padding-top: 10px;
+}
+
+.live-status-note strong {
+  color: #24324b;
+  font-size: 0.84rem;
+}
+
+.live-status-note em {
+  color: #6558f5;
+  font-size: 0.8rem;
+  font-style: normal;
+}
+
+.failure-diagnostics {
+  margin-top: 12px;
+  border-top: 1px solid #eef2f7;
+  padding-top: 12px;
+}
+
+.failure-diagnostics strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #334155;
+  font-size: 0.82rem;
+}
+
+.failure-diagnostics p {
+  margin: 0 0 10px;
+  color: #556079;
+  font-size: 0.82rem;
+}
+
+.failure-diagnostics ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 18px;
+  color: #556079;
+  font-size: 0.82rem;
+}
+
+.runtime-log-list {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.runtime-log-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #556079;
+  font-size: 0.82rem;
+}
+
+.runtime-log-list strong {
+  font-weight: 500;
+}
+
+.runtime-log-list time {
+  color: #98a2b3;
+}
+
+@keyframes pulse-live {
+  0% {
+    box-shadow: 0 0 0 0 rgba(101, 88, 245, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(101, 88, 245, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(101, 88, 245, 0);
+  }
 }
 
 .report-console {
@@ -790,9 +1100,22 @@ input {
   }
 
   .launcher-toolbar,
-  .selection-hint {
+  .selection-hint,
+  .workflow-progress-meta,
+  .upload-hints,
+  .live-status-note,
+  .button-row {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .workflow-progress-meta dl,
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-progress-meta dl {
+    display: grid;
   }
 
   .utility-rail {

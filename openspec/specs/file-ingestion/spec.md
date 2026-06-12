@@ -5,34 +5,43 @@
 Accept, validate, and interpret uploaded workflow input files before processing begins.
 ## Requirements
 ### Requirement: Users can upload workflow inputs
-The system SHALL expose the required upload entry for workflows whose operating model requires file ingestion.
+The system SHALL accept the real Excel input required by workflows whose operating model requires file ingestion.
 
 #### Scenario: User opens the 大翻译数据处理 workbench
 - WHEN a user enters the 大翻译数据处理 workbench
-- THEN the system SHALL show the required Excel upload entry before downstream processing is available
+- THEN the system SHALL show the required Excel upload entry before processing can begin
+
+#### Scenario: User uploads the required workbook
+- WHEN a user uploads a supported Excel workbook for 大翻译数据处理
+- THEN the system SHALL store the workbook and attach it to the pending workflow task
 
 ### Requirement: Input files are validated before processing
+The system SHALL validate uploaded files for required type, count, and workbook structure before task execution.
 
-The system SHALL validate uploaded files for required type, count, and structure before task execution.
+#### Scenario: Required workbook is missing
+- WHEN the user attempts to start 大翻译数据处理 without the required workbook
+- THEN the system SHALL prevent execution and explain that the Excel input is missing
 
-#### Scenario: Required file is missing
+#### Scenario: Workbook type is unsupported
+- WHEN the user uploads a file that is not a supported Excel workbook
+- THEN the system SHALL reject the file and explain the accepted file type
 
-- WHEN a workflow requires multiple files and one is missing
-- THEN the system prevents execution and explains what is missing
-
-#### Scenario: File structure is incompatible
-
-- WHEN an uploaded file does not contain the required workbook sheet, column, or document structure
-- THEN the system rejects the file for that workflow and explains the mismatch
+#### Scenario: Workbook structure is incompatible
+- WHEN the uploaded workbook does not contain the required worksheet or fields for 大翻译数据处理
+- THEN the system SHALL reject the workbook for that workflow and explain the mismatch
 
 ### Requirement: File ingestion gives human-readable feedback
-The system SHALL present input guidance in language understandable to non-technical users.
+The system SHALL present upload guidance and validation results in language understandable to non-technical users.
 
 #### Scenario: User has not provided required input
 - WHEN the required Excel input has not yet been provided
 - THEN the workbench SHALL indicate what file is needed before processing can begin
 
-#### Scenario: User opens a report workbench
-- WHEN a user enters 国际日报 or 国际热点日报二处
-- THEN the system SHALL not require manual topic-file upload as the primary interaction for that workbench
+#### Scenario: User uploads an invalid workbook
+- WHEN workbook validation fails
+- THEN the system SHALL show a clear reason rather than a raw technical exception
+
+#### Scenario: User uploads a valid workbook
+- WHEN workbook validation succeeds
+- THEN the workbench SHALL confirm that the file is ready for processing
 

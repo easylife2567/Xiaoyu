@@ -15,7 +15,7 @@ export default async function WorkbenchPage({ params }) {
 
   if (workbench.kind === 'file-processing') {
     return (
-      <WorkbenchFrame {...workbench}>
+      <WorkbenchFrame {...workbench} showWorkflowStatus={false}>
         <TranslationWorkbenchBody />
       </WorkbenchFrame>
     )

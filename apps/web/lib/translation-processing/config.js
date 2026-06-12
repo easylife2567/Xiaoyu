@@ -11,6 +11,15 @@ export const DATA_ROOT = path.resolve(PROJECT_ROOT, '.data/translation-processin
 export const TASK_ROOT = path.join(DATA_ROOT, 'tasks')
 export const UPLOAD_ROOT = path.join(DATA_ROOT, 'uploads')
 export const ARTIFACT_ROOT = path.join(DATA_ROOT, 'artifacts')
+export const PROGRESS_ROOT = path.join(DATA_ROOT, 'progress')
+
+export function resolveTranslationRuntimeRepositoryMode() {
+  return process.env.XIAOYU_TRANSLATION_RUNTIME_REPOSITORY || (process.env.NODE_ENV === 'test' ? 'memory' : 'prisma')
+}
+
+export function resolveTranslationStorageAdapterMode() {
+  return process.env.XIAOYU_TRANSLATION_STORAGE_ADAPTER || 'local'
+}
 
 export function resolvePythonBinary() {
   if (process.env.XIAOYU_PYTHON_BIN) {

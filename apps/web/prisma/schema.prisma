@@ -31,6 +31,7 @@ model TranslationTask {
   validation      Json
   summary         Json?
   failure         Json?
+  events          Json
   createdAt       DateTime               @default(now())
   updatedAt       DateTime               @updatedAt
   attempts        TranslationTaskAttempt[]
@@ -46,6 +47,8 @@ model TranslationTaskAttempt {
   finishedAt  DateTime?
   summary     Json?
   failure     Json?
+  aiCalls     Json
+  events      Json
   createdAt   DateTime                 @default(now())
   task        TranslationTask          @relation(fields: [taskId], references: [id], onDelete: Cascade)
 

@@ -882,3 +882,383 @@ def generate_chinese_summaries_batch_with_trace(
 
 def generate_chinese_summary(text: str) -> str:
     return generate_chinese_summary_with_trace(text).summary
+
+
+# ─── Daily Report drafting ──────────────────────────────────────────────────
+
+DAILY_REPORT_SYSTEM_PROMPT = (
+    "你是舆情研究助理，负责撰写《国际日报》。请严格参照以下句式撰写每条正文："
+    "“X月X日，据XXX报道，XXXXX。”正文必须以日期开头，紧接“据[来源]报道”，"
+    "后接新闻事实与影响判断；语言应简洁、准确、客观，整体风格应贴近正式日报模板。"
+    "不要在 body 中添加“一、二、三、”或“1.”等编号，编号由导出模板层统一添加。"
+    "必须严格返回 JSON 对象，格式为 "
+    "{\"sections\": [{\"index\": <int>, \"title\": <string>, \"body\": <string>}]}，"
+    "数组长度必须等于输入条数，index 从 1 开始递增，不要输出任何额外解释。"
+)
+
+
+@dataclass(frozen=True)
+class AIDailyReportResult:
+    sections: list[dict[str, object]]
+    trace: dict[str, object]
+
+
+def _format_chinese_month_day(value: object) -> str:
+    if isinstance(value, str) and len(value) >= 10:
+        try:
+            month = int(value[5:7])
+            day = int(value[8:10])
+            return f"{month}月{day}日"
+        except ValueError:
+            pass
+    return "近日"
+
+
+def _stub_daily_report_sections(selections: list[dict[str, object]]) -> list[dict[str, object]]:
+    sections = []
+    for index, selection in enumerate(selections, start=1):
+        title = selection.get("title") or f"国际要闻 #{index}"
+        source = selection.get("sourceName") or "相关媒体"
+        summary = selection.get("summary") or "该事件引发外界关注。"
+        date_text = _format_chinese_month_day(selection.get("publishedAt"))
+        sections.append(
+            {
+                "index": index,
+                "title": title,
+                "body": f"{date_text}，据{source}报道，{summary}",
+            }
+        )
+    return sections
+
+
+def _build_daily_report_user_prompt(selections: list[dict[str, object]]) -> str:
+    payload = [
+        {
+            "index": index + 1,
+            "title": selection.get("title"),
+            "sourceName": selection.get("sourceName"),
+            "sourceUrl": selection.get("sourceUrl"),
+            "publishedAt": selection.get("publishedAt"),
+            "summary": selection.get("summary"),
+        }
+        for index, selection in enumerate(selections)
+    ]
+    return (
+        "请按输入顺序撰写每条新闻的正式日报正文。每条 body 必须严格使用："
+        "“X月X日，据XXX报道，XXXXX。”这种句式；X月X日优先使用 publishedAt，"
+        "XXX 优先使用 sourceName；不要给 body 添加序号；每段建议 80-140 个中文字符，"
+        "确保 6 条合计能放入一页 Word 模板。只返回 JSON 对象，格式必须为 "
+        "{\"sections\": [{\"index\": <int>, \"title\": <string>, \"body\": <string>}]}。\n"
+        f"{json.dumps(payload, ensure_ascii=False)}"
+    )
+
+
+def _normalize_daily_report_sections(
+    raw_content: object,
+    expected_count: int,
+    config: AIConfig,
+    trace_context: dict[str, object] | None,
+    *,
+    started_at: str,
+    started_clock: float,
+) -> list[dict[str, object]]:
+    payload = _parse_json_content(
+        raw_content,
+        error_message="AI 起草结果不可用。",
+        config=config,
+        trace_context=trace_context,
+        started_at=started_at,
+        started_clock=started_clock,
+    )
+
+    sections = payload.get("sections") if isinstance(payload, dict) else None
+    if not isinstance(sections, list) or len(sections) != expected_count:
+        raise AIResponseError(
+            "AI 起草结果数量不匹配。",
+            trace=_timed_trace(
+                config,
+                trace_context,
+                started_at=started_at,
+                started_clock=started_clock,
+                status="failed",
+                failureCode="ai_response_invalid",
+                failureCategory="invalid_response",
+            ),
+        )
+
+    normalized = []
+    for index, section in enumerate(sections, start=1):
+        if not isinstance(section, dict):
+            raise AIResponseError(
+                "AI 起草结果格式不合法。",
+                trace=_timed_trace(
+                    config,
+                    trace_context,
+                    started_at=started_at,
+                    started_clock=started_clock,
+                    status="failed",
+                    failureCode="ai_response_invalid",
+                    failureCategory="invalid_response",
+                ),
+            )
+
+        title = section.get("title")
+        body = section.get("body")
+        if not isinstance(title, str) or not title.strip() or not isinstance(body, str) or not body.strip():
+            raise AIResponseError(
+                "AI 起草结果缺少标题或正文。",
+                trace=_timed_trace(
+                    config,
+                    trace_context,
+                    started_at=started_at,
+                    started_clock=started_clock,
+                    status="failed",
+                    failureCode="ai_response_invalid",
+                    failureCategory="invalid_response",
+                ),
+            )
+
+        normalized.append({"index": index, "title": title.strip(), "body": body.strip()})
+
+    return normalized
+
+
+def _invoke_daily_report_provider_once(
+    selections: list[dict[str, object]],
+    config: AIConfig,
+    trace_context: dict[str, object] | None,
+) -> AIDailyReportResult:
+    started_at = _utc_now()
+    started_clock = perf_counter()
+    if not config.api_key:
+        raise AIConfigurationError(
+            "AI 起草失败：未配置可用的模型凭据。",
+            trace=_timed_trace(
+                config,
+                trace_context,
+                started_at=started_at,
+                started_clock=started_clock,
+                status="failed",
+                failureCode="ai_configuration_error",
+                failureCategory="configuration_error",
+            ),
+        )
+    if not config.model:
+        raise AIConfigurationError(
+            "AI 起草失败：未配置可用的模型名称。",
+            trace=_timed_trace(
+                config,
+                trace_context,
+                started_at=started_at,
+                started_clock=started_clock,
+                status="failed",
+                failureCode="ai_configuration_error",
+                failureCategory="configuration_error",
+            ),
+        )
+
+    body = json.dumps(
+        {
+            "model": config.model,
+            "messages": [
+                {"role": "system", "content": DAILY_REPORT_SYSTEM_PROMPT},
+                {"role": "user", "content": _build_daily_report_user_prompt(selections)},
+            ],
+            "temperature": 0.3,
+        }
+    ).encode("utf-8")
+    request = Request(
+        f"{config.base_url}/chat/completions",
+        data=body,
+        headers={
+            "Authorization": f"Bearer {config.api_key}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+
+    try:
+        with urlopen(request, timeout=config.timeout_seconds) as response:
+            response_text: str = response.read().decode("utf-8")
+            payload = json.loads(response_text)
+    except TimeoutError as error:
+        raise AIProviderError(
+            "AI 起草失败：模型调用超时。",
+            trace=_timed_trace(
+                config,
+                trace_context,
+                started_at=started_at,
+                started_clock=started_clock,
+                status="failed",
+                failureCode="ai_provider_unavailable",
+                failureCategory="timeout",
+                selectionCount=len(selections),
+            ),
+        ) from error
+    except HTTPError as error:
+        diagnostics = _parse_http_error(error)
+        failure_category = "rate_limited" if error.code == 429 else "provider_error"
+        raise AIProviderError(
+            "AI 起草失败：模型服务暂时不可用。",
+            trace=_timed_trace(
+                config,
+                trace_context,
+                started_at=started_at,
+                started_clock=started_clock,
+                status="failed",
+                failureCode="ai_provider_unavailable",
+                failureCategory=failure_category,
+                selectionCount=len(selections),
+                **diagnostics,
+            ),
+        ) from error
+    except (URLError, OSError) as error:
+        raise AIProviderError(
+            "AI 起草失败：模型服务暂时不可用。",
+            trace=_timed_trace(
+                config,
+                trace_context,
+                started_at=started_at,
+                started_clock=started_clock,
+                status="failed",
+                failureCode="ai_provider_unavailable",
+                failureCategory="provider_error",
+                selectionCount=len(selections),
+            ),
+        ) from error
+    except json.JSONDecodeError as error:
+        raise AIResponseError(
+            "AI 起草结果不可用。",
+            trace=_timed_trace(
+                config,
+                trace_context,
+                started_at=started_at,
+                started_clock=started_clock,
+                status="failed",
+                failureCode="ai_response_invalid",
+                failureCategory="invalid_response",
+                selectionCount=len(selections),
+            ),
+        ) from error
+
+    content = _extract_response_content(
+        payload,
+        error_message="AI 起草结果不可用。",
+        config=config,
+        trace_context=trace_context,
+        started_at=started_at,
+        started_clock=started_clock,
+    )
+    sections = _normalize_daily_report_sections(
+        content,
+        len(selections),
+        config,
+        trace_context,
+        started_at=started_at,
+        started_clock=started_clock,
+    )
+    return AIDailyReportResult(
+        sections=sections,
+        trace=_timed_trace(
+            config,
+            trace_context,
+            started_at=started_at,
+            started_clock=started_clock,
+            status="succeeded",
+            failureCategory=None,
+            providerResponseId=payload.get("id"),
+            selectionCount=len(selections),
+        ),
+    )
+
+
+def _invoke_daily_report_provider(
+    selections: list[dict[str, object]],
+    config: AIConfig,
+    trace_context: dict[str, object] | None,
+) -> AIDailyReportResult:
+    retry_history: list[dict[str, object]] = []
+
+    for attempt_number in range(1, config.max_retries + 2):
+        attempt_context = _with_attempt_context(
+            trace_context,
+            attempt_number=attempt_number,
+            max_retries=config.max_retries,
+        )
+        try:
+            result = _invoke_daily_report_provider_once(selections, config, attempt_context)
+            return AIDailyReportResult(
+                sections=result.sections,
+                trace=_finalize_trace(result.trace, retry_history, config.max_retries),
+            )
+        except AIProcessingError as error:
+            if not _should_retry(error, attempt_number=attempt_number, max_retries=config.max_retries):
+                error.trace = _finalize_trace(error.trace, retry_history, config.max_retries)
+                raise
+
+            retry_attempt = len(retry_history) + 1
+            next_delay_ms = _calculate_retry_delay_ms(config.retry_base_ms, retry_attempt)
+            retry_history.append(
+                {
+                    "retryAttempt": retry_attempt,
+                    "attemptNumber": attempt_number,
+                    "failureCategory": error.trace.get("failureCategory"),
+                    "durationMs": error.trace.get("durationMs"),
+                    "finishedAt": error.trace.get("finishedAt"),
+                    "nextDelayMs": next_delay_ms,
+                }
+            )
+            sleep(next_delay_ms / 1000)
+
+    raise RuntimeError("unreachable")
+
+
+def generate_international_daily_report_with_trace(
+    selections: list[dict[str, object]],
+    *,
+    trace_context: dict[str, object] | None = None,
+) -> AIDailyReportResult:
+    config = load_ai_config()
+
+    if config.provider == "fail":
+        started_at = _utc_now()
+        started_clock = perf_counter()
+        raise AIProviderError(
+            "AI 起草失败。",
+            trace=_finalize_trace(
+                _timed_trace(
+                    config,
+                    trace_context,
+                    started_at=started_at,
+                    started_clock=started_clock,
+                    status="failed",
+                    failureCode="ai_provider_unavailable",
+                    failureCategory="provider_error",
+                    selectionCount=len(selections),
+                ),
+                [],
+                config.max_retries,
+            ),
+        )
+
+    if config.provider == "stub":
+        started_at = _utc_now()
+        started_clock = perf_counter()
+        return AIDailyReportResult(
+            sections=_stub_daily_report_sections(selections),
+            trace=_finalize_trace(
+                _timed_trace(
+                    config,
+                    trace_context,
+                    started_at=started_at,
+                    started_clock=started_clock,
+                    status="succeeded",
+                    failureCategory=None,
+                    selectionCount=len(selections),
+                ),
+                [],
+                config.max_retries,
+            ),
+        )
+
+    return _invoke_daily_report_provider(selections, config, trace_context)

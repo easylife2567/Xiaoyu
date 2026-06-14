@@ -22,8 +22,34 @@ enum TranslationAttemptStatus {
   failed
 }
 
+enum DailyReportTaskStatus {
+  drafting_pending
+  drafting_in_progress
+  drafting_ready_for_review
+  exporting_in_progress
+  completed
+  failed
+}
+
+enum DailyReportAttemptStatus {
+  queued
+  processing
+  completed
+  failed
+}
+
+enum DraftVersionSource {
+  ai_generated
+  user_edited
+}
+
+enum DailyReportArtifactKind {
+  docx_report
+  resource_pool_xlsx
+}
+
 model TranslationTask {
-  id              String                 @id
+  id              String                   @id
   workflowSlug    String
   status          TranslationTaskStatus
   sourceFileName  String
@@ -32,51 +58,130 @@ model TranslationTask {
   summary         Json?
   failure         Json?
   events          Json
-  createdAt       DateTime               @default(now())
-  updatedAt       DateTime               @updatedAt
+  createdAt       DateTime                 @default(now())
+  updatedAt       DateTime                 @updatedAt
   attempts        TranslationTaskAttempt[]
   uploads         TranslationUpload[]
   artifacts       TranslationArtifact[]
 }
 
 model TranslationTaskAttempt {
-  id          String                   @id
-  taskId      String
-  status      TranslationAttemptStatus
-  startedAt   DateTime?
-  finishedAt  DateTime?
-  summary     Json?
-  failure     Json?
-  aiCalls     Json
-  events      Json
-  createdAt   DateTime                 @default(now())
-  task        TranslationTask          @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  id         String                   @id
+  taskId     String
+  status     TranslationAttemptStatus
+  startedAt  DateTime?
+  finishedAt DateTime?
+  summary    Json?
+  failure    Json?
+  aiCalls    Json
+  events     Json
+  createdAt  DateTime                 @default(now())
+  task       TranslationTask          @relation(fields: [taskId], references: [id], onDelete: Cascade)
 
   @@index([taskId])
 }
 
 model TranslationUpload {
-  id         String          @id
-  taskId     String
-  fileName   String
-  objectKey  String
-  sizeBytes  Int
-  createdAt  DateTime        @default(now())
-  task       TranslationTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  id        String          @id
+  taskId    String
+  fileName  String
+  objectKey String
+  sizeBytes Int
+  createdAt DateTime        @default(now())
+  task      TranslationTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
 
   @@index([taskId])
 }
 
 model TranslationArtifact {
-  id          String          @id
-  taskId      String
-  attemptId   String
-  fileName    String
-  objectKey   String
-  version     Int
-  sizeBytes   Int
-  createdAt   DateTime        @default(now())
-  task        TranslationTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  id        String          @id
+  taskId    String
+  attemptId String
+  fileName  String
+  objectKey String
+  version   Int
+  sizeBytes Int
+  createdAt DateTime        @default(now())
+  task      TranslationTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId])
+}
+
+model DailyReportTask {
+  id            String                    @id
+  workflowSlug  String
+  issueDate     DateTime                  @db.Date
+  issueNumber   Int
+  status        DailyReportTaskStatus
+  summary       Json
+  failure       Json?
+  events        Json
+  createdAt     DateTime                  @default(now())
+  updatedAt     DateTime                  @updatedAt
+  selections    DailyReportSelection[]
+  draftVersions DailyReportDraftVersion[]
+  artifacts     DailyReportArtifact[]
+  attempts      DailyReportTaskAttempt[]
+
+  @@unique([workflowSlug, issueDate])
+}
+
+model DailyReportTaskAttempt {
+  id         String                   @id
+  taskId     String
+  kind       String
+  status     DailyReportAttemptStatus
+  startedAt  DateTime?
+  finishedAt DateTime?
+  summary    Json?
+  failure    Json?
+  aiCalls    Json
+  events     Json
+  createdAt  DateTime                 @default(now())
+  task       DailyReportTask          @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@index([taskId])
+}
+
+model DailyReportSelection {
+  id                String          @id
+  taskId            String
+  position          Int
+  candidateId       String
+  candidateSnapshot Json
+  createdAt         DateTime        @default(now())
+  task              DailyReportTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@unique([taskId, position])
+  @@index([taskId])
+}
+
+model DailyReportDraftVersion {
+  id        String             @id
+  taskId    String
+  attemptId String?
+  version   Int
+  source    DraftVersionSource
+  sections  Json
+  createdAt DateTime           @default(now())
+  task      DailyReportTask    @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@unique([taskId, version])
+  @@index([taskId])
+}
+
+model DailyReportArtifact {
+  id               String                  @id
+  taskId           String
+  draftVersionId   String
+  attemptId        String
+  kind             DailyReportArtifactKind
+  fileName         String
+  objectKey        String
+  sizeBytes        Int
+  validationReport Json
+  createdAt        DateTime                @default(now())
+  task             DailyReportTask         @relation(fields: [taskId], references: [id], onDelete: Cascade)
 
   @@index([taskId])
 }

@@ -1,9 +1,5 @@
-# report-drafting Specification
+## MODIFIED Requirements
 
-## Purpose
-
-Convert selected stories into editable draft sections using workbench-specific writing rules.
-## Requirements
 ### Requirement: Selected stories can be converted into report drafts
 
 The system SHALL generate draft report content from user-selected candidate stories. Drafting follows the workbench-specific writing rules and is triggered as an asynchronous process once the required number of candidates have been selected. When drafting completes, a new DraftVersion record is created with `source=ai_generated` and the full set of sections is available for review and editing.
@@ -36,15 +32,6 @@ The system SHALL allow users to make light edits to each drafted report item. Ed
 - **WHEN** a user returns to the workbench after a previous editing session
 - **THEN** the system SHALL load the latest DraftVersion for editing, reflecting all prior edits
 
-### Requirement: Drafting preserves source visibility
-
-The system SHALL allow users to view the source context behind each drafted item while editing.
-
-#### Scenario: User reviews a generated paragraph
-
-- WHEN a user inspects a drafted item
-- THEN the system makes its supporting source information available
-
 ### Requirement: Editing supports workflow-relevant actions
 
 The system SHALL support the following editing actions on drafted report sections: rewriting one section in-place, reordering sections before export, and discarding edits to return to the latest AI-generated version.
@@ -56,6 +43,8 @@ The system SHALL support the following editing actions on drafted report section
 #### Scenario: User wants a shorter item
 - **WHEN** a user requests a concise rewrite of one drafted item
 - **THEN** the system SHALL generate a shorter alternative for that item
+
+## ADDED Requirements
 
 ### Requirement: Drafting is an asynchronous attempt with a status lifecycle
 
@@ -80,4 +69,3 @@ The system SHALL allow users to view the supporting source information underlyin
 #### Scenario: User inspects a generated paragraph
 - **WHEN** a user inspects the source information for one section while editing
 - **THEN** the system SHALL display the candidate snapshot referenced by the associated DailyReportSelection for that section
-

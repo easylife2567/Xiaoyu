@@ -1,9 +1,5 @@
-# report-export Specification
+## MODIFIED Requirements
 
-## Purpose
-
-Render final report artifacts through fixed templates and workflow-specific delivery rules.
-## Requirements
 ### Requirement: Reports are exported through fixed templates
 
 The system SHALL render final report artifacts through the template configured for the active report workbench. For 国际日报, the system SHALL render the DOCX report using a fixed in-repository template (no user upload of a reference document required).
@@ -40,6 +36,8 @@ The system SHALL handle layout, naming, file generation, and resource-pool XLSX 
 - **WHEN** export completes successfully
 - **THEN** the user SHALL be able to download the DOCX report and updated resource-pool XLSX without performing any manual formatting or file manipulation
 
+## ADDED Requirements
+
 ### Requirement: Export is an asynchronous attempt with structured outcomes
 
 The system SHALL treat each export as a task attempt with discrete states (`queued`, `processing`, `completed`, `failed`), and SHALL retain a structured `validationReport` on the attempt regardless of success or failure, capturing all validation rules and their pass/fail status.
@@ -51,4 +49,3 @@ The system SHALL treat each export as a task attempt with discrete states (`queu
 #### Scenario: An export attempt completes successfully
 - **WHEN** the export attempt completes and all validations pass
 - **THEN** the system SHALL transition the task to `completed` and retain the validationReport with all checks marked as passed
-

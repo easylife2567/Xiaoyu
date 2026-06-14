@@ -22,8 +22,8 @@ export default async function WorkbenchPage({ params }) {
   }
 
   return (
-    <WorkbenchFrame {...workbench}>
-      <DailyReportWorkbenchBody profile={workbench.reportProfile} />
+    <WorkbenchFrame {...workbench} showWorkflowStatus={false}>
+      <DailyReportWorkbenchBody profile={workbench.reportProfile} workflowSlug={workbench.slug} />
     </WorkbenchFrame>
   )
 }

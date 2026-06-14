@@ -1,6 +1,10 @@
 node_modules/
 .next/
-.data/
+.data/*
+!.data/daily-report/
+!.data/daily-report/fixtures/
+!.data/daily-report/fixtures/**
+.data/daily-report/runtime/
 .env
 .env.local
 .env.*.local

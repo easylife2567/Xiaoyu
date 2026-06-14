@@ -1,0 +1,148 @@
+{
+  "workflowSlug": "international-daily-report",
+  "issueDate": "2026-06-13",
+  "generatedAt": "2026-06-13T01:30:00.000Z",
+  "sourceType": "fixture",
+  "candidates": [
+    {
+      "id": "intl-2026-06-13-001",
+      "sourceType": "fixture",
+      "title": "G7 后续磋商敲定 AI 跨境治理首批互认清单",
+      "sourceName": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/g7-ai-mutual-recognition-2026-06-12",
+      "publishedAt": "2026-06-12T22:10:00.000Z",
+      "summary": "G7 各国数字主管部门完成峰会后首轮磋商，敲定 AI 模型评估互认首批清单，覆盖通用大模型与高风险医疗、金融场景，将在 9 月前完成跨国试运行。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.93
+      }
+    },
+    {
+      "id": "intl-2026-06-13-002",
+      "sourceType": "fixture",
+      "title": "欧盟 AI 法案二期细则进入企业适配期，头部厂商发布合规路线图",
+      "sourceName": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/eu-ai-act-vendors-2026-06-12",
+      "publishedAt": "2026-06-12T19:30:00.000Z",
+      "summary": "继欧盟委员会发布 AI 法案二期实施细则后，多家头部模型厂商相继公布合规路线图，重点回应训练数据披露与高风险用途追溯要求，初步评估额外合规成本不超过营收 3%。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "intl-2026-06-13-003",
+      "sourceType": "fixture",
+      "title": "美墨边境洪灾进入恢复阶段，跨境应急通道协议拟扩容",
+      "sourceName": "AP News",
+      "sourceUrl": "https://apnews.com/article/us-mexico-border-recovery-2026-06-12",
+      "publishedAt": "2026-06-12T16:05:00.000Z",
+      "summary": "美墨边境洪灾进入灾后恢复阶段，两国边境委员会启动应急通道协议扩容评估，拟将适用范围延伸至野火、地震等多灾种，并新增联合数据共享条款。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.87
+      }
+    },
+    {
+      "id": "intl-2026-06-13-004",
+      "sourceType": "fixture",
+      "title": "印度半导体补贴细则出炉，台积电古吉拉特邦项目率先签约",
+      "sourceName": "Bloomberg",
+      "sourceUrl": "https://www.bloomberg.com/news/articles/india-tsmc-gujarat-2026-06-12",
+      "publishedAt": "2026-06-12T13:25:00.000Z",
+      "summary": "印度政府公布 240 亿美元半导体补贴细则，台积电与塔塔合资的古吉拉特邦 28 纳米项目率先完成签约，预计 2028 年量产，将覆盖印度本土汽车与工业芯片需求。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.92
+      }
+    },
+    {
+      "id": "intl-2026-06-13-005",
+      "sourceType": "fixture",
+      "title": "日本扩签护理与数字化签证落地，地方政府启动专项接收方案",
+      "sourceName": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/article/japan-visa-prefectures-2026-06-12",
+      "publishedAt": "2026-06-12T10:15:00.000Z",
+      "summary": "日本护理与数字化运维外国劳工签证扩签政策落地后，北海道、福冈等 14 个都道府县启动专项接收方案，配套日语培训与住房补贴，目标年内引进首批 1.2 万名劳工。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.86
+      }
+    },
+    {
+      "id": "intl-2026-06-13-006",
+      "sourceType": "fixture",
+      "title": "英国央行下调三季度通胀预期，市场预计 9 月启动降息",
+      "sourceName": "BBC News",
+      "sourceUrl": "https://www.bbc.com/news/business-uk-cpi-2026-06-12",
+      "publishedAt": "2026-06-12T11:50:00.000Z",
+      "summary": "英国央行下调三季度核心通胀预期 0.3 个百分点至 2.4%，市场普遍预计 9 月议息会议将启动 25 个基点降息，英镑兑美元短线下挫 0.6%。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.9
+      }
+    },
+    {
+      "id": "intl-2026-06-13-007",
+      "sourceType": "fixture",
+      "title": "联合国气候大会预备会通过损失与损害基金扩容方案",
+      "sourceName": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/environment/un-loss-damage-fund-2026-06-12",
+      "publishedAt": "2026-06-12T08:30:00.000Z",
+      "summary": "联合国气候大会预备会通过损失与损害基金扩容方案，将年度规模从 100 亿美元提升至 250 亿美元，重点支持小岛屿国家与撒哈拉以南非洲极端天气重建。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.88
+      }
+    },
+    {
+      "id": "intl-2026-06-13-008",
+      "sourceType": "fixture",
+      "title": "韩国青年住房基金启动首期申请，三周内收到 12 万份预登记",
+      "sourceName": "The Korea Herald",
+      "sourceUrl": "https://www.koreaherald.com/article/youth-housing-applications-2026-06-12",
+      "publishedAt": "2026-06-12T06:55:00.000Z",
+      "summary": "韩国青年住房专项基金首期申请通道开通三周内累计收到 12 万份预登记，国土交通部宣布将根据需求弹性扩容，并增设独居青年与新婚家庭差异化利率。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "ko",
+        "confidence": 0.84
+      }
+    },
+    {
+      "id": "intl-2026-06-13-009",
+      "sourceType": "fixture",
+      "title": "巴西亚马孙卫星监测网首期数据公开，非法采伐识别周期降至 5 小时",
+      "sourceName": "Folha de S.Paulo",
+      "sourceUrl": "https://www1.folha.uol.com.br/ambiente/amazon-monitoring-data-2026-06-12",
+      "publishedAt": "2026-06-12T04:40:00.000Z",
+      "summary": "巴西环境部公开亚马孙卫星监测网首期运行数据，非法采伐识别周期由 12 小时降至 5 小时，截至本周已联合警方查处 47 起跨州案件，覆盖面积约 1.8 万公顷。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "pt",
+        "confidence": 0.83
+      }
+    },
+    {
+      "id": "intl-2026-06-13-010",
+      "sourceType": "fixture",
+      "title": "WHO AI 医疗器械分级指南配套评审工具上线，首批 6 国接入",
+      "sourceName": "WHO Newsroom",
+      "sourceUrl": "https://www.who.int/news/item/ai-medical-toolkit-2026-06-12",
+      "publishedAt": "2026-06-12T02:20:00.000Z",
+      "summary": "世界卫生组织上线 AI 医疗器械分级指南配套评审工具包，巴西、德国、肯尼亚等 6 国成为首批接入方，可在线生成本地化风险分级报告并对接监管沙盒。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-13T00:30:00.000Z",
+        "language": "en",
+        "confidence": 0.87
+      }
+    }
+  ]
+}

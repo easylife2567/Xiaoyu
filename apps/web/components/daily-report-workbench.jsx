@@ -27,6 +27,16 @@ function formatFileSize(bytes) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`
 }
 
+// 把 'YYYY-MM-DD' 渲染成 'M 月 D 日',用于"使用 X 月 X 日的候选池"提示。
+function formatChineseMonthDay(isoDate) {
+  if (typeof isoDate !== 'string') return ''
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate)
+  if (!match) return isoDate
+  const month = Number.parseInt(match[2], 10)
+  const day = Number.parseInt(match[3], 10)
+  return `${month} 月 ${day} 日`
+}
+
 function DocumentIcon() {
   return (
     <svg fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -678,6 +688,17 @@ export function DailyReportWorkbenchBody({ profile, workflowSlug }) {
               <span>{pool.candidates?.length ?? 0} 条候选</span>
             ) : null}
           </header>
+
+          {pool?.staleSourceDate ? (
+            <div className="stale-pool-banner" role="status">
+              <span className="stale-pool-banner__title">
+                使用 {formatChineseMonthDay(pool.staleSourceDate)} 的候选池
+              </span>
+              <span className="stale-pool-banner__detail">
+                今日 fixture 暂未到位,运行 <code>npm run roll-fixture -- --workflow {workflowSlug}</code> 可补档。
+              </span>
+            </div>
+          ) : null}
 
           {pool && pool.candidates?.length > 0 ? (
             <>

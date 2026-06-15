@@ -1247,6 +1247,37 @@ input {
   transition: background-color 180ms ease;
 }
 
+/* Stale candidate pool banner — fixture fall-back from a previous date.
+   Color tokens mirror amber-50/200/800/900 for a non-blocking warning state. */
+.stale-pool-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  margin: 0 0 12px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+.stale-pool-banner__title {
+  font-weight: 600;
+  color: #92400e;
+}
+
+.stale-pool-banner__detail {
+  color: #78350f;
+  line-height: 1.5;
+}
+
+.stale-pool-banner code {
+  background: #fef3c7;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 0.74rem;
+}
+
 .candidate-row:first-of-type {
   border-top: 1px solid #e5eaf3;
 }

@@ -53,3 +53,20 @@ export function resolvePythonBinary() {
 export function resolveWorkerScript() {
   return path.resolve(PROJECT_ROOT, 'services/worker/daily_report/worker.py')
 }
+
+// fixture 缺失时是否回退到最近一份。disabled / 0 / false / off 关闭(默认启用)。
+export function resolveDailyReportFixtureStaleFallbackEnabled() {
+  const raw = process.env.XIAOYU_DAILY_REPORT_FIXTURE_STALE_FALLBACK
+  if (!raw) return true
+  const v = raw.trim().toLowerCase()
+  return v !== 'disabled' && v !== '0' && v !== 'false' && v !== 'off'
+}
+
+// fixture 回退窗口天数,0 视为关闭,负数/解析失败回到默认 7。
+export function resolveDailyReportFixtureStaleWindowDays() {
+  const raw = process.env.XIAOYU_DAILY_REPORT_FIXTURE_STALE_WINDOW_DAYS
+  if (!raw) return 7
+  const n = Number.parseInt(raw, 10)
+  if (!Number.isFinite(n) || n < 0) return 7
+  return n
+}

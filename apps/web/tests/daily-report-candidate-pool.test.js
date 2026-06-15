@@ -23,12 +23,21 @@ after(async () => {
 
 beforeEach(() => {
   resetCandidatePoolProviderCacheForTests()
+  delete process.env.XIAOYU_DAILY_REPORT_FIXTURE_STALE_FALLBACK
+  delete process.env.XIAOYU_DAILY_REPORT_FIXTURE_STALE_WINDOW_DAYS
 })
 
 async function writeFixture(workflowSlug, issueDate, payload) {
   const dir = path.join(tempRoot, workflowSlug)
   await mkdir(dir, { recursive: true })
   await writeFile(path.join(dir, `${issueDate}.json`), JSON.stringify(payload))
+}
+
+function shiftIssueDate(issueDate, days) {
+  const [y, m, d] = issueDate.split('-').map((s) => Number.parseInt(s, 10))
+  const date = new Date(Date.UTC(y, m - 1, d))
+  date.setUTCDate(date.getUTCDate() + days)
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}-${String(date.getUTCDate()).padStart(2, '0')}`
 }
 
 function buildCandidate(index) {
@@ -105,4 +114,64 @@ test('fixture workflowSlug 与请求不一致时报错', async () => {
     () => getCandidatePool({ workflowSlug: 'international-daily-report', issueDate: today }),
     (err) => err.code === 'candidate_pool_invalid',
   )
+})
+
+test('今日 fixture 缺失但回退窗口内有更早 fixture 时返回兜底候选池', async () => {
+  const today = resolveTodayIssueDate()
+  const yesterday = shiftIssueDate(today, -1)
+  await writeFixture('pool-fallback-recent', yesterday, {
+    workflowSlug: 'pool-fallback-recent',
+    issueDate: yesterday,
+    sourceType: 'fixture',
+    candidates: [buildCandidate(11), buildCandidate(12)],
+  })
+
+  const pool = await getCandidatePool({ workflowSlug: 'pool-fallback-recent', issueDate: today })
+
+  assert.equal(pool.workflowSlug, 'pool-fallback-recent')
+  assert.equal(pool.issueDate, today, 'issueDate 应保持为请求的今天')
+  assert.equal(pool.staleSourceDate, yesterday)
+  assert.equal(pool.candidates.length, 2)
+})
+
+test('回退窗口内无 fixture 时仍报 candidate_pool_fixture_missing', async () => {
+  const today = resolveTodayIssueDate()
+  await assert.rejects(
+    () => getCandidatePool({ workflowSlug: 'pool-fallback-empty', issueDate: today }),
+    (err) => err.code === 'candidate_pool_fixture_missing',
+  )
+})
+
+test('fallback 关闭时今日缺失即使有更早 fixture 也直接报错', async () => {
+  const today = resolveTodayIssueDate()
+  const yesterday = shiftIssueDate(today, -1)
+  await writeFixture('pool-fallback-disabled', yesterday, {
+    workflowSlug: 'pool-fallback-disabled',
+    issueDate: yesterday,
+    sourceType: 'fixture',
+    candidates: [buildCandidate(21)],
+  })
+
+  process.env.XIAOYU_DAILY_REPORT_FIXTURE_STALE_FALLBACK = 'disabled'
+  resetCandidatePoolProviderCacheForTests()
+
+  await assert.rejects(
+    () => getCandidatePool({ workflowSlug: 'pool-fallback-disabled', issueDate: today }),
+    (err) => err.code === 'candidate_pool_fixture_missing',
+  )
+})
+
+test('今日 fixture 命中时响应不含 staleSourceDate', async () => {
+  const today = resolveTodayIssueDate()
+  await writeFixture('pool-fallback-fresh', today, {
+    workflowSlug: 'pool-fallback-fresh',
+    issueDate: today,
+    sourceType: 'fixture',
+    candidates: [buildCandidate(31)],
+  })
+
+  const pool = await getCandidatePool({ workflowSlug: 'pool-fallback-fresh', issueDate: today })
+
+  assert.equal(pool.issueDate, today)
+  assert.equal(Object.prototype.hasOwnProperty.call(pool, 'staleSourceDate'), false)
 })

@@ -45,3 +45,15 @@ python3 worker.py export \
 - `XIAOYU_AI_PROVIDER=stub` — 本地无密钥时生成固定假数据，便于演示与测试
 - `XIAOYU_AI_PROVIDER=openai` + `XIAOYU_AI_API_KEY` / `XIAOYU_AI_MODEL` / `XIAOYU_AI_BASE_URL` — 走 OpenAI 兼容真实接口
 - `XIAOYU_AI_PROVIDER=fail` — 用于测试失败路径
+
+## 候选池 fixture
+
+候选池数据来自仓库内 `.data/daily-report/fixtures/<workflow>/<YYYY-MM-DD>.json`,worker 不直接消费 fixture——读取由 [apps/web/lib/daily-report/candidate-pool/](../../../apps/web/lib/daily-report/candidate-pool/) 完成。
+
+补 / 滚动 fixture 用根仓库的 dev 脚本(详见 [README.md](../../../README.md#候选池-fixture-滚动--兜底)):
+
+```bash
+npm run roll-fixture -- --workflow international-daily-report
+```
+
+兜底行为(今日 fixture 缺失时回退到最近一份)由服务端配置控制,worker 不参与。

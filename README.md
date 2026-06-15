@@ -29,6 +29,25 @@
 - AI 通道复用 `services/worker/shared/ai.py`，三种 provider：`openai` / `stub` / `fail`
 - **演示无需真实模型**：设置 `XIAOYU_AI_PROVIDER=stub` 即可全流程跑通
 
+#### 候选池 fixture 滚动 / 兜底
+
+每天首条 fixture 由人工写入 `.data/daily-report/fixtures/<workflow>/<YYYY-MM-DD>.json`。临时演示场景下:
+
+```bash
+# 以最近一份 fixture 为模板平移生成今日 fixture(只改日期 / ID,不调 AI)
+npm run roll-fixture -- --workflow international-daily-report
+
+# 指定目标日期 / 强制覆盖
+npm run roll-fixture -- --workflow international-daily-report --date 2026-06-15 --force
+```
+
+若今日 fixture 缺失且未运行脚本,服务端会自动回退到 7 天内最近一份并在响应里标 `staleSourceDate`,前端候选池区显示黄色提示条。该兜底行为可关:
+
+```env
+XIAOYU_DAILY_REPORT_FIXTURE_STALE_FALLBACK=disabled  # 关闭兜底,缺失时直接报错
+XIAOYU_DAILY_REPORT_FIXTURE_STALE_WINDOW_DAYS=7      # 回退窗口天数,0 等同关闭
+```
+
 ## 本地启动
 
 ```bash

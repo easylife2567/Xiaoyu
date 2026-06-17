@@ -1,0 +1,39 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">小舆双工作流</title>
+  <desc id="desc">展示大翻译数据处理与国际日报两条工作流的关键步骤。</desc>
+  <rect width="1200" height="720" fill="#f7f3ea"/>
+  <text x="76" y="84" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800">生产流程</text>
+  <text x="76" y="121" fill="#67615b" font-family="Inter, Arial, sans-serif" font-size="18">两类任务共享可追踪、可审校、可导出的工作台范式。</text>
+
+  <rect x="76" y="174" width="1048" height="196" rx="22" fill="#fff" stroke="#ded8cc"/>
+  <text x="116" y="230" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">大翻译数据处理</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="116" y="275" width="160" height="54" rx="12" fill="#242424"/>
+    <text x="196" y="309" fill="#fff" font-size="17" text-anchor="middle">上传 Excel</text>
+    <rect x="330" y="275" width="160" height="54" rx="12" fill="#e9f1f0"/>
+    <text x="410" y="309" fill="#203a36" font-size="17" text-anchor="middle">校验表格</text>
+    <rect x="544" y="275" width="160" height="54" rx="12" fill="#e9f1f0"/>
+    <text x="624" y="309" fill="#203a36" font-size="17" text-anchor="middle">AI 批处理</text>
+    <rect x="758" y="275" width="160" height="54" rx="12" fill="#f1e7d8"/>
+    <text x="838" y="309" fill="#5a4436" font-size="17" text-anchor="middle">进度诊断</text>
+    <rect x="972" y="275" width="112" height="54" rx="12" fill="#b76e52"/>
+    <text x="1028" y="309" fill="#fff" font-size="17" text-anchor="middle">下载</text>
+  </g>
+  <path d="M284 302h38M498 302h38M712 302h38M926 302h38" stroke="#c7b8a7" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="76" y="430" width="1048" height="196" rx="22" fill="#242424"/>
+  <text x="116" y="486" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">国际日报</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="116" y="531" width="160" height="54" rx="12" fill="#fff"/>
+    <text x="196" y="565" fill="#1f1f1f" font-size="17" text-anchor="middle">候选池</text>
+    <rect x="330" y="531" width="160" height="54" rx="12" fill="#e9f1f0"/>
+    <text x="410" y="565" fill="#203a36" font-size="17" text-anchor="middle">选择 6 条</text>
+    <rect x="544" y="531" width="160" height="54" rx="12" fill="#e9f1f0"/>
+    <text x="624" y="565" fill="#203a36" font-size="17" text-anchor="middle">整篇起草</text>
+    <rect x="758" y="531" width="160" height="54" rx="12" fill="#f1e7d8"/>
+    <text x="838" y="565" fill="#5a4436" font-size="17" text-anchor="middle">段落审校</text>
+    <rect x="972" y="531" width="112" height="54" rx="12" fill="#b76e52"/>
+    <text x="1028" y="565" fill="#fff" font-size="17" text-anchor="middle">导出</text>
+  </g>
+  <path d="M284 558h38M498 558h38M712 558h38M926 558h38" stroke="#6b6258" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,47 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">小舆系统架构</title>
+  <desc id="desc">展示 Next.js Web、Prisma PostgreSQL、Python worker、AI provider、本地存储和 OpenSpec 的关系。</desc>
+  <rect width="1200" height="720" fill="#fbfaf7"/>
+  <text x="78" y="86" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800">系统架构</text>
+  <text x="78" y="123" fill="#67615b" font-family="Inter, Arial, sans-serif" font-size="18">Web 交互负责调度，Python worker 负责重文档处理，规格与契约长期沉淀。</text>
+
+  <rect x="78" y="176" width="280" height="366" rx="18" fill="#242424"/>
+  <text x="118" y="230" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800">Next.js Web</text>
+  <text x="118" y="267" fill="#d8d2c8" font-family="Inter, Arial, sans-serif" font-size="17">apps/web</text>
+  <rect x="118" y="314" width="200" height="42" rx="10" fill="#3a3a3a"/>
+  <text x="218" y="341" fill="#f3efe8" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">工作台 UI</text>
+  <rect x="118" y="374" width="200" height="42" rx="10" fill="#3a3a3a"/>
+  <text x="218" y="401" fill="#f3efe8" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">API Routes</text>
+  <rect x="118" y="434" width="200" height="42" rx="10" fill="#3a3a3a"/>
+  <text x="218" y="461" fill="#f3efe8" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">任务编排</text>
+
+  <rect x="460" y="176" width="280" height="366" rx="18" fill="#e9f1f0" stroke="#bed1ce"/>
+  <text x="500" y="230" fill="#203a36" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800">Python Worker</text>
+  <text x="500" y="267" fill="#4d7770" font-family="Inter, Arial, sans-serif" font-size="17">services/worker</text>
+  <rect x="500" y="314" width="200" height="42" rx="10" fill="#fff"/>
+  <text x="600" y="341" fill="#203a36" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">Excel 处理</text>
+  <rect x="500" y="374" width="200" height="42" rx="10" fill="#fff"/>
+  <text x="600" y="401" fill="#203a36" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">AI 批处理</text>
+  <rect x="500" y="434" width="200" height="42" rx="10" fill="#fff"/>
+  <text x="600" y="461" fill="#203a36" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">DOCX / XLSX 导出</text>
+
+  <rect x="842" y="176" width="280" height="366" rx="18" fill="#fff" stroke="#ded8cc"/>
+  <text x="882" y="230" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800">基础设施</text>
+  <text x="882" y="267" fill="#6d675f" font-family="Inter, Arial, sans-serif" font-size="17">local / production</text>
+  <rect x="882" y="314" width="200" height="42" rx="10" fill="#f7f3ea"/>
+  <text x="982" y="341" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">PostgreSQL + Prisma</text>
+  <rect x="882" y="374" width="200" height="42" rx="10" fill="#f7f3ea"/>
+  <text x="982" y="401" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">本地 / S3 存储</text>
+  <rect x="882" y="434" width="200" height="42" rx="10" fill="#f7f3ea"/>
+  <text x="982" y="461" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="16" text-anchor="middle">OpenAI 兼容模型</text>
+
+  <path d="M358 360h88" stroke="#b76e52" stroke-width="4" stroke-linecap="round"/>
+  <path d="M434 344l18 16-18 16" stroke="#b76e52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M740 360h88" stroke="#b76e52" stroke-width="4" stroke-linecap="round"/>
+  <path d="M816 344l18 16-18 16" stroke="#b76e52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="78" y="592" width="1044" height="68" rx="16" fill="#f1e7d8"/>
+  <text x="112" y="634" fill="#5a4436" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">共享契约 packages/contracts</text>
+  <text x="416" y="634" fill="#5a4436" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">规格 openspec/specs</text>
+  <text x="684" y="634" fill="#5a4436" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">候选池 fixtures</text>
+</svg>

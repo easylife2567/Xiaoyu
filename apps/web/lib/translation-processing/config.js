@@ -14,7 +14,15 @@ export const ARTIFACT_ROOT = path.join(DATA_ROOT, 'artifacts')
 export const PROGRESS_ROOT = path.join(DATA_ROOT, 'progress')
 
 export function resolveTranslationRuntimeRepositoryMode() {
-  return process.env.XIAOYU_TRANSLATION_RUNTIME_REPOSITORY || (process.env.NODE_ENV === 'test' ? 'memory' : 'prisma')
+  if (process.env.XIAOYU_TRANSLATION_RUNTIME_REPOSITORY) {
+    return process.env.XIAOYU_TRANSLATION_RUNTIME_REPOSITORY
+  }
+  if (process.env.NODE_ENV === 'test') {
+    return 'memory'
+  }
+  // Fall back to file-based storage when DATABASE_URL is not configured,
+  // consistent with the daily-report module.
+  return process.env.DATABASE_URL ? 'prisma' : 'file'
 }
 
 export function resolveTranslationStorageAdapterMode() {

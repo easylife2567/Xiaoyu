@@ -1,0 +1,44 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">小舆工作台总览</title>
+  <desc id="desc">小舆项目的 README 封面图，展示舆情研究工作台、两条生产流程和导出产物。</desc>
+  <rect width="1200" height="630" fill="#f7f3ea"/>
+  <rect x="54" y="48" width="1092" height="534" rx="28" fill="#171717"/>
+  <rect x="82" y="76" width="1036" height="478" rx="18" fill="#fbfaf7"/>
+  <rect x="82" y="76" width="1036" height="62" rx="18" fill="#232323"/>
+  <circle cx="117" cy="107" r="8" fill="#f26d5b"/>
+  <circle cx="145" cy="107" r="8" fill="#e8b84a"/>
+  <circle cx="173" cy="107" r="8" fill="#5bbf83"/>
+  <text x="600" y="114" fill="#f8f6ef" font-family="Inter, Arial, sans-serif" font-size="18" text-anchor="middle">Xiaoyu Console</text>
+
+  <text x="136" y="210" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800">小舆</text>
+  <text x="136" y="256" fill="#3d3d3d" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="600">舆情研究工作台</text>
+  <text x="136" y="298" fill="#66615a" font-family="Inter, Arial, sans-serif" font-size="19">资料翻译、候选筛选、AI 起草、人工审校与文档导出</text>
+
+  <rect x="136" y="354" width="232" height="94" rx="14" fill="#fff" stroke="#dad4c8"/>
+  <text x="160" y="389" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">大翻译数据处理</text>
+  <text x="160" y="420" fill="#6d675f" font-family="Inter, Arial, sans-serif" font-size="16">Excel → 摘要 → 分类</text>
+
+  <rect x="396" y="354" width="232" height="94" rx="14" fill="#fff" stroke="#dad4c8"/>
+  <text x="420" y="389" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">国际日报</text>
+  <text x="420" y="420" fill="#6d675f" font-family="Inter, Arial, sans-serif" font-size="16">候选池 → 起草 → 导出</text>
+
+  <rect x="656" y="354" width="232" height="94" rx="14" fill="#fff" stroke="#dad4c8"/>
+  <text x="680" y="389" fill="#1f1f1f" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">热点专题</text>
+  <text x="680" y="420" fill="#6d675f" font-family="Inter, Arial, sans-serif" font-size="16">AI 与城市治理</text>
+
+  <rect x="896" y="184" width="154" height="270" rx="18" fill="#e9f1f0"/>
+  <rect x="922" y="216" width="102" height="132" rx="10" fill="#fff" stroke="#b8cbc8"/>
+  <path d="M945 253h56M945 280h56M945 307h42" stroke="#4d7770" stroke-width="8" stroke-linecap="round"/>
+  <rect x="928" y="372" width="90" height="12" rx="6" fill="#4d7770"/>
+  <rect x="928" y="398" width="70" height="12" rx="6" fill="#b76e52"/>
+
+  <path d="M272 490h640" stroke="#d7c6b2" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="272" cy="490" r="10" fill="#4d7770"/>
+  <circle cx="486" cy="490" r="10" fill="#4d7770"/>
+  <circle cx="700" cy="490" r="10" fill="#b76e52"/>
+  <circle cx="912" cy="490" r="10" fill="#232323"/>
+  <text x="272" y="525" fill="#5a554f" font-family="Inter, Arial, sans-serif" font-size="15" text-anchor="middle">输入</text>
+  <text x="486" y="525" fill="#5a554f" font-family="Inter, Arial, sans-serif" font-size="15" text-anchor="middle">AI 处理</text>
+  <text x="700" y="525" fill="#5a554f" font-family="Inter, Arial, sans-serif" font-size="15" text-anchor="middle">审校</text>
+  <text x="912" y="525" fill="#5a554f" font-family="Inter, Arial, sans-serif" font-size="15" text-anchor="middle">导出</text>
+</svg>

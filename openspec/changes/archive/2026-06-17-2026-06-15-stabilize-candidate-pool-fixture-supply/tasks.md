@@ -37,5 +37,5 @@
 
 ## 7. 收尾
 
-- [ ] 7.1 PR/commit 信息链回本 change
-- [ ] 7.2 归档时由用户执行 `npx openspec archive 2026-06-15-stabilize-candidate-pool-fixture-supply`
+- [x] 7.1 PR/commit 信息链回本 change — **跳过 rebase**:5 个相关 commit (`e7470cf`/`228178f`/`d2038b1`/`ea47b8c`/`4ae1144`) 已 push,改 message 成本高于收益;链回关系通过本 change 目录与归档动作共同锁定
+- [x] 7.2 归档时由用户执行 `npx openspec archive 2026-06-15-stabilize-candidate-pool-fixture-supply`

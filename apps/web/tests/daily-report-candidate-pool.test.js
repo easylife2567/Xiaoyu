@@ -86,7 +86,7 @@ test('fixture 缺失时返回 candidate_pool_fixture_missing', async () => {
   )
 })
 
-test('候选缺少 sourceType=fixture 时报错', async () => {
+test('候选 sourceType 不在白名单(fixture / rss)时报错', async () => {
   const today = resolveTodayIssueDate()
   await writeFixture('international-daily-report', today, {
     workflowSlug: 'international-daily-report',
@@ -99,6 +99,29 @@ test('候选缺少 sourceType=fixture 时报错', async () => {
     () => getCandidatePool({ workflowSlug: 'international-daily-report', issueDate: today }),
     (err) => err.code === 'candidate_pool_invalid',
   )
+})
+
+test('候选 sourceType=rss(采集器写出)能正常返回', async () => {
+  const today = resolveTodayIssueDate()
+  await writeFixture('international-daily-report', today, {
+    workflowSlug: 'international-daily-report',
+    issueDate: today,
+    sourceType: 'collected',
+    candidates: [
+      { ...buildCandidate(1), sourceType: 'rss' },
+      { ...buildCandidate(2), sourceType: 'rss' },
+    ],
+  })
+
+  const pool = await getCandidatePool({
+    workflowSlug: 'international-daily-report',
+    issueDate: today,
+  })
+  assert.equal(pool.candidates.length, 2)
+  assert.equal(pool.candidates[0].sourceType, 'rss')
+  assert.equal(pool.candidates[1].sourceType, 'rss')
+  // staleSourceDate 仅当兜底命中时出现,正常路径不应有
+  assert.equal(pool.staleSourceDate, undefined)
 })
 
 test('fixture workflowSlug 与请求不一致时报错', async () => {

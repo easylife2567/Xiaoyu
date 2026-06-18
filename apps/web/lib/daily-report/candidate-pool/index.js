@@ -53,6 +53,11 @@ function assertIsToday(issueDate) {
   }
 }
 
+// build-candidate-pool-real-collector(2026-06-18):放宽硬编码 'fixture',
+// 改为已知枚举白名单。'fixture' = 手工 seed,'rss' = collect.py 抓取。
+// drafting / export 不读 sourceType,只用于 spec 审计 / 区分。
+const ALLOWED_CANDIDATE_SOURCE_TYPES = new Set(['fixture', 'rss'])
+
 function assertCandidateShape(candidate, indexLabel) {
   const requiredFields = ['id', 'sourceType', 'title', 'sourceName', 'sourceUrl', 'publishedAt', 'summary']
   for (const field of requiredFields) {
@@ -63,8 +68,10 @@ function assertCandidateShape(candidate, indexLabel) {
     }
   }
 
-  if (candidate.sourceType !== 'fixture') {
-    const error = new Error(`候选 ${indexLabel} 的 sourceType 必须为 fixture，实际为 ${candidate.sourceType}。`)
+  if (!ALLOWED_CANDIDATE_SOURCE_TYPES.has(candidate.sourceType)) {
+    const error = new Error(
+      `候选 ${indexLabel} 的 sourceType 必须为 ${[...ALLOWED_CANDIDATE_SOURCE_TYPES].join(' / ')} 之一,实际为 ${candidate.sourceType}。`,
+    )
     error.code = 'candidate_pool_invalid'
     throw error
   }

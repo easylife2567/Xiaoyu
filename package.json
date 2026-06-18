@@ -8,7 +8,8 @@
     "test": "node --import tsx --test --test-concurrency=1 apps/web/tests/*.test.js",
     "test:translation-processing": "node --import tsx --test --test-concurrency=1 apps/web/tests/translation-processing-*.test.js",
     "build": "npm --workspace apps/web run build",
-    "roll-fixture": "node scripts/daily-report/roll-fixture.mjs"
+    "roll-fixture": "node scripts/daily-report/roll-fixture.mjs",
+    "collect-pool": "node scripts/daily-report/collect-pool.mjs"
   },
   "devDependencies": {
     "tsx": "^4.22.1"

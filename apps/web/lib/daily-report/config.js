@@ -70,3 +70,19 @@ export function resolveDailyReportFixtureStaleWindowDays() {
   if (!Number.isFinite(n) || n < 0) return 7
   return n
 }
+
+// 真实采集器(collect 子命令) 单 feed HTTP 超时秒数,负数/解析失败回到默认 15。
+export function resolveCollectorTimeoutSeconds() {
+  const raw = process.env.XIAOYU_DAILY_REPORT_COLLECTOR_TIMEOUT_SECONDS
+  if (!raw) return 15
+  const n = Number.parseInt(raw, 10)
+  if (!Number.isFinite(n) || n <= 0) return 15
+  return n
+}
+
+// 真实采集器请求 RSS 时使用的 User-Agent,空值/未设置回到默认。
+export function resolveCollectorUserAgent() {
+  const raw = process.env.XIAOYU_DAILY_REPORT_COLLECTOR_USER_AGENT
+  if (!raw || !raw.trim()) return 'xiaoyu-daily-report/0.1'
+  return raw.trim()
+}

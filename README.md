@@ -219,6 +219,30 @@ XIAOYU_DAILY_REPORT_FIXTURE_STALE_FALLBACK=disabled
 XIAOYU_DAILY_REPORT_FIXTURE_STALE_WINDOW_DAYS=7
 ```
 
+### 候选池真实采集 (RSS)
+
+`roll-fixture` 适合演示与本地离线兜底；生产路径用 `collect-pool` 从配置好的 RSS 源真实抓取，写出与 fixture 同 schema 的 `<issueDate>.json`：
+
+```bash
+npm run collect-pool -- --workflow international-daily-report
+```
+
+源清单在 [services/worker/daily_report/sources/](services/worker/daily_report/sources/) 配置（每 workflow 一份 JSON），首批接入 Sputnik 中文 / RFI 中文 / 纽约时报中文网 / BBC 中文 / DW 中文 + BBC World / Guardian / Al Jazeera English / DW English 共 9 个公开 RSS。采集出的候选 `sourceType` 标记为 `rss`（手工 fixture 仍是 `fixture`），便于审计区分。
+
+可选环境变量：
+
+```env
+# 单 feed HTTP 超时秒数,默认 15
+XIAOYU_DAILY_REPORT_COLLECTOR_TIMEOUT_SECONDS=15
+# 请求 RSS 时使用的 User-Agent,默认 xiaoyu-daily-report/0.1
+XIAOYU_DAILY_REPORT_COLLECTOR_USER_AGENT=xiaoyu-daily-report/0.1
+```
+
+采集失败语义:
+- 单 feed 失败(超时/4xx/解析错误)被吞,继续跑其余 feed
+- **全部 feed 失败**:不写文件,退出码 ≠ 0;此时 web 侧的"最近一份 fixture 兜底"自动接管,演示不开天窗
+- 实得候选少于 `minCandidates`:仍写文件,stdout 多一条 `warnings`(不阻塞)
+
 ---
 
 ## 项目结构

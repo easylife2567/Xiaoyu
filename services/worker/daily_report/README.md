@@ -57,3 +57,61 @@ npm run roll-fixture -- --workflow international-daily-report
 ```
 
 兜底行为(今日 fixture 缺失时回退到最近一份)由服务端配置控制,worker 不参与。
+
+## `collect` — RSS 采集 → fixture
+
+```bash
+python3 worker.py collect \
+  --workflow international-daily-report \
+  [--date 2026-06-18] \
+  [--force] \
+  [--fixture-root /abs/path] \
+  [--timeout 15]
+```
+
+或通过仓库根 npm script:
+
+```bash
+npm run collect-pool -- --workflow international-daily-report
+```
+
+读取 `services/worker/daily_report/sources/<workflowSlug>.json`(JSON,不依赖 PyYAML),逐 feed 拉取、规范化、按 `(canonicalUrl, titleFingerprint)` 去重、按 `recencyHours` 时效过滤,最后写出与 [apps/web/lib/daily-report/candidate-pool/](../../../apps/web/lib/daily-report/candidate-pool/) 兼容的 fixture 文件:**candidate `sourceType='rss'`**,文件顶层 `sourceType='collected'`,便于在 git diff 与运维审计中与手工 fixture(`'fixture'`)区分。
+
+源配置 schema:
+
+```json
+{
+  "workflowSlug": "international-daily-report",
+  "recencyHours": 24,
+  "minCandidates": 6,
+  "feeds": [
+    { "name": "BBC World", "url": "https://feeds.bbci.co.uk/news/world/rss.xml", "language": "en", "kind": "rss" }
+  ]
+}
+```
+
+`kind` 当前仅支持 `"rss"`(扩展点已留,后续 wire-service / 反爬严格源的爬虫接入归后续 change 处理)。
+
+stdout 单行 JSON 摘要:
+
+```json
+{
+  "ok": true,
+  "workflowSlug": "international-daily-report",
+  "issueDate": "2026-06-18",
+  "written": "/abs/path/to/2026-06-18.json",
+  "candidateCount": 256,
+  "feedReports": [
+    { "name": "BBC World", "url": "...", "fetched": 32, "kept": 32, "errors": null }
+  ],
+  "warnings": null
+}
+```
+
+失败 payload(退出码 2):
+
+```json
+{ "ok": false, "code": "no_feeds_succeeded", "message": "...", "details": {...} }
+```
+
+错误码集合:`source_config_missing` / `source_config_invalid` / `target_already_exists` / `no_feeds_succeeded` / `invalid_workflow`。

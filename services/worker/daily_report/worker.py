@@ -10,6 +10,7 @@ from pathlib import Path
 
 from drafting import execute_draft_command
 from exporting import execute_export_command
+from collect import execute_collect_command
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 if str(PROJECT_ROOT) not in sys.path:
@@ -35,16 +36,29 @@ def main() -> None:
     export_parser.add_argument("--sections-json", required=True)
     export_parser.add_argument("--selection", action="append", default=[])
 
+    collect_parser = sub.add_parser("collect")
+    collect_parser.add_argument("--workflow", required=True, help="workflow slug, e.g. international-daily-report")
+    collect_parser.add_argument("--date", default=None, help="YYYY-MM-DD, 默认今天")
+    collect_parser.add_argument("--force", action="store_true", help="覆盖已存在的目标 fixture")
+    collect_parser.add_argument("--fixture-root", dest="fixture_root", default=None,
+                                help="覆盖 fixture 写入根目录;不传读 XIAOYU_DAILY_REPORT_FIXTURE_ROOT 或仓库默认")
+    collect_parser.add_argument("--timeout", type=int, default=0,
+                                help="单 feed HTTP 超时秒数,默认走环境变量或 15")
+
     args = parser.parse_args()
 
     if args.command == "draft":
         result = execute_draft_command(args)
     elif args.command == "export":
         result = execute_export_command(args)
+    elif args.command == "collect":
+        result = execute_collect_command(args)
     else:
         raise SystemExit(f"Unknown command: {args.command}")
 
     print(json.dumps(result, ensure_ascii=False))
+    if isinstance(result, dict) and result.get("ok") is False:
+        sys.exit(2)
 
 
 if __name__ == "__main__":

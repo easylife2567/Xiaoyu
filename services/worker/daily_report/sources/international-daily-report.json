@@ -1,0 +1,66 @@
+{
+  "$schema": "../sources.schema.note",
+  "_note": "candidate-pool RSS 源配置。schema 自描述,字段含义见 services/worker/daily_report/README.md `collect` 小节。",
+
+  "workflowSlug": "international-daily-report",
+  "recencyHours": 24,
+  "minCandidates": 6,
+
+  "feeds": [
+    {
+      "name": "Sputnik 中文",
+      "url": "https://sputniknews.cn/export/rss2/archive/index.xml",
+      "language": "zh",
+      "kind": "rss"
+    },
+    {
+      "name": "RFI 法广中文",
+      "url": "https://www.rfi.fr/cn/rss",
+      "language": "zh",
+      "kind": "rss"
+    },
+    {
+      "name": "纽约时报中文网",
+      "url": "https://cn.nytimes.com/rss.html",
+      "language": "zh",
+      "kind": "rss"
+    },
+    {
+      "name": "BBC 中文",
+      "url": "https://www.bbc.com/zhongwen/simp/index.xml",
+      "language": "zh",
+      "kind": "rss"
+    },
+    {
+      "name": "DW 德国之声中文",
+      "url": "https://rss.dw.com/atom/rss-chi-all",
+      "language": "zh",
+      "kind": "rss"
+    },
+
+    {
+      "name": "BBC World",
+      "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "language": "en",
+      "kind": "rss"
+    },
+    {
+      "name": "The Guardian World",
+      "url": "https://www.theguardian.com/world/rss",
+      "language": "en",
+      "kind": "rss"
+    },
+    {
+      "name": "Al Jazeera English",
+      "url": "https://www.aljazeera.com/xml/rss/all.xml",
+      "language": "en",
+      "kind": "rss"
+    },
+    {
+      "name": "DW English",
+      "url": "https://rss.dw.com/rdf/rss-en-all",
+      "language": "en",
+      "kind": "rss"
+    }
+  ]
+}

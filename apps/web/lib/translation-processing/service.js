@@ -5,6 +5,7 @@ import {
   appendArtifact,
   createAttempt,
   createTask,
+  deleteTask,
   markAttemptCompleted,
   markAttemptFailed,
   markAttemptProcessing,
@@ -136,6 +137,18 @@ export async function retryTranslationTask(taskId) {
   const attempt = nextTask.attempts.at(-1)
   queueAttempt(taskId, attempt.id)
   return nextTask
+}
+
+/**
+ * 重置(完全删除)翻译任务及其所有 attempt / artifact / upload 记录。
+ * 与 retry 不同,reset 在任意状态下都允许调用,语义为"该任务不存在了",
+ * 用户重置后工作台回到初始空态,可重新上传 Excel 创建新任务。
+ *
+ * 幂等:对不存在的 taskId 调用不抛异常,与 daily-report 的 resetDailyReportTask 对齐。
+ */
+export async function resetTranslationTask(taskId) {
+  await deleteTask(taskId)
+  return { ok: true }
 }
 
 export async function readLatestArtifact(taskId) {

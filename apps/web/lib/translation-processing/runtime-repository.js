@@ -187,6 +187,10 @@ class FileRuntimeRepository {
     await ensureTaskRoot()
   }
 
+  async deleteTask(taskId) {
+    await rm(taskPath(taskId), { force: true })
+  }
+
   async #writeTask(task) {
     await ensureTaskRoot()
     const nextTask = { ...task, updatedAt: new Date().toISOString() }
@@ -343,6 +347,10 @@ class MemoryRuntimeRepository {
 
   async reset() {
     this.#tasks.clear()
+  }
+
+  async deleteTask(taskId) {
+    this.#tasks.delete(taskId)
   }
 
   async #mutateTask(taskId, updater) {
@@ -610,6 +618,15 @@ class PrismaRuntimeRepository {
     await prisma.translationUpload.deleteMany()
     await prisma.translationTaskAttempt.deleteMany()
     await prisma.translationTask.deleteMany()
+  }
+
+  async deleteTask(taskId) {
+    const prisma = await getPrismaClient()
+    // 按依赖顺序删除 child 行,避免外键约束(schema 未声明 onDelete: Cascade)
+    await prisma.translationArtifact.deleteMany({ where: { taskId } })
+    await prisma.translationUpload.deleteMany({ where: { taskId } })
+    await prisma.translationTaskAttempt.deleteMany({ where: { taskId } })
+    await prisma.translationTask.deleteMany({ where: { id: taskId } })
   }
 }
 

@@ -54,6 +54,10 @@ export async function markAttemptFailed(taskId, attemptId, failure, aiCalls = []
   return nextTask
 }
 
+export async function deleteTask(taskId) {
+  await runtimeRepository().deleteTask(taskId)
+}
+
 export { readTaskProgress, removeTaskProgress, writeTaskProgress }
 
 export async function resetTaskStoreForTests() {

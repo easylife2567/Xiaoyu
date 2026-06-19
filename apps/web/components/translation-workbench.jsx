@@ -197,6 +197,31 @@ export function TranslationWorkbenchBody() {
     await refreshTask(task.id, { silent: true })
   }
 
+  async function handleResetTask() {
+    if (!task || busy) {
+      return
+    }
+    const confirmed = window.confirm('确定要重置当前翻译任务吗？已上传的文件、所有重试记录、运行日志都会清空，且无法恢复。')
+    if (!confirmed) {
+      return
+    }
+    setBusy(true)
+    setError('')
+    try {
+      const response = await fetch(`/api/translation-processing/tasks/${task.id}`, { method: 'DELETE' })
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}))
+        throw new Error(payload.error ?? '任务重置失败。')
+      }
+      setHydratedFromCache(false)
+      setTask(null)
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : '任务重置失败。')
+    } finally {
+      setBusy(false)
+    }
+  }
+
   return (
     <>
       <section className="workflow-status live-workflow-status" aria-label="处理状态">
@@ -205,10 +230,17 @@ export function TranslationWorkbenchBody() {
             <h2>处理流程</h2>
             <span>当前状态 · {currentStatus}</span>
           </div>
-          <div className={`workflow-badge is-${resolveStatusTone(task?.status)}`}>
-            {task?.status === 'processing' ? <span className="live-dot" aria-hidden="true" /> : null}
-            <strong>{workflow.liveBadge}</strong>
-            <em>{workflow.percentage}%</em>
+          <div className="workflow-status-actions">
+            <div className={`workflow-badge is-${resolveStatusTone(task?.status)}`}>
+              {task?.status === 'processing' ? <span className="live-dot" aria-hidden="true" /> : null}
+              <strong>{workflow.liveBadge}</strong>
+              <em>{workflow.percentage}%</em>
+            </div>
+            {task ? (
+              <button className="reset-task-button" disabled={busy} type="button" onClick={handleResetTask}>
+                重置任务
+              </button>
+            ) : null}
           </div>
         </header>
 

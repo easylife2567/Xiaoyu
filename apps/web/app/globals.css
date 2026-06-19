@@ -6,6 +6,9 @@
   color: #24324b;
   background: #f6f8fc;
   font-size: 14px;
+  /* 工作台 shell 几何变量 — 后续工作台 UX 改造统一引用,见 workbench-shell-ux 契约 */
+  --shell-topbar-height: 56px;
+  --shell-body-height: calc(100vh - var(--shell-topbar-height));
 }
 
 * {
@@ -44,10 +47,12 @@ input {
 }
 
 .console-shell {
-  min-height: 100vh;
+  /* 局部滚动架构 — 整个 shell 锁定为 viewport 大小,内容通过子区域局部滚动 */
+  height: 100vh;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 208px minmax(0, 1fr);
-  grid-template-rows: 56px minmax(0, 1fr);
+  grid-template-rows: var(--shell-topbar-height) minmax(0, 1fr);
   transition: grid-template-columns 180ms ease;
 }
 
@@ -57,10 +62,15 @@ input {
 
 .console-topbar {
   grid-column: 1 / -1;
+  /* sticky 防御:即便外层意外允许滚动,topbar 也保持顶部锚定 */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 56px;
+  min-height: var(--shell-topbar-height);
   border-bottom: 1px solid #e4e9f2;
   background: #fff;
   padding: 0 18px;
@@ -140,14 +150,17 @@ input {
 }
 
 .console-sidebar {
-  min-height: calc(100vh - 56px);
-  overflow: hidden;
+  /* sidebar 在 grid row 2 col 1, height 由 minmax(0, 1fr) 自动收缩,内部独立滚动 */
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
   border-right: 1px solid #e4e9f2;
   background: #f7f9fd;
 }
 
 .sidebar-nav {
-  padding: 16px 12px;
+  padding: 16px 12px 24px;
 }
 
 .nav-group + .nav-group {
@@ -213,15 +226,48 @@ input {
 .console-stage {
   position: relative;
   min-width: 0;
+  /* stage 在 grid row 2 col 2,高度跟随 grid track,内容超出由子区域(content)处理 */
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .console-content {
-  min-height: calc(100vh - 56px);
+  /* content 占满 stage,内部通过 flex 让工作台 children 撑满剩余高度并独立滚动 */
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   margin: 0 12px 12px 0;
   border-radius: 0 0 14px 14px;
   border-right: 1px solid #e4e9f2;
   border-bottom: 1px solid #e4e9f2;
   border-left: 1px solid #e4e9f2;
+  background: #fff;
+}
+
+/* page-heading 占 auto 高度;工作台主体撑满剩余空间且不允许超出溢出 */
+.console-content > .page-heading {
+  flex: 0 0 auto;
+}
+
+/* 只让工作台主区域(report-console / workspace-grid)撑满剩余高度,
+   其它辅助区域(如翻译的 workflow-status)按内容自然高度排列 */
+.console-content > .report-console,
+.console-content > .workspace-grid {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* 翻译工作台:状态栏 sticky 在工作台顶部 */
+.console-content > .workflow-status {
+  flex: 0 0 auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
   background: #fff;
 }
 
@@ -488,6 +534,13 @@ input {
   margin-bottom: 10px;
 }
 
+/* reset 按钮与 status badge 横向并列(沿用 reset-task-button 样式)*/
+.workflow-status-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .workflow-status header h2 {
   margin: 0;
   font-size: 0.92rem;
@@ -680,10 +733,57 @@ input {
   display: grid;
   gap: 12px;
   padding: 16px 18px 18px;
+  /* 工作台 root 占满父级 .console-content 剩余高度 */
+  height: 100%;
+  min-height: 0;
+}
+
+/* 国际日报:子列(.report-main-column / .report-side-column)各自局部滚动,
+   外层不允许滚出 */
+.report-console {
+  overflow: hidden;
+}
+
+/* 翻译工作台:多 row(7+ grid 子元素)按 auto 排列,内容总和超过容器时兜底滚动 */
+.workspace-grid {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .translation-layout {
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  /* 注意:translation-layout 的 jsx 实际有多个 row(primary/side-workspace +
+     若干 console-subsection 沿 grid auto-flow 排列),不能锁 grid-template-rows
+     为单行 1fr,否则 row 1 内容(action-stack 等)会被裁剪。让 grid-auto-rows
+     按 auto 决定,整体高度超出时由 .workspace-grid 自身 overflow-y: auto 兜底。 */
+}
+
+/* 翻译双列 — flex 列容器:子元素按 flex 分级排列,短内容 flex: 0 0 auto 不被压缩。
+   不在此层嵌套 overflow:父 .workspace-grid 已 overflow-y: auto 整体兜底。 */
+.translation-layout > .console-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* console-section header 不被 flex 收缩 */
+.translation-layout > .console-section > header {
+  flex: 0 0 auto;
+}
+
+/* 文件输入(upload)按内容自然高度,不被 stretch 也不被压缩 */
+.translation-layout .upload-console {
+  flex: 0 0 auto;
+}
+
+/* 运行设置 / 按钮组按内容自然高度 */
+.translation-layout .action-stack,
+.translation-layout .button-row {
+  flex: 0 0 auto;
+}
+
+/* console-subsection 默认按内容自然展开,不收缩 */
+.translation-layout .console-subsection {
+  flex: 0 0 auto;
 }
 
 .console-section,
@@ -1006,6 +1106,9 @@ input {
 
 .report-console {
   grid-template-columns: minmax(0, 1fr) 360px;
+  /* row 模型(对齐 jsx 显式 grid-row 用法):
+     row 1 = focus-strip, row 2 = error(条件性), row 3 = progress-bar, row 4 = 主+侧工作区 */
+  grid-template-rows: auto auto auto minmax(0, 1fr);
 }
 
 .report-main-column {
@@ -1049,6 +1152,11 @@ input {
 /* Horizontal report progress pipeline (replaces vertical status column) */
 .report-progress-bar {
   grid-column: 1 / -1;
+  /* sticky 防御:即便 .report-console 出现意外滚动,进度条永远在工作台顶部 */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
   padding: 14px 16px;
   border: 1px solid #e5eaf3;
   border-radius: 6px;
@@ -1170,6 +1278,28 @@ input {
   flex-direction: column;
   gap: 12px;
   min-width: 0;
+  /* 主工作区 — flex 分级见下:已选篮子 / 产物交付按内容自然高度,草稿区独立滚动 */
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* section 分级:短/固定内容不收缩,长内容(草稿)占剩余 + 自身滚动 */
+.report-main-column > .selected-zone {
+  flex: 0 0 auto;
+}
+
+.report-main-column > .console-section:not(.selected-zone):not(:last-child) {
+  /* 草稿区:占剩余空间 + 自身纵向滚动,记者审 6 段时不挤压前后 section */
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.report-main-column > .console-section:last-child {
+  /* 产物交付:按内容自然展开 */
+  flex: 0 0 auto;
 }
 
 .report-side-column {
@@ -1177,6 +1307,18 @@ input {
   flex-direction: column;
   gap: 12px;
   min-width: 0;
+  /* 侧工作区(候选池所在列)独立局部滚动 */
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.report-side-column > .candidate-zone {
+  /* 候选池占满整个侧列高度;内部候选 list 自身滚动 */
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .report-output-grid {

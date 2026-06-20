@@ -18,8 +18,8 @@ const navigationGroups = [
   {
     title: '管理',
     items: [
-      { slug: 'artifacts', href: '#', title: '产物归档' },
-      { slug: 'settings', href: '#', title: '权限管理' },
+      { slug: 'artifacts', href: '/artifacts', title: '产物归档' },
+      { slug: 'settings', href: '/settings', title: '权限管理' },
     ],
   },
 ]

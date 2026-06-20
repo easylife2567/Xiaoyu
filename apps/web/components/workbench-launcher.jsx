@@ -46,11 +46,12 @@ export function WorkbenchLauncher() {
         {visibleWorkbenches.map((workbench) => {
           const selected = workbench.slug === selectedSlug
           return (
-            <button
+            <Link
               className={selected ? 'recommendation-card is-selected' : 'recommendation-card'}
+              href={`/workbenches/${workbench.slug}`}
               key={workbench.slug}
-              onClick={() => setSelectedSlug(workbench.slug)}
-              type="button"
+              onMouseEnter={() => setSelectedSlug(workbench.slug)}
+              onFocus={() => setSelectedSlug(workbench.slug)}
             >
               <div className="card-head">
                 <span className="card-glyph" aria-hidden="true" />
@@ -60,9 +61,9 @@ export function WorkbenchLauncher() {
               <p>{workbench.description}</p>
               <footer>
                 <span>{selected ? '当前选择' : '可进入'}</span>
-                <em>{selected ? '已选择' : '点击选择'}</em>
+                <em>{selected ? '进入工作台' : '点击进入'}</em>
               </footer>
-            </button>
+            </Link>
           )
         })}
       </div>

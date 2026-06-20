@@ -258,8 +258,16 @@ input {
 .console-content > .workspace-grid {
   flex: 1 1 0;
   min-height: 0;
+}
+
+/* 国际日报:外层不滚动,子列(.report-main-column / .report-side-column)各自局部滚动 */
+.console-content > .report-console {
   overflow: hidden;
 }
+
+/* 翻译工作台:整体兜底滚动由 .workspace-grid 自身的 overflow-y: auto 负责。
+   此处不能写 overflow: hidden — 父级作用域优先级(0,2,0)会击穿 .workspace-grid(0,1,0),
+   导致处理中持续增长的运行日志被裁剪并溢出 viewport 下方且无法滚动。 */
 
 /* 翻译工作台:状态栏 sticky 在工作台顶部 */
 .console-content > .workflow-status {
@@ -791,6 +799,23 @@ input {
   border: 1px solid #e5eaf3;
   border-radius: 6px;
   background: #fff;
+}
+
+/* 模板/占位页(产物归档 / 权限管理 等尚未接入能力)— console-section 卡片内补内边距 */
+.placeholder-state {
+  margin: 16px 18px 18px;
+  padding: 28px 24px;
+}
+
+.placeholder-state h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.placeholder-state p {
+  margin: 0;
+  color: #65718a;
+  font-size: 0.86rem;
 }
 
 .console-section header {

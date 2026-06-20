@@ -124,6 +124,21 @@ test('翻译工作台 .translation-layout 双列采用 flex 列容器(短内容�
   assert.doesNotMatch(transSection[1], /overflow-y:\s*auto/)
 })
 
+test('.console-content > .workspace-grid 不被父级作用域强制 overflow:hidden(否则覆盖整体兜底滚动)', () => {
+  // 回归守护:翻译工作台运行日志(处理中持续增长)若被父级 overflow:hidden 裁剪,
+  // 会溢出到 viewport 下方且无法滚动。.console-content > .workspace-grid 的优先级(0,2,0)
+  // 高于 .workspace-grid(0,1,0),一旦它声明 overflow:hidden 就会击穿兜底滚动。
+  const wgScoped = [...cssText.matchAll(/\.console-content\s*>\s*\.workspace-grid\s*\{([^}]*)\}/g)]
+    .map((m) => m[1].replace(/\/\*[\s\S]*?\*\//g, ''))
+    .join(' ')
+  assert.doesNotMatch(wgScoped, /overflow:\s*hidden/)
+  // 国际日报 report-console 仍需父级 overflow:hidden(子列各自局部滚动)
+  const rcScoped = [...cssText.matchAll(/\.console-content\s*>\s*\.report-console\s*\{([^}]*)\}/g)]
+    .map((m) => m[1].replace(/\/\*[\s\S]*?\*\//g, ''))
+    .join(' ')
+  assert.match(rcScoped, /overflow:\s*hidden/)
+})
+
 test('国际日报主列短内容 section 不被 flex 压缩', () => {
   // 已选篮子:短内容,flex: 0 0 auto
   const selected = cssText.match(/\.report-main-column\s*>\s*\.selected-zone\s*\{([^}]*)\}/)

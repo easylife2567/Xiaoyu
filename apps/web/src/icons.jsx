@@ -32,6 +32,24 @@ export function Icon({ name }) {
           <path d="M4 7h16v13H4zM8 4h8v3H8zM8 11h8M8 15h8" />
         </svg>
       )
+    case 'po-overview':
+      return (
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 11 12 4l8 7M6 9.5V20h12V9.5" />
+        </svg>
+      )
+    case 'po-daily':
+      return (
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M4 11 12 4l8 7M6 9.5V20h12V9.5M10 20v-5h4v5" />
+        </svg>
+      )
+    case 'po-sentiment':
+      return (
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM9 10h.01M15 10h.01M8.5 14a4 4 0 0 0 7 0" />
+        </svg>
+      )
     case 'recent':
       return (
         <svg aria-hidden="true" viewBox="0 0 24 24">

@@ -158,6 +158,14 @@ XIAOYU_AI_API_KEY=replace-with-your-local-secret
 XIAOYU_AI_PROVIDER=stub
 ```
 
+舆情总览看板(舆情速览模块)接入既有舆情 ASMX 后端,需配置服务账号凭据(仅服务端读取,不下发浏览器;会话由 BFF 自动登录维护)。未配置时看板显示「未配置」态、不影响其他模块：
+
+```env
+PUBLIC_OPINION_API_BASE=https://mcc.cuc.edu.cn/yuqing-Toolkits-New/jsonNew.asmx/
+PUBLIC_OPINION_API_USERNAME=replace-with-service-account
+PUBLIC_OPINION_API_PASSWORD=replace-with-local-secret
+```
+
 ### 初始化数据库
 
 ```bash

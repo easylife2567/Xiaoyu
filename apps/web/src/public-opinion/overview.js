@@ -73,10 +73,12 @@ export async function getMediaShare(client, ctx) {
     startTime: ctx.startTime,
     endTime: ctx.endTime,
   })
-  return Object.entries(map ?? {})
+  const entries = Object.entries(map ?? {})
     .map(([media, count]) => ({ media, count: num(count) }))
     .filter((entry) => entry.count > 0)
     .sort((a, b) => b.count - a.count)
+  const total = entries.reduce((sum, e) => sum + e.count, 0)
+  return entries.map((e) => ({ ...e, share: total > 0 ? e.count / total : 0 }))
 }
 
 export async function getTopHotNews(client, ctx) {
@@ -84,7 +86,7 @@ export async function getTopHotNews(client, ctx) {
     startDay: ctx.startDay,
     endDay: ctx.endDay,
   })
-  return (list ?? []).slice(0, 10).map((item) => ({
+  const items = (list ?? []).slice(0, 10).map((item) => ({
     platform: item.platform ?? '',
     title: item.title ?? '',
     hotValue: num(item.hotValue),
@@ -92,6 +94,8 @@ export async function getTopHotNews(client, ctx) {
     pubTime: item.pubTime ?? '',
     url: item.Url ?? '',
   }))
+  const total = items.reduce((sum, e) => sum + e.hotValue, 0)
+  return items.map((e) => ({ ...e, share: total > 0 ? e.hotValue / total : 0 }))
 }
 
 // 今日分时趋势 — getDayNumber 的按 2 小时分桶。

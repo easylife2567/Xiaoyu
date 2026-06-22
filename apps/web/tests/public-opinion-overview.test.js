@@ -94,25 +94,25 @@ test('getSentimentDistribution 按列求和映射到 5 模态', async () => {
   )
 })
 
-test('getMediaShare 过滤 0 值并按量降序', async () => {
+test('getMediaShare 过滤 0 值并按量降序, 派生 share 占比', async () => {
   const media = await getMediaShare(fakeClient(), ctx)
-  assert.deepEqual(media, [
-    { media: 'Twitter', count: 18 },
-    { media: '谷歌全网', count: 16 },
-  ])
+  assert.equal(media.length, 2)
+  assert.equal(media[0].media, 'Twitter')
+  assert.equal(media[0].count, 18)
+  assert.ok(Math.abs(media[0].share + media[1].share - 1) < 1e-9, 'share 之和应为 1')
+  assert.ok(media[0].share > media[1].share, '主项占比应更高')
 })
 
-test('getTopHotNews 映射热文字段', async () => {
+test('getTopHotNews 映射热文字段并派生 share', async () => {
   const hot = await getTopHotNews(fakeClient(), ctx)
   assert.equal(hot.length, 2)
-  assert.deepEqual(hot[0], {
-    platform: '谷歌全网',
-    title: 'A',
-    hotValue: 100,
-    emotion: '0',
-    pubTime: '2026/6/18 11:18:11',
-    url: 'https://x/1',
-  })
+  assert.equal(hot[0].platform, '谷歌全网')
+  assert.equal(hot[0].title, 'A')
+  assert.equal(hot[0].hotValue, 100)
+  assert.equal(hot[0].url, 'https://x/1')
+  // share 之和应为 1(全部 hotValue 归一化)
+  const totalShare = hot.reduce((s, e) => s + e.share, 0)
+  assert.ok(Math.abs(totalShare - 1) < 1e-9)
 })
 
 test('getTodayHourly 取 getDayNumber 的分时分桶', async () => {

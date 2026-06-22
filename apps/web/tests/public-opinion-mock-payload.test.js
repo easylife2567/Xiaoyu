@@ -2,69 +2,127 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 // ---------------------------------------------------------------------------
-// Mock payload module — Task 1: Mock Payload Module
+// Mock payload module — Task 1: Mock Payload Module (v2 DTO shape)
 // ---------------------------------------------------------------------------
-// These tests drive the creation of `mock-payload.js`.  All 6 must pass
-// before moving on to Task 2.
 
 const MOCK_PAYLOAD = await import('../src/public-opinion/mock-payload.js').then(
   (m) => m.MOCK_PAYLOAD,
 );
 
-describe('MOCK_PAYLOAD shape', () => {
-  it('is an object', () => {
+describe('MOCK_PAYLOAD (v2 DTO shape)', () => {
+  it('is an object with configured:true and mock:true', () => {
     assert.equal(typeof MOCK_PAYLOAD, 'object');
     assert.ok(MOCK_PAYLOAD !== null && !Array.isArray(MOCK_PAYLOAD));
+    assert.equal(MOCK_PAYLOAD.configured, true);
+    assert.equal(MOCK_PAYLOAD.mock, true);
   });
 
-  it('has exactly 24 keys (24h)', () => {
-    assert.equal(Object.keys(MOCK_PAYLOAD).length, 24);
-  });
-
-  it('each key is an ISO date-string hour (YYYY-MM-DDTHH:00:00Z)', () => {
-    const isoHourRx = /^\d{4}-\d{2}-\d{2}T\d{2}:00:00Z$/;
-    for (const key of Object.keys(MOCK_PAYLOAD)) {
-      assert.match(key, isoHourRx, `key "${key}" is not an ISO hour`);
+  it('has required top-level keys', () => {
+    const required = [
+      'kpis',
+      'weeklyTrend',
+      'todayHourly',
+      'sentimentDistribution',
+      'mediaShare',
+      'todayPlatformShare',
+      'mediaSentimentMatrix',
+      'warnings',
+      'topHotNews',
+      'latestNews',
+      'errors',
+    ];
+    for (const key of required) {
+      assert.ok(Object.hasOwn(MOCK_PAYLOAD, key), `missing key "${key}"`);
     }
   });
 
-  it('every hour value is an array', () => {
-    for (const [key, val] of Object.entries(MOCK_PAYLOAD)) {
-      assert.ok(Array.isArray(val), `value for key "${key}" is not an array`);
+  it('kpis shape: todayCount, weekCount, todayInfoCount', () => {
+    const { kpis } = MOCK_PAYLOAD;
+    assert.equal(typeof kpis.todayCount, 'number');
+    assert.equal(typeof kpis.weekCount, 'number');
+    assert.equal(typeof kpis.todayInfoCount, 'number');
+    assert.ok(kpis.todayCount > 0);
+    assert.ok(kpis.weekCount > 0);
+    assert.ok(kpis.todayInfoCount > 0);
+  });
+
+  it('weeklyTrend has total + points[7] with label+count', () => {
+    assert.equal(typeof MOCK_PAYLOAD.weeklyTrend.total, 'number');
+    assert.equal(MOCK_PAYLOAD.weeklyTrend.points.length, 7);
+    for (const pt of MOCK_PAYLOAD.weeklyTrend.points) {
+      assert.equal(typeof pt.label, 'string');
+      assert.equal(typeof pt.count, 'number');
     }
   });
 
-  it('every item has the correct shape (text, score, source, timestamp)', () => {
-    const requiredFields = ['text', 'score', 'source', 'timestamp'];
-    for (const [key, items] of Object.entries(MOCK_PAYLOAD)) {
-      for (const item of items) {
-        for (const field of requiredFields) {
-          assert.ok(
-            Object.hasOwn(item, field),
-            `item in key "${key}" missing field "${field}"`,
-          );
-        }
-        const { text, score, source, timestamp } = item;
-        assert.equal(typeof text, 'string');
-        assert.equal(typeof score, 'number');
-        assert.equal(typeof source, 'string');
-        assert.equal(typeof timestamp, 'string');
-        assert.ok(score >= -1 && score <= 1, `score ${score} out of range`);
+  it('todayHourly has total + points[12]', () => {
+    assert.equal(typeof MOCK_PAYLOAD.todayHourly.total, 'number');
+    assert.equal(MOCK_PAYLOAD.todayHourly.points.length, 12);
+  });
+
+  it('sentimentDistribution has 5 entries', () => {
+    assert.equal(MOCK_PAYLOAD.sentimentDistribution.length, 5);
+    for (const e of MOCK_PAYLOAD.sentimentDistribution) {
+      assert.equal(typeof e.label, 'string');
+      assert.equal(typeof e.count, 'number');
+    }
+  });
+
+  it('mediaShare has 6 entries with media+count+share', () => {
+    assert.equal(MOCK_PAYLOAD.mediaShare.length, 6);
+    for (const e of MOCK_PAYLOAD.mediaShare) {
+      assert.equal(typeof e.media, 'string');
+      assert.equal(typeof e.count, 'number');
+      assert.equal(typeof e.share, 'number');
+    }
+  });
+
+  it('todayPlatformShare has 6 entries', () => {
+    assert.equal(MOCK_PAYLOAD.todayPlatformShare.length, 6);
+  });
+
+  it('mediaSentimentMatrix is 6×4 (media + 5 emotions)', () => {
+    assert.equal(MOCK_PAYLOAD.mediaSentimentMatrix.length, 6);
+    for (const row of MOCK_PAYLOAD.mediaSentimentMatrix) {
+      assert.equal(typeof row.media, 'string');
+      for (const label of ['正面', '偏正面', '中立', '偏负面', '负面']) {
+        assert.equal(typeof row[label], 'number');
       }
     }
   });
 
-  it('all timestamps are ISO strings within their parent hour', () => {
-    for (const [key, items] of Object.entries(MOCK_PAYLOAD)) {
-      const hourStart = new Date(key);
-      const hourEnd = new Date(hourStart.getTime() + 3_600_000);
-      for (const item of items) {
-        const ts = new Date(item.timestamp);
-        assert.ok(
-          ts >= hourStart && ts < hourEnd,
-          `timestamp ${item.timestamp} is not within hour ${key}`,
-        );
-      }
+  it('warnings shape: warningTotal, majorTotal, topWords[]', () => {
+    const w = MOCK_PAYLOAD.warnings;
+    assert.equal(typeof w.warningTotal, 'number');
+    assert.equal(typeof w.majorTotal, 'number');
+    assert.ok(Array.isArray(w.topWords));
+    for (const tw of w.topWords) {
+      assert.equal(typeof tw.word, 'string');
+      assert.equal(typeof tw.count, 'number');
+    }
+  });
+
+  it('topHotNews has 10 items with title+hotValue+emotion', () => {
+    assert.equal(MOCK_PAYLOAD.topHotNews.length, 10);
+    for (const item of MOCK_PAYLOAD.topHotNews) {
+      assert.equal(typeof item.title, 'string');
+      assert.equal(typeof item.hotValue, 'number');
+      assert.equal(typeof item.emotion, 'string');
+      assert.equal(typeof item.share, 'number');
+    }
+  });
+
+  it('latestNews has 30 items with full fields + 4 risk items', () => {
+    assert.equal(MOCK_PAYLOAD.latestNews.length, 30);
+    const riskItems = MOCK_PAYLOAD.latestNews.filter((n) => n.risk);
+    assert.equal(riskItems.length, 4);
+    for (const item of MOCK_PAYLOAD.latestNews) {
+      assert.equal(typeof item.title, 'string');
+      assert.equal(typeof item.platform, 'string');
+      assert.equal(typeof item.risk, 'boolean');
+      assert.equal(typeof item.sentiment, 'string');
+      assert.equal(typeof item.pubTime, 'string');
+      assert.equal(typeof item.url, 'string');
     }
   });
 });

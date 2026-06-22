@@ -156,12 +156,32 @@ export async function getWarnings(client, ctx) {
 }
 
 // 最新舆情信息流 — getSpanTimeMediaInfo 的分页条目(带关键词/风险标记)。
+// v2:limit 由 15 提升到 30,并把 emotion 映射到 5 模态字符串 sentiment(为情感色条服务)。
+const EMOTION_VALUE_MAP = {
+  '0': '中立',
+  '1': '正面',
+  '2': '负面',
+  '3': '偏正面',
+  '4': '偏负面',
+  正面: '正面',
+  偏正面: '偏正面',
+  中立: '中立',
+  偏负面: '偏负面',
+  负面: '负面',
+}
+
+function toSentiment(value) {
+  if (value == null) return '中立'
+  const key = String(value)
+  return EMOTION_VALUE_MAP[key] ?? '中立'
+}
+
 export async function getLatestNews(client, ctx) {
   const list = await client.call('getSpanTimeMediaInfo', {
     startDay: ctx.startDay,
     endDay: ctx.endDay,
     page: 1,
-    number: 15,
+    number: 30,
   })
   return (list ?? []).map((item) => ({
     platform: item.platform ?? '',
@@ -169,6 +189,7 @@ export async function getLatestNews(client, ctx) {
     keyword: item.keyWord ?? '',
     risk: Boolean(item.risk),
     emotion: item.emotionValue ?? '',
+    sentiment: toSentiment(item.emotionValue),
     pubTime: item.pubTime ?? '',
     url: item.Url ?? '',
   }))
@@ -204,6 +225,61 @@ export async function aggregateOverview(client, ctx = buildOverviewContext()) {
       payload.errors[key] = String(result.reason?.message ?? result.reason)
     }
   })
+  return enrichWithDerived(payload)
+}
+
+/**
+ * 派生 v2 新图表需要的字段(零后端改动):
+ *  - weeklySentiment: 7 天 × 5 情感堆叠面积所需,从 weeklyTrend + sentimentDistribution 按比例派生
+ *  - todayHourlyByMedia: 分时 × 媒体热力所需,从 todayHourly + todayPlatformShare 按平台占比派生
+ *
+ * 若任一上游数据缺失,对应派生字段被置 null,前端面板回退到空态。
+ */
+export function enrichWithDerived(payload) {
+  payload.weeklySentiment = deriveWeeklySentiment(payload)
+  payload.todayHourlyByMedia = deriveTodayHourlyByMedia(payload)
   return payload
+}
+
+function deriveWeeklySentiment(payload) {
+  const weekly = payload?.weeklyTrend?.points
+  const sentiment = payload?.sentimentDistribution
+  if (!Array.isArray(weekly) || weekly.length === 0) return null
+  if (!Array.isArray(sentiment) || sentiment.length === 0) return null
+
+  const totalSentiment = sentiment.reduce((s, e) => s + num(e.count), 0)
+  if (totalSentiment <= 0) return null
+
+  const ratios = EMOTION_LABELS.map((label) => {
+    const row = sentiment.find((e) => e.label === label)
+    return totalSentiment > 0 ? num(row?.count) / totalSentiment : 0
+  })
+
+  return weekly.map((day) => {
+    const total = num(day.count)
+    const entry = { date: day.label }
+    EMOTION_LABELS.forEach((label, i) => {
+      entry[label] = Math.round(total * ratios[i])
+    })
+    return entry
+  })
+}
+
+function deriveTodayHourlyByMedia(payload) {
+  const hourly = payload?.todayHourly?.points
+  const platforms = payload?.todayPlatformShare
+  if (!Array.isArray(hourly) || hourly.length === 0) return null
+  if (!Array.isArray(platforms) || platforms.length === 0) return null
+
+  const totalPlatform = platforms.reduce((s, e) => s + num(e.count), 0)
+  if (totalPlatform <= 0) return null
+
+  // 取前 6 个平台,按各自占比把 12 小时桶分散
+  const top = platforms.slice(0, 6)
+  return top.map((p) => {
+    const ratio = num(p.count) / totalPlatform
+    const hours = hourly.map((h) => Math.round(num(h.count) * ratio))
+    return { media: p.media, hours }
+  })
 }
 

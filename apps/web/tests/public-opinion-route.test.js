@@ -17,7 +17,7 @@ test('未配置凭据时 GET 返回 configured:false 且 HTTP 200', async () => 
   delete process.env.PUBLIC_OPINION_API_USERNAME
   delete process.env.PUBLIC_OPINION_API_PASSWORD
   try {
-    const res = await GET()
+    const res = await GET(new Request('http://test/api/public-opinion/overview'))
     assert.equal(res.status, 200)
     const body = await res.json()
     assert.deepEqual(body, { configured: false })

@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { scaleSequential } from 'd3-scale'
+import { scaleLinear, scaleSequential } from 'd3-scale'
 import { interpolateBlues } from 'd3-scale-chromatic'
-import { arc as d3arc } from 'd3-shape'
+import { arc as d3arc, line as d3line, curveMonotoneX } from 'd3-shape'
 import { max as d3max } from 'd3-array'
 
 // 舆情看板 d3 工具集 — 只用于"画 + 算色阶 + 数值插值",不直接操作 DOM。
@@ -50,6 +50,36 @@ export function donutArcPath({ value, total, size = 54, thickness = 8, padAngle 
 }
 
 export { d3max }
+
+/**
+ * 生成迷你 sparkline 的 SVG path d 字符串(KPI 卡内嵌用)。
+ * points 接受 [{label, count}] 或 [number];自动缩放到 [w,h]。
+ * 返回 { d, last:{x,y} }(末点用于画小圆点)。
+ */
+export function sparklinePath(points, { w = 120, h = 22, padding = 1 } = {}) {
+  if (!Array.isArray(points) || points.length === 0) {
+    return { d: '', last: { x: 0, y: h / 2 } }
+  }
+  const values = points.map((p) => (typeof p === 'number' ? p : Number(p?.count ?? 0)))
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  const xScale = scaleLinear()
+    .domain([0, Math.max(values.length - 1, 1)])
+    .range([padding, w - padding])
+  const yScale = scaleLinear()
+    .domain([min === max ? min - 1 : min, max === min ? max + 1 : max])
+    .range([h - padding, padding])
+  const generator = d3line()
+    .x((_, i) => xScale(i))
+    .y((v) => yScale(v))
+    .curve(curveMonotoneX)
+  const d = generator(values) || ''
+  const lastIndex = values.length - 1
+  return {
+    d,
+    last: { x: xScale(lastIndex), y: yScale(values[lastIndex]) },
+  }
+}
 
 /**
  * 数值滚动 hook。0 → target,持续 ms,easeOutCubic。

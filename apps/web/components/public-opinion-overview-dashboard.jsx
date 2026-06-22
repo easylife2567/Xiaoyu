@@ -1,24 +1,23 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import {
   ResponsiveContainer,
-  LineChart,
-  Line,
   BarChart,
   Bar,
   XAxis,
   YAxis,
   Tooltip,
   CartesianGrid,
-  ReferenceLine,
-  Label,
   Cell,
 } from 'recharts'
+import { stack as d3stack, area as d3area, curveMonotoneX } from 'd3-shape'
+import { scaleLinear, scaleBand } from 'd3-scale'
 import {
   blueScale,
   contrastTextOn,
   donutArcPath,
+  sparklinePath,
   useCountUp,
 } from '../src/public-opinion/d3-utils.js'
 
@@ -48,7 +47,7 @@ const PO_CHART_THEME = {
 
 // ───────────────────────────── 子组件 ─────────────────────────────
 
-function Panel({ title, subtitle, error, empty, span = 6, children }) {
+function Panel({ title, subtitle, error, empty, span = 4, children }) {
   return (
     <section className="po-panel console-section" data-span={span}>
       <header className="po-panel-head">
@@ -66,7 +65,29 @@ function Panel({ title, subtitle, error, empty, span = 6, children }) {
   )
 }
 
-function KpiTile({ label, value, icon }) {
+/**
+ * 迷你 sparkline — KPI 卡底部 22px 高趋势线。
+ * 纯 SVG,不引入新 fetch,prefers-reduced-motion 下不做动画。
+ */
+function Sparkline({ points, color = '#1677ff', label, w = 120, h = 22 }) {
+  const { d, last } = useMemo(() => sparklinePath(points, { w, h }), [points, w, h])
+  if (!d) return null
+  return (
+    <svg
+      className="po-kpi-spark"
+      width={w}
+      height={h}
+      viewBox={`0 0 ${w} ${h}`}
+      role="img"
+      aria-label={label ? `${label} 趋势` : 'sparkline'}
+    >
+      <path d={d} fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx={last.x} cy={last.y} r="1.8" fill={color} />
+    </svg>
+  )
+}
+
+function KpiTile({ label, value, icon, sparkPoints, sparkColor }) {
   const animated = useCountUp(Number(value) || 0)
   const display = Math.round(animated).toLocaleString('zh-CN')
   return (
@@ -77,14 +98,17 @@ function KpiTile({ label, value, icon }) {
       <div className="po-kpi-body">
         <strong className="po-kpi-value">{display}</strong>
         <span className="po-kpi-label">{label}</span>
+        {sparkPoints && sparkPoints.length > 0 ? (
+          <Sparkline points={sparkPoints} color={sparkColor} label={label} />
+        ) : null}
       </div>
     </div>
   )
 }
 
-function KpiBar({ data, error }) {
+function KpiBar({ data, error, weeklyPoints }) {
   return (
-    <section className="po-panel console-section po-kpi-bar" data-span={12}>
+    <section className="po-panel console-section po-kpi-bar" data-span="8">
       {error ? (
         <p className="po-panel-state is-error">KPI 加载失败:{error}</p>
       ) : (
@@ -98,6 +122,8 @@ function KpiBar({ data, error }) {
                 <path d="M14 5h6v6" />
               </svg>
             }
+            sparkPoints={weeklyPoints}
+            sparkColor={PO_CHART_THEME.primary}
           />
           <KpiTile
             label="本周舆情量"
@@ -108,6 +134,8 @@ function KpiBar({ data, error }) {
                 <path d="M3 9h18M8 3v4M16 3v4" />
               </svg>
             }
+            sparkPoints={weeklyPoints}
+            sparkColor={PO_CHART_THEME.accent}
           />
           <KpiTile
             label="当日信息量"
@@ -117,6 +145,8 @@ function KpiBar({ data, error }) {
                 <path d="M4 6h16M4 12h10M4 18h16" />
               </svg>
             }
+            sparkPoints={weeklyPoints}
+            sparkColor="#86909c"
           />
         </>
       )}
@@ -186,6 +216,7 @@ function Heatmap({ rows }) {
               <span
                 key={label}
                 role="cell"
+                tabIndex={0}
                 className="po-heatmap-cell"
                 style={{ background: bg, color: contrastTextOn(bg) }}
                 title={`${row.media} · ${label}:${v}`}
@@ -200,23 +231,351 @@ function Heatmap({ rows }) {
   )
 }
 
+/**
+ * 情感 × 时间堆叠面积图 — 7 天 × 5 模态。
+ * 一张图同时回答:① 趋势走向 ② 情感构成 ③ 日均比例。
+ * 纯 SVG;mousemove 二分查找日期 + React state 显示 tooltip。
+ */
+function StackedSentimentArea({ data, width = 520, height = 220 }) {
+  const [hover, setHover] = useState(null)
+  const svgRef = useRef(null)
+
+  if (!Array.isArray(data) || data.length === 0) {
+    return <p className="po-panel-state">暂无数据</p>
+  }
+
+  const padding = { top: 16, right: 28, bottom: 24, left: 36 }
+  const innerW = width - padding.left - padding.right
+  const innerH = height - padding.top - padding.bottom
+
+  const stackGen = d3stack().keys(EMOTION_LABELS)
+  const series = stackGen(data)
+  const maxY = Math.max(
+    1,
+    ...data.map((d) => EMOTION_LABELS.reduce((s, k) => s + (d[k] ?? 0), 0)),
+  )
+  const xScale = scaleBand()
+    .domain(data.map((d) => d.date))
+    .range([0, innerW])
+    .padding(0)
+  const yScale = scaleLinear().domain([0, maxY]).range([innerH, 0]).nice()
+  const avg = data.reduce((s, d) => s + EMOTION_LABELS.reduce((ss, k) => ss + (d[k] ?? 0), 0), 0) / data.length
+
+  const xCenter = (d) => (xScale(d.date) ?? 0) + xScale.bandwidth() / 2
+  const areaGen = d3area()
+    .x((d) => xCenter(d.data))
+    .y0((d) => yScale(d[0]))
+    .y1((d) => yScale(d[1]))
+    .curve(curveMonotoneX)
+
+  function onMove(e) {
+    const rect = svgRef.current?.getBoundingClientRect()
+    if (!rect) return
+    const x = e.clientX - rect.left - padding.left
+    if (x < 0 || x > innerW) {
+      setHover(null)
+      return
+    }
+    const idx = Math.min(
+      data.length - 1,
+      Math.max(0, Math.round((x / innerW) * (data.length - 1))),
+    )
+    setHover({ idx, x: xCenter(data[idx]) + padding.left })
+  }
+
+  return (
+    <div className="po-stack-area">
+      <svg
+        ref={svgRef}
+        viewBox={`0 0 ${width} ${height}`}
+        width="100%"
+        height={height}
+        role="img"
+        aria-label="情感 × 时间堆叠面积"
+        onMouseMove={onMove}
+        onMouseLeave={() => setHover(null)}
+      >
+        <g transform={`translate(${padding.left},${padding.top})`}>
+          {/* Y grid */}
+          {yScale.ticks(4).map((t) => (
+            <g key={t}>
+              <line x1={0} x2={innerW} y1={yScale(t)} y2={yScale(t)} stroke={PO_CHART_THEME.grid} />
+              <text x={-6} y={yScale(t) + 3} fontSize="10" textAnchor="end" fill="#86909c">
+                {t}
+              </text>
+            </g>
+          ))}
+          {/* areas */}
+          {series.map((s) => (
+            <path key={s.key} d={areaGen(s)} fill={EMOTION_COLORS[s.key]} opacity="0.85" />
+          ))}
+          {/* avg dashed line */}
+          <line
+            x1={0}
+            x2={innerW}
+            y1={yScale(avg)}
+            y2={yScale(avg)}
+            stroke="#86909c"
+            strokeDasharray="4 4"
+          />
+          <text x={innerW - 4} y={yScale(avg) - 4} fontSize="10" fill="#86909c" textAnchor="end">
+            Avg {avg.toFixed(0)}
+          </text>
+          {/* x labels */}
+          {data.map((d) => (
+            <text
+              key={d.date}
+              x={xCenter(d)}
+              y={innerH + 14}
+              fontSize="10"
+              textAnchor="middle"
+              fill="#86909c"
+            >
+              {d.date}
+            </text>
+          ))}
+          {/* hover marker */}
+          {hover ? (
+            <line
+              x1={hover.x - padding.left}
+              x2={hover.x - padding.left}
+              y1={0}
+              y2={innerH}
+              stroke="#1d2129"
+              strokeOpacity="0.2"
+            />
+          ) : null}
+        </g>
+      </svg>
+      {hover ? (
+        <div
+          style={{
+            position: 'absolute',
+            left: Math.min(width - 160, hover.x + 4),
+            top: 8,
+            ...PO_CHART_THEME.tooltipStyle,
+            background: '#fff',
+            padding: '6px 10px',
+            pointerEvents: 'none',
+          }}
+        >
+          <div style={{ fontWeight: 600, marginBottom: 4 }}>{data[hover.idx].date}</div>
+          {EMOTION_LABELS.map((k) => (
+            <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11 }}>
+              <span
+                style={{
+                  width: 8,
+                  height: 8,
+                  background: EMOTION_COLORS[k],
+                  borderRadius: 2,
+                  display: 'inline-block',
+                }}
+              />
+              <span style={{ color: '#86909c' }}>{k}</span>
+              <span style={{ marginLeft: 'auto', fontVariantNumeric: 'tabular-nums' }}>
+                {data[hover.idx][k] ?? 0}
+              </span>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
+/**
+ * 媒体 × 情感 100% 横向堆叠条 — 看"哪个平台情感更偏负"。
+ * 用 recharts 内置堆叠条,百分比换算后传入。
+ */
+function MediaSentimentPercentBar({ rows }) {
+  if (!Array.isArray(rows) || rows.length === 0) {
+    return <p className="po-panel-state">暂无数据</p>
+  }
+  const data = rows.map((r) => {
+    const total = EMOTION_LABELS.reduce((s, k) => s + (r[k] ?? 0), 0)
+    const entry = { media: r.media }
+    EMOTION_LABELS.forEach((k) => {
+      entry[k] = total > 0 ? Math.round(((r[k] ?? 0) / total) * 1000) / 10 : 0
+    })
+    return entry
+  })
+  return (
+    <div className="po-percent-bar">
+      <ResponsiveContainer width="100%" height={220}>
+        <BarChart data={data} layout="vertical" margin={{ top: 8, right: 16, left: 8, bottom: 0 }}>
+          <CartesianGrid strokeDasharray="3 3" stroke={PO_CHART_THEME.grid} horizontal={false} />
+          <XAxis
+            type="number"
+            domain={[0, 100]}
+            unit="%"
+            tick={PO_CHART_THEME.axisTick}
+          />
+          <YAxis type="category" dataKey="media" width={70} tick={PO_CHART_THEME.axisTick} />
+          <Tooltip contentStyle={PO_CHART_THEME.tooltipStyle} formatter={(v) => `${v}%`} />
+          {EMOTION_LABELS.map((label) => (
+            <Bar key={label} dataKey={label} stackId="a" fill={EMOTION_COLORS[label]} />
+          ))}
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  )
+}
+
+/**
+ * 分时 × 媒体小热力 — 12 桶 × N 媒体的色块网格。
+ * 色 = blueScale(count),字色 = contrastTextOn(bg);keyboard Tab 可达。
+ */
+function HourlyMediaHeat({ rows, hourlyLabels }) {
+  if (!Array.isArray(rows) || rows.length === 0) {
+    return <p className="po-panel-state">暂无数据</p>
+  }
+  const max = Math.max(1, ...rows.flatMap((r) => r.hours))
+  const scale = blueScale(max)
+  const labels = hourlyLabels ?? rows[0]?.hours.map((_, i) => `${String(i * 2).padStart(2, '0')}时`)
+  return (
+    <div className="po-hourly-heat" role="table" aria-label="今日分时 × 媒体热力">
+      <div className="po-hourly-heat-head" role="row">
+        <span />
+        {labels.map((l) => (
+          <span key={l} role="columnheader">
+            {l}
+          </span>
+        ))}
+      </div>
+      {rows.map((row) => (
+        <div className="po-hourly-heat-row" role="row" key={row.media}>
+          <span className="po-hourly-heat-axis" role="rowheader" title={row.media}>
+            {row.media}
+          </span>
+          {row.hours.map((v, i) => {
+            const bg = scale(v)
+            return (
+              <span
+                key={i}
+                role="cell"
+                tabIndex={0}
+                className="po-hourly-heat-cell"
+                style={{ background: bg, color: contrastTextOn(bg) }}
+                title={`${row.media} · ${labels[i] ?? i}:${v}`}
+              >
+                {v > 0 ? v : ''}
+              </span>
+            )
+          })}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function avgOf(points, key = 'count') {
   if (!points || points.length === 0) return 0
   return points.reduce((s, p) => s + (p[key] ?? 0), 0) / points.length
+}
+
+/**
+ * 信息流过滤 chips — 「全部 / 风险 / 各平台」。
+ */
+function FeedChips({ items, selected, onSelect }) {
+  const counts = useMemo(() => {
+    const c = { all: items.length, risk: 0 }
+    for (const it of items) {
+      if (it.risk) c.risk += 1
+      const p = it.platform || ''
+      if (p) c[p] = (c[p] ?? 0) + 1
+    }
+    return c
+  }, [items])
+  const platforms = useMemo(() => {
+    const set = new Set()
+    for (const it of items) if (it.platform) set.add(it.platform)
+    return Array.from(set)
+  }, [items])
+
+  const chip = (key, text) => (
+    <button
+      key={key}
+      type="button"
+      role="button"
+      aria-pressed={selected === key}
+      className={`po-feed-chip${selected === key ? ' is-active' : ''}`}
+      onClick={() => onSelect(key)}
+    >
+      <span>{text}</span>
+      <span className="po-feed-chip-count">{counts[key] ?? 0}</span>
+    </button>
+  )
+
+  return (
+    <div className="po-feed-chips" role="toolbar" aria-label="信息流过滤">
+      {chip('all', '全部')}
+      {chip('risk', '风险')}
+      {platforms.map((p) => chip(p, p))}
+    </div>
+  )
+}
+
+/**
+ * 受 prefers-reduced-motion 与 visibilityState 守护的轮询 hook。
+ * 在 callback 抛错时静默(setLatestNews 内部已 try/catch 即可)。
+ * 重要:disabled=true 时完全不启动 interval。
+ */
+function useInterval(callback, delay, { disabled = false } = {}) {
+  const savedRef = useRef(callback)
+  useEffect(() => {
+    savedRef.current = callback
+  }, [callback])
+  useEffect(() => {
+    if (disabled || delay == null) return
+    let id
+    const start = () => {
+      stop()
+      id = setInterval(() => {
+        if (typeof document !== 'undefined' && document.visibilityState === 'hidden') return
+        savedRef.current?.()
+      }, delay)
+    }
+    const stop = () => {
+      if (id) clearInterval(id)
+      id = null
+    }
+    start()
+    const onVisibility = () => {
+      // 切回前台立即拉一次(可选);为避免双拉,这里只重置 timer 节奏
+      if (document.visibilityState === 'visible') {
+        savedRef.current?.()
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility)
+    return () => {
+      stop()
+      document.removeEventListener('visibilitychange', onVisibility)
+    }
+  }, [delay, disabled])
 }
 
 // ───────────────────────────── 主组件 ─────────────────────────────
 
 export function PublicOpinionOverviewDashboard() {
   const [state, setState] = useState({ status: 'loading', payload: null })
+  const [feedFilter, setFeedFilter] = useState('all')
 
   useEffect(() => {
     let active = true
     async function load() {
       try {
-        const res = await fetch('/api/public-opinion/overview')
+        // v2:在 dev 环境下若 URL 带 ?mock=1 转发到 API
+        const url = new URL('/api/public-opinion/overview', window.location.origin)
+        const isMockUrl = new URLSearchParams(window.location.search).get('mock') === '1'
+        if (isMockUrl) url.searchParams.set('mock', '1')
+        const res = await fetch(url.toString())
         const payload = await res.json()
-        if (active) setState({ status: 'ready', payload })
+        if (active) {
+          setState({ status: 'ready', payload })
+          if (payload?.mock) {
+            console.info('[public-opinion] mock 模式生效 — 轮询已停用')
+          }
+        }
       } catch (err) {
         if (active) setState({ status: 'error', payload: null, error: String(err?.message ?? err) })
       }
@@ -227,20 +586,50 @@ export function PublicOpinionOverviewDashboard() {
     }
   }, [])
 
+  const payload = state.payload ?? {}
+  const isMock = Boolean(payload.mock)
+
+  // v2:30s 轮询(仅信息流),mock 模式与 reduced-motion 不影响轮询(轮询是数据,非动画)
+  useInterval(
+    async () => {
+      try {
+        const res = await fetch('/api/public-opinion/overview?slice=latest')
+        if (!res.ok) return
+        const data = await res.json()
+        if (Array.isArray(data?.latestNews)) {
+          setState((s) =>
+            s.status === 'ready'
+              ? { ...s, payload: { ...s.payload, latestNews: data.latestNews } }
+              : s,
+          )
+        }
+      } catch {
+        // 静默失败:轮询失败不打扰主视图
+      }
+    },
+    30_000,
+    { disabled: state.status !== 'ready' || isMock },
+  )
+
   if (state.status === 'loading') {
     return (
       <div className="po-dashboard">
-        <div className="po-grid-12">
-          <section className="po-panel console-section po-skeleton" data-span={12} style={{ minHeight: 76 }} />
-          {[6, 6, 6, 6, 4, 4, 4, 12, 12].map((span, i) => (
-            <section
-              key={i}
-              className="po-panel console-section po-skeleton"
-              data-span={span}
-              style={{ minHeight: span === 12 ? 220 : 240 }}
-            />
-          ))}
+        <div className="po-overview-main">
+          <div className="po-overview-grid">
+            <section className="po-panel console-section po-skeleton" data-span="8" style={{ minHeight: 68 }} />
+            {[8, 4, 4, 4, 4, 8].map((span, i) => (
+              <section
+                key={i}
+                className="po-panel console-section po-skeleton"
+                data-span={span}
+                style={{ minHeight: span === 8 ? 220 : 200 }}
+              />
+            ))}
+          </div>
         </div>
+        <aside className="po-overview-aside">
+          <section className="po-panel console-section po-skeleton" style={{ minHeight: 480 }} />
+        </aside>
       </div>
     )
   }
@@ -253,8 +642,6 @@ export function PublicOpinionOverviewDashboard() {
       </section>
     )
   }
-
-  const payload = state.payload ?? {}
 
   if (payload.configured === false) {
     return (
@@ -270,221 +657,230 @@ export function PublicOpinionOverviewDashboard() {
 
   const errors = payload.errors ?? {}
   const weekly = payload.weeklyTrend
-  const hourly = payload.todayHourly
   const sentiment = payload.sentimentDistribution
   const media = payload.mediaShare
   const matrix = payload.mediaSentimentMatrix
   const todayPlatform = payload.todayPlatformShare
   const warnings = payload.warnings
   const hot = payload.topHotNews
-  const latest = payload.latestNews
+  const latest = payload.latestNews ?? []
+  const weeklySentiment = payload.weeklySentiment
+  const todayHourlyByMedia = payload.todayHourlyByMedia
+  const hourlyLabels = payload.todayHourly?.points?.map((p) => p.label)
 
   const sentimentTotal = (sentiment ?? []).reduce((sum, item) => sum + item.count, 0)
-  const mediaTop = (media ?? []).slice(0, 7)
-  const platformTop = (todayPlatform ?? []).slice(0, 7)
-  const weeklyAvg = avgOf(weekly?.points)
-  const hourlyAvg = avgOf(hourly?.points)
+  const mediaTop = (media ?? []).slice(0, 6)
+  const platformTop = (todayPlatform ?? []).slice(0, 6)
   const hotTop = (hot ?? []).slice(0, 10)
+
+  // 信息流前端过滤
+  const filteredLatest = latest.filter((item) => {
+    if (feedFilter === 'all') return true
+    if (feedFilter === 'risk') return Boolean(item.risk)
+    return item.platform === feedFilter
+  })
 
   return (
     <div className="po-dashboard">
-      <div className="po-grid-12">
-        <KpiBar data={payload.kpis} error={errors.kpis} />
+      <div className="po-overview-main">
+        <div className="po-overview-grid">
+          <KpiBar data={payload.kpis} error={errors.kpis} weeklyPoints={weekly?.points} />
 
-        <Panel
-          title="本周舆情趋势"
-          subtitle="近 7 天每日量"
-          span={6}
-          error={errors.weeklyTrend}
-          empty={weekly && weekly.points.length === 0}
-        >
-          {weekly ? (
-            <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={weekly.points} margin={{ top: 8, right: 16, left: -8, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke={PO_CHART_THEME.grid} vertical={false} />
-                <XAxis dataKey="label" tick={PO_CHART_THEME.axisTick} />
-                <YAxis allowDecimals={false} tick={PO_CHART_THEME.axisTick} />
-                <Tooltip contentStyle={PO_CHART_THEME.tooltipStyle} />
-                <ReferenceLine y={weeklyAvg} stroke="#86909c" strokeDasharray="4 4">
-                  <Label value={`Avg ${weeklyAvg.toFixed(1)}`} position="right" fill="#86909c" fontSize={11} />
-                </ReferenceLine>
-                <Bar dataKey="count" name="舆情量" radius={[4, 4, 0, 0]} fill={PO_CHART_THEME.primary} />
-              </BarChart>
-            </ResponsiveContainer>
-          ) : null}
-        </Panel>
+          <Panel
+            title="情感 × 时间趋势"
+            subtitle="近 7 天 · 5 模态堆叠"
+            span="8"
+            error={errors.weeklyTrend}
+            empty={Array.isArray(weeklySentiment) && weeklySentiment.length === 0}
+          >
+            {weeklySentiment ? <StackedSentimentArea data={weeklySentiment} /> : null}
+          </Panel>
 
-        <Panel
-          title="情感分布"
-          subtitle="近 7 天"
-          span={6}
-          error={errors.sentimentDistribution}
-          empty={sentiment && sentimentTotal === 0}
-        >
-          {sentiment ? (
-            <div className="po-mini-donut-row">
-              {sentiment.map((entry) => (
-                <MiniDonut
-                  key={entry.label}
-                  label={entry.label}
-                  value={entry.count}
-                  total={sentimentTotal}
-                  color={EMOTION_COLORS[entry.label] ?? '#98a2b3'}
-                />
-              ))}
-            </div>
-          ) : null}
-        </Panel>
+          <Panel
+            title="今日分时 × 媒体"
+            subtitle="12 桶 × 平台"
+            span="8"
+            error={errors.todayHourly}
+            empty={Array.isArray(todayHourlyByMedia) && todayHourlyByMedia.length === 0}
+          >
+            {todayHourlyByMedia ? (
+              <HourlyMediaHeat rows={todayHourlyByMedia} hourlyLabels={hourlyLabels} />
+            ) : null}
+          </Panel>
 
-        <Panel
-          title="今日分时趋势"
-          subtitle="按 2 小时分桶"
-          span={6}
-          error={errors.todayHourly}
-          empty={hourly && hourly.total === 0}
-        >
-          {hourly ? (
-            <ResponsiveContainer width="100%" height={200}>
-              <LineChart data={hourly.points} margin={{ top: 8, right: 16, left: -8, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke={PO_CHART_THEME.grid} vertical={false} />
-                <XAxis dataKey="label" tick={PO_CHART_THEME.axisTick} />
-                <YAxis allowDecimals={false} tick={PO_CHART_THEME.axisTick} />
-                <Tooltip contentStyle={PO_CHART_THEME.tooltipStyle} />
-                <ReferenceLine y={hourlyAvg} stroke="#86909c" strokeDasharray="4 4">
-                  <Label value={`Avg ${hourlyAvg.toFixed(1)}`} position="right" fill="#86909c" fontSize={11} />
-                </ReferenceLine>
-                <Line
-                  type="monotone"
-                  dataKey="count"
-                  name="信息量"
-                  stroke={PO_CHART_THEME.accent}
-                  strokeWidth={2}
-                  dot={{ r: 2 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          ) : null}
-        </Panel>
+          <Panel
+            title="今日平台分布"
+            subtitle="今日各平台信息量"
+            span="4"
+            error={errors.todayPlatformShare}
+            empty={todayPlatform && todayPlatform.length === 0}
+          >
+            {todayPlatform ? (
+              <ResponsiveContainer width="100%" height={200}>
+                <BarChart data={platformTop} layout="vertical" margin={{ top: 8, right: 16, left: 24, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke={PO_CHART_THEME.grid} horizontal={false} />
+                  <XAxis type="number" allowDecimals={false} tick={PO_CHART_THEME.axisTick} />
+                  <YAxis type="category" dataKey="media" width={70} tick={PO_CHART_THEME.axisTick} />
+                  <Tooltip contentStyle={PO_CHART_THEME.tooltipStyle} />
+                  <Bar dataKey="count" name="信息量" radius={[0, 4, 4, 0]}>
+                    {platformTop.map((entry, i) => (
+                      <Cell key={entry.media} fill={MEDIA_COLORS[i % MEDIA_COLORS.length]} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            ) : null}
+          </Panel>
 
-        <Panel
-          title="今日平台分布"
-          subtitle="今日各平台信息量"
-          span={6}
-          error={errors.todayPlatformShare}
-          empty={todayPlatform && todayPlatform.length === 0}
-        >
-          {todayPlatform ? (
-            <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={platformTop} layout="vertical" margin={{ top: 8, right: 16, left: 24, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke={PO_CHART_THEME.grid} horizontal={false} />
-                <XAxis type="number" allowDecimals={false} tick={PO_CHART_THEME.axisTick} />
-                <YAxis type="category" dataKey="media" width={70} tick={PO_CHART_THEME.axisTick} />
-                <Tooltip contentStyle={PO_CHART_THEME.tooltipStyle} />
-                <Bar dataKey="count" name="信息量" radius={[0, 4, 4, 0]}>
-                  {platformTop.map((entry, i) => (
-                    <Cell key={entry.media} fill={MEDIA_COLORS[i % MEDIA_COLORS.length]} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          ) : null}
-        </Panel>
+          <Panel
+            title="媒体 × 情感百分比"
+            subtitle="各平台情感占比"
+            span="4"
+            error={errors.mediaSentimentMatrix}
+            empty={matrix && matrix.length === 0}
+          >
+            {matrix ? <MediaSentimentPercentBar rows={matrix} /> : null}
+          </Panel>
 
-        <Panel
-          title="媒体来源占比"
-          subtitle="近 7 天 · Top 7"
-          span={4}
-          error={errors.mediaShare}
-          empty={media && media.length === 0}
-        >
-          {media ? (
-            <ol className="po-ranklist">
-              {mediaTop.map((entry, i) => (
-                <RankRow
-                  key={entry.media}
-                  rank={i + 1}
-                  name={entry.media}
-                  value={entry.count}
-                  share={entry.share}
-                  secondary={entry.count}
-                />
-              ))}
-            </ol>
-          ) : null}
-        </Panel>
+          <Panel
+            title="媒体来源占比"
+            subtitle="近 7 天 · Top 6"
+            span="4"
+            error={errors.mediaShare}
+            empty={media && media.length === 0}
+          >
+            {media ? (
+              <ol className="po-ranklist">
+                {mediaTop.map((entry, i) => (
+                  <RankRow
+                    key={entry.media}
+                    rank={i + 1}
+                    name={entry.media}
+                    value={entry.count}
+                    share={entry.share}
+                    secondary={entry.count}
+                  />
+                ))}
+              </ol>
+            ) : null}
+          </Panel>
 
-        <Panel
-          title="Top 热门信息"
-          subtitle="近 7 天 · Top 10"
-          span={4}
-          error={errors.topHotNews}
-          empty={hot && hot.length === 0}
-        >
-          {hot ? (
-            <ol className="po-ranklist">
-              {hotTop.map((item, i) => (
-                <RankRow
-                  key={`${item.url}-${i}`}
-                  rank={i + 1}
-                  name={item.title || item.platform || '(无标题)'}
-                  value={item.hotValue}
-                  share={item.share}
-                  secondary={item.hotValue}
-                />
-              ))}
-            </ol>
-          ) : null}
-        </Panel>
+          <Panel
+            title="Top 热门信息"
+            subtitle="近 7 天 · Top 10"
+            span="4"
+            error={errors.topHotNews}
+            empty={hot && hot.length === 0}
+          >
+            {hot ? (
+              <ol className="po-ranklist">
+                {hotTop.map((item, i) => (
+                  <RankRow
+                    key={`${item.url}-${i}`}
+                    rank={i + 1}
+                    name={item.title || item.platform || '(无标题)'}
+                    value={item.hotValue}
+                    share={item.share}
+                    secondary={item.hotValue}
+                  />
+                ))}
+              </ol>
+            ) : null}
+          </Panel>
 
-        <Panel title="预警概览" subtitle="近 7 天" span={4} error={errors.warnings}>
-          {warnings ? (
-            <div className="po-warning">
-              <div className="po-warning-cards">
-                <div className="po-warning-card">
-                  <span>预警总量</span>
-                  <strong>{warnings.warningTotal}</strong>
+          <Panel title="预警概览" subtitle="近 7 天" span="4" error={errors.warnings}>
+            {warnings ? (
+              <div className="po-warning">
+                <div className="po-warning-cards">
+                  <div className="po-warning-card">
+                    <span>预警总量</span>
+                    <strong>{warnings.warningTotal}</strong>
+                  </div>
+                  <div className="po-warning-card is-major">
+                    <span>重大预警</span>
+                    <strong>{warnings.majorTotal}</strong>
+                  </div>
                 </div>
-                <div className="po-warning-card is-major">
-                  <span>重大预警</span>
-                  <strong>{warnings.majorTotal}</strong>
-                </div>
+                {warnings.topWords.length > 0 ? (
+                  <div className="po-wordcloud">
+                    {warnings.topWords.map((w, i) => (
+                      <span key={w.word} style={{ fontSize: `${0.8 + Math.min(i === 0 ? 0.6 : 0.4 / (i + 1), 0.6)}rem` }}>
+                        {w.word}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="po-panel-state">当前无预警</p>
+                )}
               </div>
-              {warnings.topWords.length > 0 ? (
-                <div className="po-wordcloud">
-                  {warnings.topWords.map((w, i) => (
-                    <span key={w.word} style={{ fontSize: `${0.8 + Math.min(i === 0 ? 0.6 : 0.4 / (i + 1), 0.6)}rem` }}>
-                      {w.word}
-                    </span>
-                  ))}
-                </div>
-              ) : (
-                <p className="po-panel-state">当前无预警</p>
-              )}
-            </div>
-          ) : null}
-        </Panel>
+            ) : null}
+          </Panel>
 
-        <Panel
-          title="媒体 × 情感矩阵"
-          subtitle="近 7 天 · 各平台情感构成"
-          span={12}
-          error={errors.mediaSentimentMatrix}
-          empty={matrix && matrix.length === 0}
-        >
-          {matrix ? <Heatmap rows={matrix} /> : null}
-        </Panel>
+          <Panel
+            title="媒体 × 情感矩阵"
+            subtitle="近 7 天 · 各平台情感构成"
+            span="8"
+            error={errors.mediaSentimentMatrix}
+            empty={matrix && matrix.length === 0}
+          >
+            {matrix ? <Heatmap rows={matrix} /> : null}
+          </Panel>
 
-        <Panel
-          title="最新舆情信息流"
-          subtitle="近 7 天 · 最新 15 条"
-          span={12}
-          error={errors.latestNews}
-          empty={latest && latest.length === 0}
-        >
-          {latest ? (
-            <ul className="po-feed">
-              {latest.map((item, i) => (
-                <li key={`${item.url}-${i}`}>
+          {/* 保留情感分布 5 模态环作为可选回看(空间允许) */}
+          <Panel
+            title="情感分布"
+            subtitle="近 7 天"
+            span="8"
+            error={errors.sentimentDistribution}
+            empty={sentiment && sentimentTotal === 0}
+          >
+            {sentiment ? (
+              <div className="po-mini-donut-row">
+                {sentiment.map((entry) => (
+                  <MiniDonut
+                    key={entry.label}
+                    label={entry.label}
+                    value={entry.count}
+                    total={sentimentTotal}
+                    color={EMOTION_COLORS[entry.label] ?? '#98a2b3'}
+                  />
+                ))}
+              </div>
+            ) : null}
+          </Panel>
+        </div>
+      </div>
+
+      <aside className="po-overview-aside">
+        <section className="po-panel console-section" style={{ minHeight: 0 }}>
+          <div className="po-feed-head">
+            <h2>
+              最新舆情信息流
+              <span
+                className={`po-live-dot${isMock ? ' is-mock' : ''}`}
+                aria-label={isMock ? 'mock 模式' : '实时更新'}
+                title={isMock ? 'mock' : '实时'}
+              />
+            </h2>
+            <FeedChips items={latest} selected={feedFilter} onSelect={setFeedFilter} />
+          </div>
+          {errors.latestNews ? (
+            <p className="po-panel-state is-error">信息流加载失败:{errors.latestNews}</p>
+          ) : filteredLatest.length === 0 ? (
+            <p className="po-panel-state">暂无数据</p>
+          ) : (
+            <ul className="po-feed" aria-live="polite">
+              {filteredLatest.map((item, i) => (
+                <li
+                  key={`${item.url}-${i}`}
+                  className={`po-feed-item${item.risk ? ' is-risk' : ''}`}
+                  data-emo={item.sentiment ?? ''}
+                >
+                  <span
+                    className="po-feed-emo-bar"
+                    aria-hidden="true"
+                    style={{ background: EMOTION_COLORS[item.sentiment] ?? '#dcdfe6' }}
+                  />
                   <div className="po-feed-main">
                     <a href={item.url || undefined} target="_blank" rel="noreferrer" className="po-feed-title">
                       {item.risk ? <span className="po-tag is-risk">风险</span> : null}
@@ -499,9 +895,9 @@ export function PublicOpinionOverviewDashboard() {
                 </li>
               ))}
             </ul>
-          ) : null}
-        </Panel>
-      </div>
+          )}
+        </section>
+      </aside>
     </div>
   )
 }

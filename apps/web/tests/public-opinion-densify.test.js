@@ -18,9 +18,11 @@ const dashText = readFileSync(dashPath, 'utf8')
 const d3UtilsPath = path.resolve(import.meta.dirname, '../src/public-opinion/d3-utils.js')
 const d3UtilsText = readFileSync(d3UtilsPath, 'utf8')
 
-test('CSS 定义 12 列栅格 + data-span 属性选择器', () => {
-  assert.match(cssText, /\.po-grid-12\s*\{[^}]*grid-template-columns:\s*repeat\(12,\s*1fr\)/)
-  assert.match(cssText, /\.po-grid-12\s*>\s*\[data-span='12'\]/)
+test('CSS 定义 12 列栅格(v2 sticky-feed 下作为 ≤1280 fallback) + data-span 选择器', () => {
+  // v2:主用 .po-overview-grid (8 列),≤1280 fallback 到 12 列;
+  // 此守护测试覆盖任一方案存在即可,确保密度化栅格不被回退到 flex 流式
+  assert.match(cssText, /grid-template-columns:\s*repeat\((8|12),\s*1fr\)/)
+  assert.match(cssText, /\[data-span='8'\]|\[data-span='12'\]/)
 })
 
 test('KPI 紧凑条样式存在(po-kpi-bar / po-kpi-tile)', () => {
@@ -57,16 +59,17 @@ test('d3-utils 暴露关键工具', () => {
   }
 })
 
-test('看板组件使用 MiniDonut 与 Heatmap 子组件 + ReferenceLine 均值线', () => {
+test('看板组件使用 MiniDonut / Heatmap / StackedSentimentArea / HourlyMediaHeat 等子组件', () => {
   assert.match(dashText, /function MiniDonut\(/)
   assert.match(dashText, /function Heatmap\(/)
   assert.match(dashText, /function RankRow\(/)
   assert.match(dashText, /function KpiBar\(/)
+  assert.match(dashText, /function StackedSentimentArea\(/)
+  assert.match(dashText, /function HourlyMediaHeat\(/)
   // 情感分布渲染 5 个 MiniDonut(由 sentiment.map 驱动)
   assert.match(dashText, /sentiment\.map\(\(entry\) => \(\s*<MiniDonut/)
-  // 趋势加 Avg 均值线
-  const refLines = dashText.match(/<ReferenceLine /g) ?? []
-  assert.ok(refLines.length >= 2, '本周趋势 + 今日分时 应各有一条 ReferenceLine')
+  // v2:StackedSentimentArea 包含 Avg 均值线(纯 SVG line,替代 ReferenceLine)
+  assert.match(dashText, /Avg\s*\{avg/)
 })
 
 test('情感 5 模态保留语义色序(正面绿→负面红)', () => {
@@ -74,10 +77,11 @@ test('情感 5 模态保留语义色序(正面绿→负面红)', () => {
   assert.match(dashText, /负面:\s*'#f53f3f'/)
 })
 
-test('SSR 加载态使用 12 列栅格 + data-span 骨架', () => {
+test('SSR 加载态使用密度化栅格 + data-span 骨架(v2:po-overview-grid)', () => {
   const html = renderToStaticMarkup(PublicOpinionOverviewPage())
   assert.match(html, /class="po-dashboard"/)
-  assert.match(html, /po-grid-12/)
-  assert.match(html, /data-span="12"/)
+  // v2 双列布局:左 main 用 .po-overview-grid,右 aside sticky
+  assert.match(html, /po-overview-grid|po-grid-12/)
+  assert.match(html, /data-span="(4|8|12)"/)
   assert.match(html, /主导航/)
 })

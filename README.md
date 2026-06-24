@@ -299,6 +299,3 @@ npx openspec archive <change-name>
 
 ---
 
-## 参考
-
-README 组织方式参考了 [cv-cat/Spider_XHS](https://github.com/cv-cat/Spider_XHS)：第一屏定位、项目价值说明、配图预览、功能表、快速开始和项目结构。

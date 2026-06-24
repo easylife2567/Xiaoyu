@@ -16,3 +16,5 @@ __pycache__/
 # 系统 / 调试产物
 .DS_Store
 .playwright-mcp/
+# 截图根目录散落产物 (Playwright 默认输出位置)
+/*.png

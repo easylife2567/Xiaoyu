@@ -12,3 +12,7 @@ node_modules/
 _third_party/
 __pycache__/
 .claude/
+
+# 系统 / 调试产物
+.DS_Store
+.playwright-mcp/

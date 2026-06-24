@@ -347,7 +347,9 @@ input {
 }
 
 /* 只让工作台主区域(report-console / workspace-grid)撑满剩余高度,
-   其它辅助区域(如翻译的 workflow-status)按内容自然高度排列 */
+   其它辅助区域(如翻译的 workflow-status)按内容自然高度排列。
+   舆情看板的尺寸约束在自身规则块声明(flex / height / overflow), 不在此层下放,
+   以免抢占测试断言对其首块 token 的匹配。 */
 .console-content > .report-console,
 .console-content > .workspace-grid {
   flex: 1 1 0;
@@ -915,14 +917,22 @@ input {
 
 /* 舆情总览看板 */
 .po-dashboard {
-  /* v3: 双列网格(左 8 分析,右 4 sticky 信息流);≤1280 塌单列 */
+  /* v3: 双列网格(左 8 分析 / 右 4 信息流);≤1280 塌单列
+     —— dashboard 自身不滚动(由 .console-content flex 给定可视高度),
+     左 main、右 aside 各自独立纵向滚动,确保:
+       · 在 main 内滚动,aside 永远钉在视口
+       · 在 aside 内滚动,main 不跟随
+     这是「双独立滚动列」范式,sticky 在 align-items: start 下不可靠,改用此结构。 */
   display: grid;
   grid-template-columns: 8fr 4fr;
   gap: var(--po-gap, 10px);
-  align-items: start;
+  align-items: stretch;
   padding: var(--po-pad, 10px) 18px 22px;
+  /* 撑满父级 .console-content 剩余高度,自身不溢出 */
+  flex: 1 1 0;
+  height: 100%;
   min-height: 0;
-  overflow-y: auto;
+  overflow: hidden;
   font-variant-numeric: tabular-nums;
   /* v3 控制台分区密度 token(在 v2 基础上整体下调一档) */
   --po-pad: 10px;
@@ -940,13 +950,19 @@ input {
   flex-direction: column;
   gap: var(--po-gap, 12px);
   min-width: 0;
+  /* v3: 左 main 独立滚动 — dashboard 自己不滚,所以 main 必须 overflow-y: auto */
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .po-overview-aside {
+  /* v3: 右 aside 独立滚动 — 由 grid stretch 撑满 dashboard 视口高度,top: 0 仅作 sticky 兼容备份;
+     真正钉住视口靠 height: 100% + overflow-y: auto(main 滚动不再带动 aside)。 */
   position: sticky;
-  /* v3: 头部与左侧 KPI rail 顶部基线对齐(top: 0,相对 .po-dashboard 滚动容器内坐标) */
   top: 0;
-  max-height: calc(100vh - var(--shell-topbar-height, 56px) - 24px);
+  height: 100%;
+  min-height: 0;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -968,14 +984,22 @@ input {
 .po-overview-grid > [data-span='4'] { grid-column: span 4; }
 .po-overview-grid > [data-span='8'] { grid-column: span 8; }
 
-/* ≤1280:双列塌单列,左 main 内部 grid 回退到 v1 12 列规则 */
+/* ≤1280:双列塌单列,改回页面级一体滚动(main / aside 都不局部滚) */
 @media (max-width: 1280px) {
   .po-dashboard {
     grid-template-columns: 1fr;
+    height: auto;
+    overflow-y: auto;
+  }
+  .po-overview-main {
+    height: auto;
+    overflow: visible;
   }
   .po-overview-aside {
     position: static;
+    height: auto;
     max-height: none;
+    overflow: visible;
   }
   .po-overview-grid {
     grid-template-columns: repeat(12, 1fr);

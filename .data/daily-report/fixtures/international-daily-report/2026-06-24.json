@@ -1,0 +1,3508 @@
+{
+  "workflowSlug": "international-daily-report",
+  "issueDate": "2026-06-24",
+  "generatedAt": "2026-06-24T01:30:00.000Z",
+  "sourceType": "collected",
+  "candidates": [
+    {
+      "id": "intl-2026-06-24-001",
+      "sourceType": "rss",
+      "title": "Australia news live: Jackie O pursues claim against Kiis FM after Kyle Sandilands settles; press gallery objects to One Nation threats to ban journalists",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/australia-news/live/2026/jun/18/australia-news-live-non-stop-sydney-london-flights-qantas-one-nation-pauline-hanson-labor-anthony-albanese-economy-cost-of-living-ntwnfb",
+      "publishedAt": "2026-06-24T06:14:04.000Z",
+      "summary": "Get our breaking news email, free app or daily news podcastCoalition says it’s good Hanson and One Nation getting the scrutiny of a party on the riseKevin Hogan, the shadow assistant treasurer, says he thinks it’s good Hanson was able to speak at the press club yesterday as One Nation “needs to b...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-002",
+      "sourceType": "rss",
+      "title": "俄禁103名加拿大人入境，中国媒体人：反制属正当主权行为",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071921975.html",
+      "publishedAt": "2026-06-24T06:14:03.000Z",
+      "summary": "俄罗斯外交部6月16日宣布禁止103名加拿大公民入境，以反制加拿大当日对俄新增制裁。中国常驻俄罗斯媒体人仝潇华就此向俄罗斯卫星通讯社表示，俄罗斯采取对等反制措施是维护自身主权和安全利益的正当权利，这一主权行为具有法律和道义基础。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-003",
+      "sourceType": "rss",
+      "title": "Middle East crisis live: Tehran says it will charge ships in strait of Hormuz after 60 days; US-Iran presidents sign peace deal",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/live/2026/jun/18/middle-east-crisis-live-us-iran-presidents-sign-peace-deal-mou-trump-tehran-strait-of-hormuz-toll-lebanon-israel",
+      "publishedAt": "2026-06-24T06:13:28.000Z",
+      "summary": "Chief Iranian negotiator says key waterway will ‘not return to prewar conditions’ after 60-day window; both sides sign memorandum of understanding extending truceReaction: Donald Trump’s Iran deal met with anger, relief and incredulityAnalysis: Trump’s Iran deal is result of unrealistic ambitions...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-004",
+      "sourceType": "rss",
+      "title": "俄国家杜马主席：西方与基辅一样都应为白俄罗斯儿童遭袭悲剧负责",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071921708.html",
+      "publishedAt": "2026-06-24T06:09:28.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月18日电 俄罗斯国家杜马主席沃洛金表示，西方集体代表和基辅新纳粹主义政权一样都应为白俄罗斯儿童遭袭悲剧负责。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-005",
+      "sourceType": "rss",
+      "title": "Inquest into Melbourne influencer’s death following freebirth halted after new phone evidence discovered",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/jun/18/freebirth-death-melbourne-influencer-phone-evidence-inquest-ntwnfb",
+      "publishedAt": "2026-06-24T05:51:29.000Z",
+      "summary": "Coroner tells freebirth inquest new material ‘of such significance’ any findings must be postponed so information can be analysedThe closing submissions in an inquest into the death of a woman who gave birth at home with no support from medically trained health workers has been delayed, after new...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-006",
+      "sourceType": "rss",
+      "title": "Moscow oil refinery on fire after ‘large-scale’ Ukrainian drone strike",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/2026/jun/18/moscow-oil-refinery-on-fire-ukraine-drone-stikes",
+      "publishedAt": "2026-06-24T05:47:49.000Z",
+      "summary": "Mayor of Russian capital claims ‌about 180 drones heading to the city were shot down as flames and smoke billow over outskirtsUkrainian drones hit Moscow’s ⁠oil refinery for the second time ⁠this week, sending out flames and plumes ⁠of smoke over the south-eastern district of Kapotnya on Thursday...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-007",
+      "sourceType": "rss",
+      "title": "乌军在伤亡惨重情况下向苏梅州调遣精英特种部队",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071921318.html",
+      "publishedAt": "2026-06-24T05:23:19.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月18日电 俄罗斯强力机构向卫星通讯社透露，在苏梅州战线伤亡惨重的情况下，乌军司令部向该州调派了第73海军特种作战中心的多支小队。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-008",
+      "sourceType": "rss",
+      "title": "Luis Diaz dazzles as Colombia beat World Cup 2026 debutants Uzbekistan 3-1",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/sports/2026/6/18/colombia-uzbekistan-fifa-world-cup-2026-luis-diaz-munoz-campaz-fayzullaev?traffic_source=rss",
+      "publishedAt": "2026-06-24T05:17:18.000Z",
+      "summary": "Winger Luis Diaz scored a goal and set up another, as Colombia made a winning return to the FIFA World Cup.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-009",
+      "sourceType": "rss",
+      "title": "英国此时以“涉俄”为由制裁中国企业意欲何为？",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071920686.html",
+      "publishedAt": "2026-06-24T05:15:08.000Z",
+      "summary": "6月16日，英国政府以“向俄罗斯提供关键军事装备”为由，宣布对多国实体及个人实施制裁，其中包括四家中国实体。中国时评人司马平邦接受俄罗斯卫星通讯社采访时表示，英国此举实质上是试图以此作为投名状，在中美之间明确“站队”，向美靠拢，同时借此拖延俄乌冲突。为防英方破坏力在欧洲扩散，波及中欧贸易，中方应坚决反击。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-010",
+      "sourceType": "rss",
+      "title": "Albanese announces ‘generous’ capital gains tax exemptions for small businesses after budget backlash",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/jun/18/albanese-announces-generous-capital-gains-tax-exemptions-for-small-businesses-after-budget-backlash",
+      "publishedAt": "2026-06-24T05:08:52.000Z",
+      "summary": "Startups and testamentary trusts to receive carve outs after criticism of Labor’s CGT changesFollow our Australia news live blog for latest updatesGet our breaking news email, free app or daily news podcastAll of Australia’s 2.7m small businesses will receive “generous” exemptions from capital ga...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-011",
+      "sourceType": "rss",
+      "title": "Dubai property sales have fallen ‘off a cliff’ since start of Middle East war",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/business/2026/jun/18/dubai-property-sales-fall-since-middle-east-war-say-experts",
+      "publishedAt": "2026-06-24T05:00:04.000Z",
+      "summary": "Sellers of luxury villas have wiped tens of millions of pounds off asking prices, with sales down 19% in May from the previous monthProperty sales in Dubai have fallen “off a cliff”, a leading market watcher has said, after war in the Middle East forced a dramatic slowdown in one of the world’s m...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-012",
+      "sourceType": "rss",
+      "title": "Ukraine bolsters its northern defences amid fears Belarus is being dragged into war",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/2026/jun/18/ukraine-bolsters-its-northern-defences-amid-fears-belarus-is-being-dragged-into-war",
+      "publishedAt": "2026-06-24T05:00:03.000Z",
+      "summary": "Kyiv is not taking any risks amid Moscow’s efforts to integrate Minsk ever more closely into its warRussian spy drones flying into Ukraine from Belarusian airspace have sharply increased since the beginning of the year, as senior officials in Kyiv express mounting concern over Belarus’s involveme...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-013",
+      "sourceType": "rss",
+      "title": "Russia-linked arson attacks show bad actors targeting UK, says Starmer",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/politics/2026/jun/18/keir-starmer-russian-linked-arson-attack-property-bad-actors",
+      "publishedAt": "2026-06-24T05:00:02.000Z",
+      "summary": "Prime minister says country needs to resist those who seek to ‘exploit division’ and ‘destabilise democracy’The trial of two Russian-linked arsonists who targeted property connected to Keir Starmer shows that the UK is under attack from bad actors who want to “exploit division” and “destabilise o...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-014",
+      "sourceType": "rss",
+      "title": "Labour campaigners fear hordes of MPs may annoy public as Makerfield votes",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/politics/2026/jun/18/up-to-3000-labour-activists-expected-in-makerfield-campaign-andy-burnham-byelection",
+      "publishedAt": "2026-06-24T05:00:02.000Z",
+      "summary": "Up to 3,000 activists – including cabinet ministers and other MPs – descending on constituency to back Andy BurnhamUp to 3,000 Labour campaigners are expected to descend on Makerfield for Andy Burnham, prompting fears among organisers that the hordes of activists may end up overwhelming voters du...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-015",
+      "sourceType": "rss",
+      "title": "Taliban order ban on smartphones as officials shown destroying devices",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/global-development/2026/jun/18/taliban-ban-smartphones-officials-shown-destroying-devices",
+      "publishedAt": "2026-06-24T05:00:01.000Z",
+      "summary": "Directive aimed at government workers, but reports of wider implementation spark warnings of future Afghanistan-wide prohibitionThe Taliban have ordered a sweeping ban on the use of smartphones by government officials – in what some analysts say could foreshadow broader, population-level restrict...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-016",
+      "sourceType": "rss",
+      "title": "BBC made second Ashley Cain TV series despite alleged misconduct",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/media/2026/jun/18/bbc-made-second-ashley-cain-tv-series-despite-alleged-misconduct",
+      "publishedAt": "2026-06-24T05:00:01.000Z",
+      "summary": "Filming in Las Vegas was suspended and Cain replaced as presenter after he appeared to be drunk, sources sayBBC presenter Ashley Cain called women ‘slags’, ‘sluts’ and ‘bitches’Warning: this article contains sexually explicit, offensive languageThe BBC made a second documentary series fronted by ...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-017",
+      "sourceType": "rss",
+      "title": "Despair and delight in England-Croatia grudge match",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/18/despair-and-delight-in-england-croatia-grudge-match?traffic_source=rss",
+      "publishedAt": "2026-06-24T04:58:10.000Z",
+      "summary": "Emotions seesawed across London and Zagreb as England met Croatia in a thrilling World Cup grudge match.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-018",
+      "sourceType": "rss",
+      "title": "Racism hindered NSW police investigation into the 1988 death of Indigenous teenager Mark Haines, inquest found",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/jun/18/racism-hindered-nsw-police-investigation-into-the-1988-death-of-indigenous-teenager-mark-haines-inquest-found-ntwnfb",
+      "publishedAt": "2026-06-24T04:53:18.000Z",
+      "summary": "Coroner overturned initial police finding of suicide, saying their investigation was ‘deeply flawed, superficial and inadequate from the outset’•Warning: This article contains images of and references to Indigenous Australians who have diedFollow our Australia news live blog for latest updatesGet...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-019",
+      "sourceType": "rss",
+      "title": "More than 13,000 seal pups die on remote Australian island amid bird flu outbreak",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/environment/2026/jun/18/more-than-13000-seal-pups-die-on-remote-australian-island-amid-bird-flu-outbreak",
+      "publishedAt": "2026-06-24T04:51:04.000Z",
+      "summary": "Testing confirms spread of deadly H5N1 virus on the subantarctic Heard Island, about 4,000km south-west of PerthFollow our Australia news live blog for latest updatesGet our breaking news email, free app or daily news podcastMore than 13,000 seal pups have died on an Australian territory, as test...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-020",
+      "sourceType": "rss",
+      "title": "美伊协议细节公开：石油出口解禁、3000亿美元重建基金",
+      "sourceName": "纽约时报中文网",
+      "sourceUrl": "https://cn.nytimes.com/world/20260618/trump-iran-deal-obama/?utm_source=RSS",
+      "publishedAt": "2026-06-24T04:41:43.000Z",
+      "summary": "协议内容包括重新开放霍尔木兹海峡，制定一项3000亿美元的重建计划；协议正式签署后美国将允许伊朗出口原油。双方将就伊核计划展开为期60天的谈判。 Haiyun Jiang/The New York Times 周三，在法国埃维昂莱班举行的七国集团峰会上，特朗普总统和其他美国官员出席了新闻发布会。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://cn.nytimes.com/rss.html"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-021",
+      "sourceType": "rss",
+      "title": "Activist praises Algeria’s support for Gaza orphans following World Cup def",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/18/activist-praises-algerias-support-for-gaza-orphans-following-world-cup-def?traffic_source=rss",
+      "publishedAt": "2026-06-24T04:35:18.000Z",
+      "summary": "Activist praises Algeria’s support for Gaza orphans following World Cup defeat",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-022",
+      "sourceType": "rss",
+      "title": "日本防卫大臣称正在与亚太国家进行武器出口谈判",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071921051.html",
+      "publishedAt": "2026-06-24T04:30:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月18日电 日本防卫大臣小泉进次郎透露有关日本正在与澳大利亚、菲律宾、印尼和新西兰进行武器出口谈判的情况。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-023",
+      "sourceType": "rss",
+      "title": "US must ‘force’ Israel to change its policy on Lebanon",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/18/us-must-force-israel-to-change-its-policy-on-lebanon?traffic_source=rss",
+      "publishedAt": "2026-06-24T04:15:29.000Z",
+      "summary": "Rami Khouri says real policy change will only happen when the US forces Israel’s hand in Lebanon.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-024",
+      "sourceType": "rss",
+      "title": "美方炮制“中国药品威胁”闹剧，三大议题捆绑暴露政治操弄",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071920941.html",
+      "publishedAt": "2026-06-24T04:15:24.000Z",
+      "summary": "美国参议院老龄化特别委员会近日举行听证会，强行将中国在全球药品供应链中的正常参与扭曲为“国家安全威胁”，并将药品供应、金融诈骗和数据隐私三个性质迥异的议题刻意捆绑，炮制出一个所谓的“中国威胁包”。这种操弄既不符合经济常识，也暴露了美方煽动对抗的政治用心。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-025",
+      "sourceType": "rss",
+      "title": "Rejoining customs union would not fix damage caused by Brexit, research finds",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/politics/2026/jun/18/brexit-customs-union-exports-single-market-research",
+      "publishedAt": "2026-06-24T04:00:02.000Z",
+      "summary": "Exclusive: Economists find Brexit caused 12% depression in UK exports, most of which is due to leaving single marketBrexit has depressed UK exports to the EU by 12%, and rejoining the customs union would undo only a fraction of the damage, research shared with the Guardian shows.With the UK’s fut...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-026",
+      "sourceType": "rss",
+      "title": "Western Europeans believe crime is rising despite fall in overall rates, poll finds",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/2026/jun/18/western-europeans-crime-rising-despite-fall-overall-rates-poll-finds",
+      "publishedAt": "2026-06-24T04:00:02.000Z",
+      "summary": "YouGov survey of six countries shows respondents think crime is increasing – though most trust their national police Western Europeans believe crime is rising in their country, according to a survey, despite long-term overall crime rates falling across the region since the mid-1990s.The YouGov po...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-027",
+      "sourceType": "rss",
+      "title": "NHS patients face worst drug shortages on record, say pharmacists and GPs",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/business/2026/jun/18/nhs-patients-face-worst-drug-shortages-on-record-say-pharmacists-and-gps",
+      "publishedAt": "2026-06-24T04:00:01.000Z",
+      "summary": "Supply problems pose risk to health, with common painkillers, epilepsy medication and HRT affectedBritons are facing some of the “most severe” shortages of NHS medicines on record including common painkillers, epilepsy drugs and HRT, health leaders have warned, even forcing some patients with imp...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-028",
+      "sourceType": "rss",
+      "title": "Oil prices fall after peace deal signed – as it happened",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/live/2026/jun/17/middle-east-war-iran-israel-us-donald-trump-hezbollah-lebanon-peace-deal-netanyahu-latest-news-updated",
+      "publishedAt": "2026-06-24T03:55:07.000Z",
+      "summary": "This blog is now closed – see our full report on the latest in the Middle East crisisTrump also addressed media reports of a leaked US-Iran deal (see post at 11:57), denying claims it includes a $300bn reconstruction fund for Tehran.“We’re not putting up 10 cents,” he said. “We are not investing ...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-029",
+      "sourceType": "rss",
+      "title": "Oil prices fall, stocks rally as US, Iran sign framework to end war",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/economy/2026/6/18/oil-prices-fall-stocks-rally-as-us-iran-sign-framework-to-end-war?traffic_source=rss",
+      "publishedAt": "2026-06-24T03:45:13.000Z",
+      "summary": "Brent crude drops 2.3 percent, while key stock indices in Japan, South Korea and Taiwan climb.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-030",
+      "sourceType": "rss",
+      "title": "不够“反贼”的“反贼喜剧演员”池子",
+      "sourceName": "纽约时报中文网",
+      "sourceUrl": "https://cn.nytimes.com/china/20260618/chizi-comedian-china-censorship/?utm_source=RSS",
+      "publishedAt": "2026-06-24T03:36:40.000Z",
+      "summary": "池子曾因嘲讽中国政府的玩笑遭“封杀”。如今，在完全自由的创作环境中，他发现自己在抵抗另一种强加的期望：扮演”反贼”。他说，当反贼容易，做好的喜剧演员难。 今年4月，池子多年来首次在东京登台演出。观众想看到的是一个“反贼”。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://cn.nytimes.com/rss.html"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-031",
+      "sourceType": "rss",
+      "title": "真主党领导人：以色列解除真主党武装的计划行不通",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071920575.html",
+      "publishedAt": "2026-06-24T03:24:59.000Z",
+      "summary": "黎巴嫩什叶派运动真主党领导人纳伊姆•卡西姆周三在什叶派重要纪念日阿舒拉节前夕发表讲话时表示，以色列只能指望与真主党达成共同安全协议，而不是解除其武装。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-032",
+      "sourceType": "rss",
+      "title": "Trump’s MoU with Iran draws backlash from some Republicans",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/6/18/trumps-iran-framework-draws-backlash-from-some-republicans?traffic_source=rss",
+      "publishedAt": "2026-06-24T03:11:41.000Z",
+      "summary": "Louisiana Senator Bill Cassidy blasts US-Iran MoU as &#039;worst foreign policy blunder in decades&#039;.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-033",
+      "sourceType": "rss",
+      "title": "外卖“价格战”要熄火了？中国新规瞄准“长期大额补贴”",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071920038.html",
+      "publishedAt": "2026-06-24T02:50:44.000Z",
+      "summary": "过去一年，中国外卖平台“补贴大战”让喜爱点外卖的消费者们“薅足了羊毛”。为规范外卖平台补贴行为，中国国家市场监督管理总局近日依据反垄断法、反不正当竞争法、价格法、电子商务法、食品安全法等法律法规规定，起草形成《外卖平台补贴行为规范十条（征求意见稿）》，自6月17日起至7月17日公开征求意见。这场声势浩大的补贴大战会否就此走向终局？我们的外卖会涨价吗？平台内经营者、外卖小哥等等各方将如何反应？",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-034",
+      "sourceType": "rss",
+      "title": "Netanyahu under pressure in Israel after US-Iran agreement",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/18/netanyahu-under-pressure-in-israel-after-us-iran-agreement?traffic_source=rss",
+      "publishedAt": "2026-06-24T02:27:44.000Z",
+      "summary": "Israeli Prime Minister Benjamin Netanyahu is facing mounting pressure after he was cut out of the US-Iran agreement.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-035",
+      "sourceType": "rss",
+      "title": "Who benefits from Zimbabwe’s lithium boom?",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/6/18/who-benefits-from-zimbabwes-lithium-boom?traffic_source=rss",
+      "publishedAt": "2026-06-24T02:26:51.000Z",
+      "summary": "New projects and foreign-backed mines are reshaping Zimbabwe’s lithium sector, with uneven local gains.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-036",
+      "sourceType": "rss",
+      "title": "Greta Thunberg joins Brussels protest against Israel",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/18/greta-thunberg-joins-brussels-protest-against-israel?traffic_source=rss",
+      "publishedAt": "2026-06-24T02:24:13.000Z",
+      "summary": "Around 100 people, including Greta Thunberg and other Flotilla activists, have rallied in Brussels.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-037",
+      "sourceType": "rss",
+      "title": "伊朗外交部：伊朗承诺恢复霍尔木兹海峡正常航运",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071919802.html",
+      "publishedAt": "2026-06-24T02:19:31.000Z",
+      "summary": "伊朗外交部发言人伊斯梅尔•巴加埃表示，伊朗将根据与美国签署的备忘录，担负起恢复霍尔木兹海峡正常航运的义务。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-038",
+      "sourceType": "rss",
+      "title": "Trump says he has signed peace deal – as it happened",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/us-news/live/2026/jun/17/trump-georgia-primary-mike-collins-jon-ossoff-midterms-g7-us-politics-latest-news-updates",
+      "publishedAt": "2026-06-24T02:01:19.000Z",
+      "summary": "This liveblog is closed. For the latest on the Middle East crisis, follow our new liveblog here.Sign up for the Breaking News US emailDonald Trump also denied (again) that the memorandum of understanding includes a $300bn fund for Iran, and denied that he had asked the Gulf states to commit fundi...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-039",
+      "sourceType": "rss",
+      "title": "Moment Trump signs US-Iran agreement at Palace of Versailles",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/videos/crm03y1xx2no?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-24T01:59:38.000Z",
+      "summary": "The 14-point Memorandum of Understanding was signed at a post-G7 dinner in France.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-040",
+      "sourceType": "rss",
+      "title": "Shelter-in-place ordered in LA as blaze engulfs roof of 500,000 sq-ft warehouse",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/us-news/2026/jun/17/los-angeles-warehouse-fire-ammonia",
+      "publishedAt": "2026-06-24T01:51:22.000Z",
+      "summary": "Clouds of dark smoke and ammonia rose from cold storage and freezing facility in Boyle Heights near downtownThe solar panel-covered roof of a 500,000 sq-ft cold storage facility in Los Angeles caught fire Wednesday, sending up thick clouds of dark smoke and ammonia, leading city officials to orde...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-041",
+      "sourceType": "rss",
+      "title": "South Africa coach tells critics to ‘shut up’ before second World Cup match",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/sports/2026/6/18/south-africa-coach-tells-critics-to-shut-up-before-second-world-cup-match?traffic_source=rss",
+      "publishedAt": "2026-06-24T01:49:05.000Z",
+      "summary": "&#039;I never listen to the ​trash of the social media,&#039; Hugo Broos says before Bafana Bafana&#039;s match against Czechia.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-042",
+      "sourceType": "rss",
+      "title": "Ghalibaf says talks delivered more results than war",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/18/ghalibaf-says-talks-delivered-more-results-than-war?traffic_source=rss",
+      "publishedAt": "2026-06-24T01:45:45.000Z",
+      "summary": "Ghalibaf says talks delivered more results than war",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-043",
+      "sourceType": "rss",
+      "title": "克里米亚当局：乌克兰语作为第三官方语言的地位不变",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071919657.html",
+      "publishedAt": "2026-06-24T01:42:15.000Z",
+      "summary": "俄罗斯克里米亚共和国议会议长弗拉基米尔•康斯坦丁诺夫表示，克里米亚将保留乌克兰语作为第三官方语言的地位，剥夺其现有地位不合理。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-044",
+      "sourceType": "rss",
+      "title": "US and Iran sign Memorandum of Understanding to end war",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/18/us-and-iran-sign-memorandum-of-understanding-to-end-war?traffic_source=rss",
+      "publishedAt": "2026-06-24T01:42:10.000Z",
+      "summary": "US President Donald Trump and Iranian President Masoud Pezeshkian have reportedly signed a Memorandum of Understanding",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-045",
+      "sourceType": "rss",
+      "title": "Ghana beat Panama 1–0 in chaotic World Cup Group L match",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/sports/2026/6/18/ghana-beat-panama-1-0-in-chaotic-charged-world-cup-group-l?traffic_source=rss",
+      "publishedAt": "2026-06-24T01:40:22.000Z",
+      "summary": "Caleb Yirenkyi scored a winner in the fifth minute of stoppage time in a scrappy end to the match in Toronto.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-046",
+      "sourceType": "rss",
+      "title": "US-Iran deal leaves core sticking points unresolved - and a $300bn question",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-24T01:29:32.000Z",
+      "summary": "Trump has insisted the deal ensures that Iran will never buy, develop or produce a nuclear weapon. But text of the agreement falls short of that.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-047",
+      "sourceType": "rss",
+      "title": "What's in the US-Iran agreement?",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cvgmqzr6p9mo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-24T01:28:02.000Z",
+      "summary": "The 14-paragraph memo includes an end to fighting, an agreement that Iran will never have a nuclear weapon, and a $300bn redevelopment package for Iran.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-048",
+      "sourceType": "rss",
+      "title": "伊朗外交部：不会就伊朗导弹计划进行谈判",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071919372.html",
+      "publishedAt": "2026-06-24T01:03:36.000Z",
+      "summary": "伊朗外交部发言人伊斯梅尔•巴加埃表示，伊朗不会与美国或任何其他国家就其导弹计划进行谈判。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-049",
+      "sourceType": "rss",
+      "title": "德黑兰如何赢得了世界",
+      "sourceName": "纽约时报中文网",
+      "sourceUrl": "https://cn.nytimes.com/opinion/20260618/trump-iran-war-aggression/?utm_source=RSS",
+      "publishedAt": "2026-06-24T00:53:34.000Z",
+      "summary": "伊朗曾长时间被孤立、制裁并被斥为残酷、压迫性国家，但特朗普的战争在很大程度上改变了叙事。伊朗对西方胁迫的反抗成为一种号召。 Photo illustration by Tam Stockton for The New York Times; source photograph by Vahid Salemi/Associated Press",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://cn.nytimes.com/rss.html"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-050",
+      "sourceType": "rss",
+      "title": "Trump signs Iran peace plan, claiming deal averts ‘worldwide depression’",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/2026/jun/17/trump-us-iran-war-mou-deal",
+      "publishedAt": "2026-06-24T00:36:22.000Z",
+      "summary": "Details of the 14-point agreement revealed as senior US officials claim ‘major win’ despite significant concessions to TehranReaction: Donald Trump’s Iran deal met with anger, relief and incredulityAnalysis: Trump’s Iran deal is result of unrealistic ambitions for an untenable warDonald Trump has...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-051",
+      "sourceType": "rss",
+      "title": "G7拟五年内将对华关键矿产依赖降至60%以下",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071916689.html",
+      "publishedAt": "2026-06-24T00:35:34.000Z",
+      "summary": "七国集团（G7）领导人6月17日发表声明称，计划通过与伙伴国家的合作，大幅降低对中国关键矿产供应的依赖，五年内降至60%以下，之后力争尽快达到50%。该声明还得到伙伴国澳大利亚的支持。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-052",
+      "sourceType": "rss",
+      "title": "日本防卫大臣质疑中国军费数据",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071916567.html",
+      "publishedAt": "2026-06-24T00:34:30.000Z",
+      "summary": "据彭博社报道，日本防卫大臣小泉进次郎在就任后首次接受外国媒体采访时，公开质疑中国官方军费开支数据的准确性。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-053",
+      "sourceType": "rss",
+      "title": "US transfers immigrants out of Florida Alligator Alcatraz detention centre",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/6/18/us-transfers-immigrants-out-of-florida-alligator-alcatraz-detention-centre?traffic_source=rss",
+      "publishedAt": "2026-06-24T00:27:27.000Z",
+      "summary": "The facility, located near the Everglade wetlands, has drawn human rights concerns and lawsuits over its conditions.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-054",
+      "sourceType": "rss",
+      "title": "伊朗外交部：美国今日应取消对伊朗石油的制裁",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071916464.html",
+      "publishedAt": "2026-06-24T00:20:54.000Z",
+      "summary": "俄罗斯卫星通讯社德黑兰6月18日电 伊朗外交部发言人巴加埃表示，美国今日应取消对伊朗石油的制裁。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-055",
+      "sourceType": "rss",
+      "title": "俄中选委主席：中选委、国防部、安全局认为在新地区举行选举具有可行性",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071916368.html",
+      "publishedAt": "2026-06-24T00:20:20.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科电 俄罗斯中央选举委员会主席帕姆菲洛娃表示，俄中选委、国防部、安全局和联邦主体的行政长官决定，在实施战时状态的时期，在新地区举行俄国家杜马议员选举是可行的。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-056",
+      "sourceType": "rss",
+      "title": "中使馆驳斥荷方涉华错误言论，强调中国是稳定力量而非风险来源",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071916234.html",
+      "publishedAt": "2026-06-24T00:01:23.000Z",
+      "summary": "中国驻荷兰使馆发言人日前就荷兰政府发布《国际安全战略2026—2030》涉华内容表明严正立场，强调“中国的发展为世界带来的是机遇而不是挑战，是稳定力量而不是风险来源”，敦促荷方摒弃意识形态偏见，停止炒作“中国威胁论”，多做有利于增进互信与合作的建设性事情。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-057",
+      "sourceType": "rss",
+      "title": "Iran war live: Pakistan says MoU in effect after Trump, Pezeshkian signing",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/news/liveblog/2026/6/18/iran-war-live-trump-pezeshkian-sign-mou-to-end-fighting-reopen-hormuz?traffic_source=rss",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "summary": "US officials say the deal includes an end to war in Lebanon and the reopening of the Strait of Hormuz.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-058",
+      "sourceType": "rss",
+      "title": "民调：近55%的摩尔多瓦人反对与罗马尼亚合并",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071916137.html",
+      "publishedAt": "2026-06-23T23:58:51.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科电 摩尔多瓦社会学研究所（IMAS）6月17日公布的民调结果显示，超过半数的摩尔多瓦公民反对该国与罗马尼亚合并。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-059",
+      "sourceType": "rss",
+      "title": "'I buried my parents one day after the other' - Ebola mourners learn how to grieve safely",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cj3gx8jl6d5o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T23:57:36.000Z",
+      "summary": "A cemetery at the epicentre of the outbreak is rapidly filling up, however large traditional funerals have been scrapped.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-060",
+      "sourceType": "rss",
+      "title": "Trump to Netanyahu: Use a ‘softer’ touch on Lebanon",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/17/trump-to-netanyahu-use-a-softer-touch-on-lebanon?traffic_source=rss",
+      "publishedAt": "2026-06-23T23:57:07.000Z",
+      "summary": "US President Donald Trump has encouraged Israeli Prime Minister Benjamin Netanyahu to use a ‘softer touch’ in Lebanon.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-061",
+      "sourceType": "rss",
+      "title": "Trump says it’s ‘unfair’ for Iran to lack ballistic missiles",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/17/trump-says-its-unfair-for-iran-to-lack-ballistic-missiles?traffic_source=rss",
+      "publishedAt": "2026-06-23T23:56:36.000Z",
+      "summary": "President Donald Trump says it’s ‘unfair’ for Iran to lack ballistic missiles if other regional countries have them.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-062",
+      "sourceType": "rss",
+      "title": "特朗普证实已经与伊朗签署协议",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071916034.html",
+      "publishedAt": "2026-06-23T23:56:07.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月18日电 美国总统特朗普表示，美国已经与伊朗签署了谅解备忘录，结束了两国之间的冲突。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-063",
+      "sourceType": "rss",
+      "title": "俄交通部长：俄罗斯75%的交通运输系统通过数字化技术管理",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071915920.html",
+      "publishedAt": "2026-06-23T23:47:43.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科电 俄罗斯交通运输部长安德烈·尼基京表示，俄罗斯75%的交通运输系统通过数字技术进行管理，超过45%的机构正在采用基于人工智能的解决方案。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-064",
+      "sourceType": "rss",
+      "title": "伊朗外长：感谢中方为推动谈判和达成协议发挥的积极作用",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071915805.html",
+      "publishedAt": "2026-06-23T23:46:12.000Z",
+      "summary": "据中国外交部网站消息，2026年6月17日，中共中央政治局委员、外交部长王毅应约同伊朗外长阿拉格齐通电话。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-065",
+      "sourceType": "rss",
+      "title": "Harvard and Bard face fresh questions from lawmakers over ties to Epstein",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/us-news/2026/jun/17/harvard-bard-college-jeffrey-epstein",
+      "publishedAt": "2026-06-23T23:41:14.000Z",
+      "summary": "Democrat Jamie Raskin seeks ‘comprehensive accounting’ and requests interview with outgoing Bard presidentHarvard University and Bard College are facing new questions about the institutions’ relationship with Jeffrey Epstein amid allegations that the convicted child sex trafficker leveraged his t...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-066",
+      "sourceType": "rss",
+      "title": "Top Republican decries Trump’s Iran deal: ‘Reagan is rolling over in his grave’",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/us-news/2026/jun/17/trump-republicans-iran-deal",
+      "publishedAt": "2026-06-23T23:30:39.000Z",
+      "summary": "Senator Bill Cassidy attacks ‘worst foreign policy blunder in decades’ while others in his party skeptical over peace dealA handful of Senate Republicans have sharply criticized the agreement Donald Trump reached with Iran, accusing the administration of committing “the worst foreign policy blund...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-067",
+      "sourceType": "rss",
+      "title": "数量空前的俄出口商将参与赴广州的商务访问活动",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071915523.html",
+      "publishedAt": "2026-06-23T23:29:20.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科电 俄罗斯农产品出口发展中心向俄罗斯卫星通讯社表示，将在赴广州考察期间介绍俄罗斯农产品的俄公司数量超过100家，创下俄中贸易史上此类活动中的记录。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-068",
+      "sourceType": "rss",
+      "title": "Trump, Pezeshkian sign deal to end Iran war, reopen Hormuz",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/trump-pezeshkian-sign-deal-to-end-iran-war-reopen-hormuz/live-77596195?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T23:19:00.000Z",
+      "summary": "US President Donald Trump and Iranian President Masoud Pezeshkian have signed an initial agreement to extend the ceasefire for another 60 days and reopen the Strait of Hormuz. DW has the latest.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-069",
+      "sourceType": "rss",
+      "title": "俄人权事务专员呼吁联合国和欧安组织评估乌军对儿童巴士的攻击",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071915426.html",
+      "publishedAt": "2026-06-23T23:06:42.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月18日电 俄罗斯人权事务专员亚娜·兰特拉托娃的新闻处向卫星通讯社表示，已经致函联合国和欧安组织，呼吁客观评估乌军在布良斯克州对白俄罗斯儿童乘坐的巴士实施的攻击。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-070",
+      "sourceType": "rss",
+      "title": "Diplomat confirms that US and Iran have signed MoU electronically",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/6/17/iran-confirms-that-mou-has-been-signed-electronically-by-both-sides?traffic_source=rss",
+      "publishedAt": "2026-06-23T23:02:47.000Z",
+      "summary": "Foreign Ministry spokesperson Esmaeil Baghaei says the agreement has been finalised and signed with the US.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-071",
+      "sourceType": "rss",
+      "title": "'We had to get out of the way': The backlash over delivery robots",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c0rygp005wjo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T23:02:05.000Z",
+      "summary": "As the delivery vehicles increasing take to US streets, bans and protest groups are springing up.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-072",
+      "sourceType": "rss",
+      "title": "‘Most famous tree in the world’: Sherwood Forest’s 1,000-year-old Major oak dies",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/environment/2026/jun/18/most-famous-tree-world-sherwood-forest-ancient-major-oak-dies",
+      "publishedAt": "2026-06-23T23:01:46.000Z",
+      "summary": "Nottinghamshire tree, one of Europe’s oldest and largest, fails to produce leaves after being stressed by series of hot, dry summersThe Major oak, one of Europe’s oldest, largest and most celebrated ancient trees, has died.The huge tree, which has grown in Sherwood Forest in Nottinghamshire, Engl...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-073",
+      "sourceType": "rss",
+      "title": "戈梅利州执行委员会：乌军在布良斯克州袭击一辆大巴 仍有6人留院治疗",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071915145.html",
+      "publishedAt": "2026-06-23T22:57:40.000Z",
+      "summary": "俄罗斯卫星通讯社明斯克6月18日电 白俄罗斯戈梅利州执行委员会通报称，乌军在布良斯克州袭击一辆载有白俄罗斯公民的大巴，目前仍有6人留院治疗。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-074",
+      "sourceType": "rss",
+      "title": "The Ring and Lilo & Stitch actress Daveigh Chase dies aged 35",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cd0m2mg949yo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T22:55:46.000Z",
+      "summary": "Chase died from sepsis following a bout with meningitis in a Los Angeles hospital, her longtime manager told the BBC.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-075",
+      "sourceType": "rss",
+      "title": "Japan ramping up defence is 'critical' to prevent war, Defence Minister Koizumi tells BBC",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cly8qd4595eo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T22:36:13.000Z",
+      "summary": "Japan needs to revisit the pacifist posture that has defined it since World War Two, Shinjiro Koizumi says.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-076",
+      "sourceType": "rss",
+      "title": "US House staff visit Ghislaine Maxwell’s prison after claims of laptop and puppy",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/us-news/2026/jun/17/ghislaine-maxwell-prison-visit-epstein",
+      "publishedAt": "2026-06-23T22:33:15.000Z",
+      "summary": "Epstein associate’s lawyer rejected preferential treatment claims in January, saying ‘humane treatment isn’t special’Staff from the House oversight and judiciary committees visited the Texas prison where Ghislaine Maxwell, the longtime associate of Jeffrey Epstein, is serving her sentence, accord...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-077",
+      "sourceType": "rss",
+      "title": "Cannabis commercialisation not decriminalisation drives up usage, study finds",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/society/2026/jun/17/cannabis-commercialisation-not-decriminalisation-drives-up-usage-study",
+      "publishedAt": "2026-06-23T22:30:46.000Z",
+      "summary": "Review reveals rise in users and rates of psychosis in countries where cannabis is sold commercially Decriminalising the possession of cannabis or strictly regulating access to the drug do not appear to drive up usage, but when the drug is sold commercially the number of users increases and more ...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-078",
+      "sourceType": "rss",
+      "title": "媒体：特朗普亲自签署与伊朗协议的副本",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071915018.html",
+      "publishedAt": "2026-06-23T22:20:44.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月18日电 美国阿克西奥斯新闻网站记者巴拉克·拉维德表示，美国总统特朗普在凡尔赛宫与法国总统马克龙晚餐期间亲自签署了与伊朗协议的副本。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-079",
+      "sourceType": "rss",
+      "title": "Kane double fires England past Croatia in World Cup thriller",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/sports/2026/6/17/kane-double-fires-england-past-croatia-in-world-cup-thriller?traffic_source=rss",
+      "publishedAt": "2026-06-23T22:19:32.000Z",
+      "summary": "Harry Kane scores twice, while Jude Bellingham and Marcus Rashford also net, as England beat Croatia 4-2 in 2026 opener.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-080",
+      "sourceType": "rss",
+      "title": "媒体：伊朗外交部通报称已经与美国签署谅解备忘录",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071914767.html",
+      "publishedAt": "2026-06-23T22:04:21.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月18日电 伊朗Press TV电视台报道称，伊朗外交部通发言人巴加埃宣布，已经与美国签署了谅解备忘录。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-081",
+      "sourceType": "rss",
+      "title": "报告：中国市场对世界海产品产业的影响将越来越大",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071914647.html",
+      "publishedAt": "2026-06-23T21:58:36.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科电 俄罗斯农产品出口发展中心的报告显示，中国市场未来对世界海产品产业的影响将越来越大。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-082",
+      "sourceType": "rss",
+      "title": "伊朗重申霍尔木兹海峡60天后仍将要收费",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%BA%9A%E6%B4%B2/20260617-%E4%BC%8A%E6%9C%97%E9%87%8D%E7%94%B3%E9%9C%8D%E5%B0%94%E6%9C%A8%E5%85%B9%E6%B5%B7%E5%B3%A160%E5%A4%A9%E5%90%8E%E4%BB%8D%E5%B0%86%E8%A6%81%E6%94%B6%E8%B4%B9",
+      "publishedAt": "2026-06-23T21:38:23.000Z",
+      "summary": "伊朗重申，在与美国签署的谅解备忘录规定的60天免费通行期结束后，将对途经霍尔木兹海峡的船只收取费用。该备忘录旨在为双方就最终协议进行谈判争取时间。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-083",
+      "sourceType": "rss",
+      "title": "Al Jazeera journalist reunited with family in Khartoum after years of war",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/17/al-jazeera-journalist-reunited-with-family-in-khartoum-after-years-of-war?traffic_source=rss",
+      "publishedAt": "2026-06-23T21:34:05.000Z",
+      "summary": "Al Jazeera journalist Al-Tahir al-Mardi has been reunited with his family in Khartoum after three years of separation.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-084",
+      "sourceType": "rss",
+      "title": "Huawei CFO’s admissions can be used at criminal trial, US judge rules",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/economy/2026/6/17/huawei-cfos-admissions-can-be-used-at-criminal-trial-us-judge-rules?traffic_source=rss",
+      "publishedAt": "2026-06-23T21:32:43.000Z",
+      "summary": "CFO Meng Wanzhou said in 2021 that Huawei illegally conducted business in Iran.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-085",
+      "sourceType": "rss",
+      "title": "特朗普：“马克龙总统做得非常出色”",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%AC%A7%E6%B4%B2/20260617-%E7%89%B9%E6%9C%97%E6%99%AE-%E9%A9%AC%E5%85%8B%E9%BE%99%E6%80%BB%E7%BB%9F%E5%81%9A%E5%BE%97%E9%9D%9E%E5%B8%B8%E5%87%BA%E8%89%B2",
+      "publishedAt": "2026-06-23T21:12:09.000Z",
+      "summary": "美国总统在埃维昂举行的七国集团峰会闭幕式上发表讲话，赞扬了华盛顿和德黑兰达成的协议草案。特朗普还赞扬“马克龙总统做得非常出色”！",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-086",
+      "sourceType": "rss",
+      "title": "Thieves with bulldozer carry out ATM heist in 4 minutes",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/17/thieves-with-bulldozer-carry-out-atm-heist-in-4-minutes?traffic_source=rss",
+      "publishedAt": "2026-06-23T21:11:38.000Z",
+      "summary": "CCTV footage released by police shows thieves using a bulldozer to tear an ATM from the front of a bank.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-087",
+      "sourceType": "rss",
+      "title": "Meet Yoane Wissa, who scored DR Congo’s first-ever goal at a World Cup",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/sports/2026/6/17/meet-yoane-wissa-who-scored-dr-congos-first-ever-goal-at-a-world-cup?traffic_source=rss",
+      "publishedAt": "2026-06-23T21:10:46.000Z",
+      "summary": "Wissa, who nearly lost his sight in 2021, scored a header marking DR Congo’s historic return to the World Cup.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-088",
+      "sourceType": "rss",
+      "title": "墨球迷为“眯缝眼”向韩国网红公开道歉",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%BA%9A%E6%B4%B2/20260617-%E5%A2%A8%E7%90%83%E8%BF%B7%E4%B8%BA-%E7%9C%AF%E7%BC%9D%E7%9C%BC-%E5%90%91%E9%9F%A9%E5%9B%BD%E7%BD%91%E7%BA%A2%E5%85%AC%E5%BC%80%E9%81%93%E6%AD%89",
+      "publishedAt": "2026-06-23T21:09:46.000Z",
+      "summary": "在墨西哥举行的一场世界杯比赛中，一位韩国网红在拍摄视频时，意外遭遇了种族歧视手势。这段视频在TikTok上迅速走红，引发了广泛的声援，并促使肇事者公开道歉。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-089",
+      "sourceType": "rss",
+      "title": "Gilgo Beach killer sentenced to life without parole",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/17/gilgo-beach-killer-sentenced-to-life-without-parole?traffic_source=rss",
+      "publishedAt": "2026-06-23T21:07:26.000Z",
+      "summary": "New York’s Gilgo Beach serial killer Rex Heuermann was sentenced to life without parole for the murders of eight women.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-090",
+      "sourceType": "rss",
+      "title": "伊朗媒体：伊朗、美国及各自盟友承诺停止军事行动",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071914526.html",
+      "publishedAt": "2026-06-23T21:05:49.000Z",
+      "summary": "俄罗斯卫星通讯社德黑兰电 伊朗伊斯兰共和国通讯社（IRNA）援引伊美两国即将签署的备忘录文本报道，伊朗、美国及各自盟友承诺停止相互敌对的军事行动。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-091",
+      "sourceType": "rss",
+      "title": "默茨向特朗普赠送球衣  号码47",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%AC%A7%E6%B4%B2/20260617-%E9%BB%98%E8%8C%A8%E5%90%91%E7%89%B9%E6%9C%97%E6%99%AE%E8%B5%A0%E9%80%81%E7%90%83%E8%A1%A3-%E5%8F%B7%E7%A0%8147",
+      "publishedAt": "2026-06-23T21:03:51.000Z",
+      "summary": "在七国集团峰会首日，美国总统特朗普获赠一件德国国家足球队球衣，球衣号码是47，预示特朗普是美国第47任总统。但据《巴黎竞赛报》的报道，特朗普并没有带走这件奇特的礼物，球衣被丢在了更衣间。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-092",
+      "sourceType": "rss",
+      "title": "Read: US officials release 14-point initial agreement to end war with Iran",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/read-us-officials-release-14-point-initial-agreement-to-end-war-with-iran/a-77595563?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T21:01:00.000Z",
+      "summary": "The interim agreement ends fighting on all fronts for 60 days and sets out provisions for the reopening of the Strait of Hormuz.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-093",
+      "sourceType": "rss",
+      "title": "Families of eight women killed confront the Gilgo Beach serial killer: ‘Save a spot in hell’",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/us-news/2026/jun/17/gilgo-beach-victims-rex-heuermann-sentence",
+      "publishedAt": "2026-06-23T20:57:40.000Z",
+      "summary": "New York judge imposes life without parole after emotional statements at Rex Heuermann’s sentencingSign up for the Breaking News US newsletter emailThe families of eight women killed by Rex Heuermann spoke at the Gilgo Beach killer’s sentencing in Riverhead, New York, on Wednesday, more than thre...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-094",
+      "sourceType": "rss",
+      "title": "特朗普：或恢复对俄制裁",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071914424.html",
+      "publishedAt": "2026-06-23T20:57:07.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿电 美国总统特朗普对媒体表示，由于油价下跌，他可能恢复对俄罗斯的制裁。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-095",
+      "sourceType": "rss",
+      "title": "马克龙：“一直对特朗普充满信心”",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%B3%95%E5%9B%BD/20260617-%E9%A9%AC%E5%85%8B%E9%BE%99-%E4%B8%80%E7%9B%B4%E5%AF%B9%E7%89%B9%E6%9C%97%E6%99%AE%E5%85%85%E6%BB%A1%E4%BF%A1%E5%BF%83",
+      "publishedAt": "2026-06-23T20:56:37.000Z",
+      "summary": "6月16日，在法国埃维昂（Evian）举行的七国集团（G7）峰会进入关键议程。乌克兰总统泽连斯基抵达会场。据乌克兰总统泽连斯基6月16日发布的照片显示，美国总统特朗普和国务卿卢比奥在法国埃维昂（évian）举行的七国集团(G7)峰会期间与泽连斯基会面。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-096",
+      "sourceType": "rss",
+      "title": "Croatia fans rock cowboy style in Dallas parade ahead of match with England",
+      "sourceName": "Al Jazeera English",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/6/17/aje-onl-nf_croatia-fans-parade-dallas-ahead-of-england-match-170626?traffic_source=rss",
+      "publishedAt": "2026-06-23T20:56:29.000Z",
+      "summary": "Thousands of Croatia supporters turned downtown Dallas into a sea of red and white ahead of face-off with England.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-097",
+      "sourceType": "rss",
+      "title": "法国将经历新一轮持续高温",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%AC%A7%E6%B4%B2/20260617-%E6%B3%95%E5%9B%BD%E5%B0%86%E7%BB%8F%E5%8E%86%E6%96%B0%E4%B8%80%E8%BD%AE%E6%8C%81%E7%BB%AD%E9%AB%98%E6%B8%A9",
+      "publishedAt": "2026-06-23T20:53:06.000Z",
+      "summary": "法国气象局从18日中午起对26个省份发布橙色高温预警。根据天气预报，影响范围从巴黎大区延伸至法国中部，并向大东部大区和罗讷-阿尔卑斯大区北部延伸。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-098",
+      "sourceType": "rss",
+      "title": "特朗普：让伊朗放弃弹道导弹是不公平的",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071914334.html",
+      "publishedAt": "2026-06-23T20:49:15.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿电 美国总统特朗普表示，去让伊朗放弃其拥有的弹道导弹是不公平的，因为其他国家有这种武器。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-099",
+      "sourceType": "rss",
+      "title": "美国：  签字后   伊朗将被允许出售其石油",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%BA%9A%E6%B4%B2/20260617-%E7%BE%8E%E5%9B%BD-%E7%AD%BE%E5%AD%97%E5%90%8E-%E4%BC%8A%E6%9C%97%E5%B0%86%E8%A2%AB%E5%85%81%E8%AE%B8%E5%87%BA%E5%94%AE%E5%85%B6%E7%9F%B3%E6%B2%B9",
+      "publishedAt": "2026-06-23T20:49:11.000Z",
+      "summary": "根据华盛顿和德黑兰周三公布的谅解备忘录文，美国承诺，如果伊朗核计划达成最终协议，美国将协助伊朗获得3000亿美元的资金用于重建和发展。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-100",
+      "sourceType": "rss",
+      "title": "特朗普：“凡尔赛是世界上最美丽的宫殿”",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%AC%A7%E6%B4%B2/20260617-%E7%89%B9%E6%9C%97%E6%99%AE-%E5%87%A1%E5%B0%94%E8%B5%9B%E6%98%AF%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E7%BE%8E%E4%B8%BD%E7%9A%84%E5%AE%AB%E6%AE%BF",
+      "publishedAt": "2026-06-23T20:44:55.000Z",
+      "summary": "在埃维昂举行的七国集团峰会结束后，美国特朗普总统于周三晚间抵达凡尔赛宫，受到法国总统埃马纽埃尔·马克龙和布丽吉特·马克龙的热情接待，共进晚餐。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-101",
+      "sourceType": "rss",
+      "title": "特朗普称其法国之行“大获成功”",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%AC%A7%E6%B4%B2/20260617-%E7%89%B9%E6%9C%97%E6%99%AE%E7%A7%B0%E5%85%B6%E6%B3%95%E5%9B%BD%E4%B9%8B%E8%A1%8C-%E5%A4%A7%E8%8E%B7%E6%88%90%E5%8A%9F",
+      "publishedAt": "2026-06-23T20:39:21.000Z",
+      "summary": "在七国集团峰会后的新闻发布会上，法国总统马克龙被问及邀请特朗普出席凡尔赛宫晚宴一事，以及法国政界批评马克龙对特朗普低声下气的批评。马克龙毫不掩饰地说他表示“完全坚持”自己的决定。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-102",
+      "sourceType": "rss",
+      "title": "特朗普：美国已将与伊朗协议的副本发送给以色列",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071914197.html",
+      "publishedAt": "2026-06-23T20:38:10.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿电 美国总统特朗普对媒体表示，美国已将与伊朗间的谅解备忘录副本发送给了以色列。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-103",
+      "sourceType": "rss",
+      "title": "白俄罗斯卫生部：在乌军袭击布良斯克州中 一名成人和一名儿童伤势严重",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071914096.html",
+      "publishedAt": "2026-06-23T20:26:24.000Z",
+      "summary": "俄罗斯卫星通讯社明斯克电 白俄罗斯卫生部长霍贾耶夫表示，在布良斯克州乌军袭击大巴车事件中，一名成人和一名儿童伤势严重。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-104",
+      "sourceType": "rss",
+      "title": "克宫：乌军袭击行驶在布良斯克州载有白俄罗斯儿童的大巴是蓄意为之",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071913787.html",
+      "publishedAt": "2026-06-23T20:00:26.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科电 俄罗斯总统新闻秘书佩斯科夫表示，乌军袭击行驶在布良斯克州载有白俄罗斯儿童的大巴是蓄意为之。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-105",
+      "sourceType": "rss",
+      "title": "华盛顿公布美伊之间的谅解备忘录文本",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E7%BE%8E%E6%B4%B2/20260617-%E5%8D%8E%E7%9B%9B%E9%A1%BF%E5%85%AC%E5%B8%83%E7%BE%8E%E4%BC%8A%E4%B9%8B%E9%97%B4%E7%9A%84%E8%B0%85%E8%A7%A3%E5%A4%87%E5%BF%98%E5%BD%95%E6%96%87%E6%9C%AC",
+      "publishedAt": "2026-06-23T19:38:35.000Z",
+      "summary": "美国和伊朗之间尚未正式签署的谅解备忘录文本于周三由一位美国官员在与记者通话时透露。透露内容包括14点：",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-106",
+      "sourceType": "rss",
+      "title": "美伊协议达成：特朗普特别感谢习近平普京帮忙",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%94%BF%E6%B2%BB/20260617-%E7%BE%8E%E4%BC%8A%E5%8D%8F%E8%AE%AE%E8%BE%BE%E6%88%90-%E7%89%B9%E6%9C%97%E6%99%AE%E6%84%9F%E8%B0%A2%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%99%AE%E4%BA%AC%E5%B8%AE%E5%BF%99",
+      "publishedAt": "2026-06-23T19:38:13.000Z",
+      "summary": "美国总统特朗普日前向帮助他与伊朗达成初步停火协议的人表示感谢时，赞扬了两位被他称为朋友的世界领导人，这就是中国的习近平和俄罗斯的普京。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-107",
+      "sourceType": "rss",
+      "title": "EU lawmakers approve new tougher migrant policy",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/eu-lawmakers-approve-new-tougher-migrant-policy/a-77595342?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T19:33:00.000Z",
+      "summary": "The EU is backing tougher migration policies that seek to ramp up deportations of failed asylum-seekers. Under the new legislation, EU states can establish \"return hubs.\"",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-108",
+      "sourceType": "rss",
+      "title": "UN experts demand Iranians free Foremans",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c9w28e2vn57o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T19:21:36.000Z",
+      "summary": "They said proceedings against Lindsay and Craig Foreman had been marked by grave irregularities.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-109",
+      "sourceType": "rss",
+      "title": "美宣布逾10亿美元人道援助 拨款联合国机构支援40多国危机地区",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E5%9B%BD%E9%99%85/20260617-%E7%BE%8E%E5%AE%A3%E5%B8%83%E9%80%BE10%E4%BA%BF%E7%BE%8E%E5%85%83%E4%BA%BA%E9%81%93%E6%8F%B4%E5%8A%A9-%E6%8B%A8%E6%AC%BE%E8%81%94%E5%90%88%E5%9B%BD%E6%9C%BA%E6%9E%84%E6%94%AF%E6%8F%B440%E5%A4%9A%E5%9B%BD%E5%8D%B1%E6%9C%BA%E5%9C%B0%E5%8C%BA",
+      "publishedAt": "2026-06-23T19:05:48.000Z",
+      "summary": "美国国务院宣布，将向联合国儿童基金会（UNICEF）及世界粮食计划署（WFP）提供超过10亿美元人道与灾害应对援助，用于支援全球40多个国家的紧急救援行动。资金将投入粮食供应、医疗照护、儿童保护及供水卫生等项目，协助受战争、饥荒及天灾冲击的民众。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-110",
+      "sourceType": "rss",
+      "title": "Ex-Nigeria oil minister cleared in UK bribery trial",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c872pwx4x2vo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T19:03:10.000Z",
+      "summary": "Diezani Alison-Madueke had been accused of receiving bribes from oil tycoons but was found not guilty by a jury at Southwark Crown Court.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-111",
+      "sourceType": "rss",
+      "title": "印度国防部：印度武器生产规模创历史新高，超180亿美元",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071911146.html",
+      "publishedAt": "2026-06-23T19:00:00.000Z",
+      "summary": "印度国防部长拉杰纳特·辛格表示，2025至2026财年印度国防生产规模创历史新高，达到1.78万亿卢比（约合188亿美元以上）。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-112",
+      "sourceType": "rss",
+      "title": "UK officials expect Russia to retaliate for seizure of shadow fleet oil tanker",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/politics/2026/jun/17/uk-expect-russia-retaliate-seizure-shadow-fleet-oil-tanker-smyrtos",
+      "publishedAt": "2026-06-23T18:47:03.000Z",
+      "summary": "No formal warning issued to captains or ship owners, but industry body says they are exercising greater vigilanceBritish officials believe Russia will try to retaliate for the Royal Marines’ seizure of the oil tanker Smyrtos, prompting UK ship owners to exercise greater vigilance until tensions w...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-113",
+      "sourceType": "rss",
+      "title": "法国举办G7峰会凸显对公正结束俄乌战争的重视",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%B8%93%E6%A0%8F%E6%A3%80%E7%B4%A2/%E8%A6%81%E9%97%BB%E5%88%86%E6%9E%90/20260617-%E6%B3%95%E5%9B%BD%E4%B8%BE%E5%8A%9Eg7%E5%B3%B0%E4%BC%9A%E5%87%B8%E6%98%BE%E5%AF%B9%E5%85%AC%E6%AD%A3%E7%BB%93%E6%9D%9F%E4%BF%84%E4%B9%8C%E6%88%98%E4%BA%89%E7%9A%84%E9%87%8D%E8%A7%86",
+      "publishedAt": "2026-06-23T18:43:56.000Z",
+      "summary": "七大工业国集团（G7）领袖在日内瓦湖（Lake Geneva）畔的法国小镇Evian-les-Bains举行高峰会，除了最当下的伊朗议题以外，也成为讨论其他国际议题的珍贵场合。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-114",
+      "sourceType": "rss",
+      "title": "菲律宾贸工部副部长：东盟合作是引领地区安全的“指南针”",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071911870.html",
+      "publishedAt": "2026-06-23T18:40:00.000Z",
+      "summary": "菲律宾贸易与工业部副部长艾伦·盖普提在俄罗斯-东盟论坛会议上表示，东盟国家合作是引领确保地区安全的指南针，其基础是地区发展的共同愿景。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-115",
+      "sourceType": "rss",
+      "title": "普京：俄罗斯-东盟峰会及峰会成果文件将促进伙伴关系发展",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071913351.html",
+      "publishedAt": "2026-06-23T18:30:10.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯总统普京表示，俄罗斯-东盟峰会及峰会成果文件将促进伙伴关系发展。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-116",
+      "sourceType": "rss",
+      "title": "普京：俄罗斯与土耳其关系友好",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071913236.html",
+      "publishedAt": "2026-06-23T18:25:29.000Z",
+      "summary": "俄罗斯总统弗拉基米尔·普京表示，俄罗斯与土耳其关系友好，并正不断充实新的内容。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-117",
+      "sourceType": "rss",
+      "title": "Titan sub: design flaws and company groupthink central to catastrophe, report finds",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/2026/jun/17/titan-sub-design-flaws-company-groupthink-report",
+      "publishedAt": "2026-06-23T18:24:06.000Z",
+      "summary": "Canadian officials find structural defects in material used for hull and say firm failed to fully test ‘novel’ designCanadian safety officials have issued a damning report on the catastrophic final voyage of the Titan submersible, finding that the US company behind the expedition was overcome by ...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-118",
+      "sourceType": "rss",
+      "title": "印尼在霍尔木兹海峡开放的情况下仍将继续进口俄罗斯石油",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071911364.html",
+      "publishedAt": "2026-06-23T18:20:00.000Z",
+      "summary": "印尼能源和矿产资源部发言人德维·安吉亚表示，即使在中东局势缓和的背景下经由霍尔木兹海峡的航运开放的情况下也将继续进口俄罗斯石油。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-119",
+      "sourceType": "rss",
+      "title": "特朗普：美国应归还伊朗资产 否则没人再会投资美元",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071912944.html",
+      "publishedAt": "2026-06-23T18:10:48.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月17日电 美国总统特朗普表示，美国在某个时刻须归还被冻结的伊朗资产，否则将没有人再会投资美元了。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-120",
+      "sourceType": "rss",
+      "title": "欧盟已经和克里姆林宫进行了“简短”的外交接触",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%AC%A7%E6%B4%B2/20260617-%E6%AC%A7%E7%9B%9F%E5%B7%B2%E7%BB%8F%E5%92%8C%E5%85%8B%E9%87%8C%E5%A7%86%E6%9E%97%E5%AE%AB%E8%BF%9B%E8%A1%8C%E4%BA%86-%E7%AE%80%E7%9F%AD-%E7%9A%84%E5%A4%96%E4%BA%A4%E6%8E%A5%E8%A7%A6",
+      "publishedAt": "2026-06-23T18:05:21.000Z",
+      "summary": "欧盟理事会主席安东尼奥·科斯塔的办公室周三表示，欧盟已经和克里姆林宫进行了“简短”的外交接触，开辟沟通渠道。与此同时，欧洲正在讨论是否与俄罗斯就结束乌克兰战争进行对话。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-121",
+      "sourceType": "rss",
+      "title": "东盟秘书长：东盟轮值主席国菲律宾与美国结盟不会影响与俄罗斯的关系",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071910715.html",
+      "publishedAt": "2026-06-23T18:03:00.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 东盟秘书长高金洪向卫星通讯社表示，东盟轮值主席国菲律宾与美国结盟不会影响东盟与俄罗斯的合作。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-122",
+      "sourceType": "rss",
+      "title": "俄专家：北约在波罗的海的演习是对俄作战的预演",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071912816.html",
+      "publishedAt": "2026-06-23T17:58:25.000Z",
+      "summary": "俄罗斯退役海军上校、军事专家瓦西里·丹德金向俄罗斯卫星通讯社表示，“勇敢野猪-2026”演习实际上是北约在波罗的海地区实现全面控制计划的一部分。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-123",
+      "sourceType": "rss",
+      "title": "普京：俄罗斯和东盟的战略伙伴关系是亚太地区稳定的重要因素",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071912709.html",
+      "publishedAt": "2026-06-23T17:51:43.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯总统普京表示，俄罗斯与东盟的战略伙伴关系是亚太地区稳定的重要因素。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-124",
+      "sourceType": "rss",
+      "title": "普京称马来西亚是俄罗斯在亚太地区的可靠伙伴",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071912601.html",
+      "publishedAt": "2026-06-23T17:46:19.000Z",
+      "summary": "俄罗斯总统弗拉基米尔·普京表示，马来西亚是俄罗斯在亚太地区的久经考验和可靠的伙伴。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-125",
+      "sourceType": "rss",
+      "title": "Serial killer who murdered eight women in Long Island town imprisoned for life",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/clyw29kvlydo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T17:45:54.000Z",
+      "summary": "In fiery exchange, judge sentenced him to three life sentences plus 25 years to life on four other charges, all running consecutively.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-126",
+      "sourceType": "rss",
+      "title": "Germany: Reports of antisemitism in 2025 remain high",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/germany-reports-of-antisemitism-in-2025-remain-high/a-77593695?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T17:41:00.000Z",
+      "summary": "The Federal Association of Departments for Research and Information on Antisemitism (RIAS) recorded over 8,700 cases they classify as antisemitic hostility in 2025, many of which were connected with the State of Israel.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-127",
+      "sourceType": "rss",
+      "title": "日本财务省：日本5月从俄进口增长3.4%，对俄出口增长11.8%",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071905325.html",
+      "publishedAt": "2026-06-23T17:40:00.000Z",
+      "summary": "根据日本财务省公布的贸易统计数据显示，5月份日本从俄罗斯的进口总额同比增长3.4%，对俄罗斯的出口总额同比增长11.8%。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-128",
+      "sourceType": "rss",
+      "title": "特朗普：黎巴嫩领导人将在未来一到两周内访美",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071912312.html",
+      "publishedAt": "2026-06-23T17:39:42.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月17日电 美国总统特朗普表示，黎巴嫩领导人将在未来一到两周内访问美国。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-129",
+      "sourceType": "rss",
+      "title": "特朗普感谢普京总统和习近平主席在伊朗问题上的立场",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071911980.html",
+      "publishedAt": "2026-06-23T17:32:54.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月17日电 美国总统特朗普感谢俄罗斯总统普京和中国国家主席习近平在伊朗问题上的立场。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-130",
+      "sourceType": "rss",
+      "title": "“达赖喇嘛在美国的代言人”罗伯特·瑟曼逝世",
+      "sourceName": "纽约时报中文网",
+      "sourceUrl": "https://cn.nytimes.com/obits/20260618/robert-thurman-dead/?utm_source=RSS",
+      "publishedAt": "2026-06-23T17:23:47.000Z",
+      "summary": "瑟曼被公认为美国首屈一指的藏传佛教专家，达赖喇嘛曾亲自为他授戒。他撰写、编译了20多本书籍，致力于增进西方对藏传佛教的理解。他的女儿是知名演员乌玛·瑟曼。 Astrid Stawiarz/Getty Images for Tibet House 罗伯特·瑟曼，摄于2015年。在他组织的无数关于佛教的讲座和会议中，他总能带来一种极具感染力的活力。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://cn.nytimes.com/rss.html"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-131",
+      "sourceType": "rss",
+      "title": "越南专家：构建创新生态系统将确保东盟竞争力",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071908442.html",
+      "publishedAt": "2026-06-23T17:20:00.000Z",
+      "summary": "越南越捷航空董事会第一副主席丁越芳在俄罗斯-东盟峰会期间的会议上表示，建设现代化物流中心、金融平台和创新生态系统将确保东盟经济体的长期竞争力。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-132",
+      "sourceType": "rss",
+      "title": "Middle East: Trump could restart Iran war if deal not signed",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/middle-east-trump-could-restart-iran-war-if-deal-not-signed/live-77593730?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T17:18:00.000Z",
+      "summary": "President Trump says the US would \"start the process again\" if Iran doesn't make a deal. Meanwhile, Lebanon's president said talks with Israel are independent and should not be linked to the US-Iran deal. Follow DW.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-133",
+      "sourceType": "rss",
+      "title": "美伊协议是如何在最后一刻仓促敲定的",
+      "sourceName": "纽约时报中文网",
+      "sourceUrl": "https://cn.nytimes.com/world/20260618/us-iran-deal-trump/?utm_source=RSS",
+      "publishedAt": "2026-06-23T17:09:01.000Z",
+      "summary": "基于对华盛顿、欧洲及中东各地官员的采访，本文还原了协议达成前最后数小时各方的博弈。美伊围绕一系列对全球政治、经济和美国国内政局具有重大影响的问题展开拉锯。 Kenny Holston/The New York Times 周日，宣布达成协议的当晚，特朗普总统在白宫观看终极格斗冠军赛。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://cn.nytimes.com/rss.html"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-134",
+      "sourceType": "rss",
+      "title": "东盟国家需考虑建立与俄罗斯直接支付渠道的可能性",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071909959.html",
+      "publishedAt": "2026-06-23T17:00:00.000Z",
+      "summary": "俄罗斯-泰国商业理事会主席、俄罗斯企业家、“新钢铁-M”控股集团董事会主席伊万·杰姆琴科在俄罗斯-东盟论坛会议期间表示，东盟国家需考虑建立与俄罗斯直接支付渠道的可能性，以及更积极地开展各国央行间的沟通。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-135",
+      "sourceType": "rss",
+      "title": "普京：俄与东盟支持公正世界秩序",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071911657.html",
+      "publishedAt": "2026-06-23T16:57:01.000Z",
+      "summary": "俄罗斯总统弗拉基米尔·普京表示，俄罗斯与东盟国家支持建立公正的世界秩序体系。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-136",
+      "sourceType": "rss",
+      "title": "Search for six-year-old Ebola patient after armed men storm DR Congo hospital",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cvgep4l397eo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T16:50:42.000Z",
+      "summary": "Health facilities have come under attack during the current outbreak as a result of misinformation and fear.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-137",
+      "sourceType": "rss",
+      "title": "Trump says he will visit India as frosty relationship with Modi thaws",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c621glv9vnqo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T16:43:18.000Z",
+      "summary": "Trump made the announcement during chat where he also vowed to protect India.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-138",
+      "sourceType": "rss",
+      "title": "伊朗外长：希望在伊美签署备忘录后，伊中能源合作能够进一步扩大",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071910590.html",
+      "publishedAt": "2026-06-23T16:40:00.000Z",
+      "summary": "俄罗斯卫星通讯社德黑兰6月17日电 伊朗外长阿拉格奇表示，德黑兰希望，在与美国签署备忘录后，伊朗与中国的合作能够得到扩大，尤其是在能源领域。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-139",
+      "sourceType": "rss",
+      "title": "AI will create more jobs for humans, not replace them, Amazon founder Bezos says",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/ceqdrw2yy3vo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T16:37:41.000Z",
+      "summary": "The Amazon founder, who now has robotics and space travel companies, thinks AI will create a labour shortage.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-140",
+      "sourceType": "rss",
+      "title": "被麦克风捕捉到私下对话后 加总理称特朗普喜欢加中电动车协议的结构",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E7%BB%8F%E8%B4%B8/20260617-%E8%A2%AB%E9%BA%A6%E5%85%8B%E9%A3%8E%E6%8D%95%E6%8D%89%E5%88%B0%E7%A7%81%E4%B8%8B%E5%AF%B9%E8%AF%9D%E5%90%8E-%E5%8A%A0%E6%80%BB%E7%90%86%E7%A7%B0%E7%89%B9%E6%9C%97%E6%99%AE%E5%96%9C%E6%AC%A2%E5%8A%A0%E4%B8%AD%E7%94%B5%E5%8A%A8%E6%B1%BD%E8%BD%A6%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%BB%93%E6%9E%84",
+      "publishedAt": "2026-06-23T16:30:33.000Z",
+      "summary": "加拿大总理卡尼（Mark Carney）表示，美国总统特朗普（Donald Trump）对加方允许以低关税进口限定数量中国电动汽车的协议感到满意。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-141",
+      "sourceType": "rss",
+      "title": "普京总统提议考虑成立俄罗斯、文莱政府间联合委员会",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071911246.html",
+      "publishedAt": "2026-06-23T16:22:36.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯总统普京提议考虑成立俄罗斯、文莱政府间联合委员会，以发展（两国）关系。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-142",
+      "sourceType": "rss",
+      "title": "俄外交部无任所大使：俄将向国际组织转达有关乌军袭击载有儿童的巴士信息",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071910492.html",
+      "publishedAt": "2026-06-23T16:20:00.000Z",
+      "summary": "俄罗斯外交部无任所大使罗季翁·米罗什尼克对俄罗斯卫星通讯社表示，俄罗斯将向国际组织通报乌军袭击一辆载有白俄罗斯儿童的巴士信息。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-143",
+      "sourceType": "rss",
+      "title": "普京：俄与东盟战略伙伴关系有助亚太稳定",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071911041.html",
+      "publishedAt": "2026-06-23T16:06:43.000Z",
+      "summary": "俄罗斯总统弗拉基米尔·普京表示，俄罗斯与东盟的战略伙伴关系是亚太地区重要的稳定因素。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-144",
+      "sourceType": "rss",
+      "title": "德媒：德国国防部计划在2029年前增加军事动物研究项目",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260618/1071905993.html",
+      "publishedAt": "2026-06-23T16:00:00.000Z",
+      "summary": "德国媒体援引德国政府对左翼党派议会质询的回应报道，德国国防部计划在2029年前增加有动物参与的军事研究项目数量，理由是地缘政治形势的变化。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-145",
+      "sourceType": "rss",
+      "title": "EU, G7 pledge support amid DRC Ebola outbreak",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/eu-g7-pledge-support-amid-drc-ebola-outbreak/a-77588901?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T15:56:00.000Z",
+      "summary": "G7 leaders called for a \"strong and coordinated response\" to the latest Ebola outbreak. The EU's Ursula von der Leyen said that \"health security is shared security.\" The recorded death toll in DRC is approaching 200.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-146",
+      "sourceType": "rss",
+      "title": "Mangione's lawyers plan psychiatric defence in state murder trial",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c1lym76jyymo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T15:52:47.000Z",
+      "summary": "They will argue he was suffering from \"extreme emotional disturbance\" at the time UnitedHealth CEO Brian Thompson was killed.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-147",
+      "sourceType": "rss",
+      "title": "北约秘书长：安卡拉峰会期间泽连斯基不会出席北约领导人的全体会议",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071909720.html",
+      "publishedAt": "2026-06-23T15:47:00.000Z",
+      "summary": "俄罗斯卫星通讯社布鲁塞尔6月17日电 北约秘书长马克·吕特表示， 7月7日至8日在安卡拉举行的北约峰会期间，弗拉基米尔·泽连斯基将不会出席北约领导人单独全体会议。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-148",
+      "sourceType": "rss",
+      "title": "日防相质疑中国军费开支数据：是否真基于事实、有证据支持且高度透明",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%94%BF%E6%B2%BB/20260617-%E6%97%A5%E9%98%B2%E7%9B%B8%E8%B4%A8%E7%96%91%E4%B8%AD%E5%9B%BD%E5%9B%BD%E9%98%B2%E6%94%AF%E5%87%BA%E6%95%B0%E6%8D%AE-%E6%98%AF%E5%90%A6%E7%9C%9F%E5%9F%BA%E4%BA%8E%E4%BA%8B%E5%AE%9E-%E6%9C%89%E8%AF%81%E6%8D%AE%E6%94%AF%E6%8C%81%E4%B8%94%E9%AB%98%E5%BA%A6%E9%80%8F%E6%98%8E",
+      "publishedAt": "2026-06-23T15:42:57.000Z",
+      "summary": "日本防卫大臣小泉进次郎近日在受访时质疑中国官方公布的军费开支数据，这再次表明东京方面正对北京指责日本奉行“新军国主义”的言论采取更强硬的立场。小泉称，与中方形成鲜明对比的是，日本将以透明的方式投资于无人机和人工智能等新型作战手段，以适应不断变化的冲突性质。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-149",
+      "sourceType": "rss",
+      "title": "芬兰议会通过政府关于允许核武器入境的提案",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071907295.html",
+      "publishedAt": "2026-06-23T15:35:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 据芬兰议会投票结果，议会通过立法修正案，取消了芬兰现行的关于禁止运进、制造、储存和使用核武器的规定。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-150",
+      "sourceType": "rss",
+      "title": "特朗普质疑当年把俄罗斯排除出八国集团是否是个好主意",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071910368.html",
+      "publishedAt": "2026-06-23T15:22:03.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月17日电 美国总统唐纳德·特朗普质疑当年把俄罗斯排除在八国集团（G8）之外是否是个好主意。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-151",
+      "sourceType": "rss",
+      "title": "俄工商会主席讲述俄罗斯与东盟的合作前景",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071907035.html",
+      "publishedAt": "2026-06-23T15:20:00.000Z",
+      "summary": "俄罗斯工商会主席谢尔盖·卡特林在喀山举行的俄罗斯-东盟商业论坛后对俄罗斯卫星通讯社表示，为发展俄罗斯与东盟国家的关系，必须要有直航航线、新的运输和物流链，必须深化金融和银行业合作。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-152",
+      "sourceType": "rss",
+      "title": "保加利亚外交部：保加利亚反对欧盟对俄罗斯能源和东正教大牧首基里尔实施制裁",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071910239.html",
+      "publishedAt": "2026-06-23T15:04:37.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 保加利亚外交部长维利斯拉瓦·彼得罗娃表示，保加利亚不支持欧盟新一轮制裁中针对俄罗斯能源和东正教大牧首基里尔实施制裁的条款。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-153",
+      "sourceType": "rss",
+      "title": "美伊停火框架协议里到底写了什么？",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/美伊停火框架协议里到底写了什么？/a-77592746?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T15:03:00.000Z",
+      "summary": "在美国与伊朗达成框架协议三天后，彭博社（Bloomberg）和阿拉伯电视台（Al-Arabiya）公布了该备忘录的文本。有媒体解读这份文件是美国向德黑兰政权做出的重大让步。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-154",
+      "sourceType": "rss",
+      "title": "东盟秘书长：俄罗斯-东盟峰会对发展合作很重要",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071906807.html",
+      "publishedAt": "2026-06-23T15:00:00.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 东盟秘书长高金洪在接受卫星通讯社采访时表示，俄罗斯-东盟峰会非常重要，为各方发展务实合作提供了契机。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-155",
+      "sourceType": "rss",
+      "title": "俄原子能集团总经理：俄罗斯与印尼即将达成浮动核电站船队建造协议",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071909346.html",
+      "publishedAt": "2026-06-23T14:56:04.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯国家原子能集团公司总经理利哈乔夫在俄罗斯-东盟喀山峰会期间对媒体表示，俄罗斯与印度尼西亚即将达成浮动核电站船队建造协议，其中包括与印尼企业合作。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-156",
+      "sourceType": "rss",
+      "title": "普京：2025年俄菲双边贸易额突破5亿美元",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071909264.html",
+      "publishedAt": "2026-06-23T14:51:23.000Z",
+      "summary": "俄罗斯总统弗拉基米尔·普京表示，2025年俄罗斯与菲律宾的双边贸易额已超过5亿美元，但这远未达到极限。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-157",
+      "sourceType": "rss",
+      "title": "特朗普质疑将俄罗斯排除在八国集团之外是好主意这一想法",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071909167.html",
+      "publishedAt": "2026-06-23T14:49:26.000Z",
+      "summary": "美国总统唐纳德·特朗普周三表示，他对将俄罗斯排除在八国集团之外是好主意这一想法表示质疑。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-158",
+      "sourceType": "rss",
+      "title": "菲律宾总统邀请普京出席东盟峰会",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071909049.html",
+      "publishedAt": "2026-06-23T14:48:15.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 菲律宾总统费迪南德·马科斯邀请俄罗斯总统弗拉基米尔·普京出席定于11月在马尼拉举行的东盟峰会。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-159",
+      "sourceType": "rss",
+      "title": "民调：三分之一的俄罗斯家长将汉语视为孩子教育的重要部分",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071906687.html",
+      "publishedAt": "2026-06-23T14:45:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 据俄罗斯《生意人报》援引Skyeng在线外语学校的调查报道称，31%的受访俄罗斯家长认为汉语是孩子教育的重要部分。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-160",
+      "sourceType": "rss",
+      "title": "黄仁勋：必须去适应新一代技术革命，发现新的机遇",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E7%A7%91%E6%8A%80%E4%B8%8E%E6%96%87%E5%8C%96/20260617-%E9%BB%84%E4%BB%81%E5%8B%8B-%E5%BF%85%E9%A1%BB%E5%8E%BB%E9%80%82%E5%BA%94%E6%96%B0%E4%B8%80%E4%BB%A3%E6%8A%80%E6%9C%AF%E9%9D%A9%E5%91%BD%EF%BC%8C%E5%8F%91%E7%8E%B0%E6%96%B0%E7%9A%84%E6%9C%BA%E9%81%87",
+      "publishedAt": "2026-06-23T14:37:07.000Z",
+      "summary": "人工智能技术正快速发展，也日益广泛地应用于人类生活的方方面面。以设计和销售图形处理器著称的美国科技公司英伟达如今在该领域扮演者至关重要的角色。但人们对人工智能技术可能取代人工，导致就业岗位流失的担忧也令英伟达面对不少批评。英伟达公司首席执行官英伟达6月16日在美国德克萨斯州接受美联社专访时表示，社会没有选择，必须适应以人工智能为核心的新一波技术革命，去发现新的机遇。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-161",
+      "sourceType": "rss",
+      "title": "Nigerian man jailed for storing human faeces outside his home",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/ce8jgr3vggno?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T14:33:39.000Z",
+      "summary": "Neighbours said the stench from the property had become so overwhelming that it was impossible to relax at home.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-162",
+      "sourceType": "rss",
+      "title": "俄经济发展部长：俄罗斯正讨论向东盟增加液化天然气供应",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071905764.html",
+      "publishedAt": "2026-06-23T14:30:00.000Z",
+      "summary": "俄罗斯经济发展部长马克西姆·列舍特尼科夫表示，俄罗斯正与东盟国家讨论增加能源资源供应，其中包括液化天然气。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-163",
+      "sourceType": "rss",
+      "title": "CRISPR gene-editing for crops: Precision tool or new risk?",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/crispr-gene-editing-for-crops-precision-tool-or-new-risk/a-77579053?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T14:29:00.000Z",
+      "summary": "The EU has eased restrictions on crops developed using novel genetic techniques. While supporters say the technology could help farmers adapt to climate change, critics argue its effects remain poorly understood.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-164",
+      "sourceType": "rss",
+      "title": "俄外交部呼吁国际社会谴责乌军袭击载有儿童的巴士",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071908557.html",
+      "publishedAt": "2026-06-23T14:26:57.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 俄罗斯外交部发言人玛丽亚·扎哈罗娃表示，莫斯科呼吁国际机构、各国政府和国际社会谴责乌克兰军队袭击载有白俄罗斯儿童的巴士。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-165",
+      "sourceType": "rss",
+      "title": "G7达成共识：力争到2030年将对华稀土和永磁体依赖度降至60%以下",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E5%9B%BD%E9%99%85/20260617-g7%E8%BE%BE%E6%88%90%E5%85%B1%E8%AF%86-%E4%BB%BB%E4%BD%95%E5%8D%95%E4%B8%80%E5%9B%BD%E5%AE%B6%E4%BE%9B%E5%BA%94%E7%9A%84%E7%A8%80%E5%9C%9F%E5%9D%87%E4%B8%8D%E5%BA%94%E8%B6%85%E8%BF%87%E5%85%B6%E6%80%BB%E8%BF%9B%E5%8F%A3%E9%87%8F%E7%9A%8460",
+      "publishedAt": "2026-06-23T14:19:25.000Z",
+      "summary": "据彭博社援引知情人士报导称，七国集团国家已达成一致，到2030年，任何单一国家供应的稀土均不应超过七国集团总进口量的60%，以此减少对中国的依赖。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-166",
+      "sourceType": "rss",
+      "title": "Leader of South Africa's second biggest party wants his predecessor sacked as minister",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/ce8jg660r73o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T14:17:19.000Z",
+      "summary": "John Steenhuisen is one of South Africa's best-known politicians after leading the DA for seven years.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-167",
+      "sourceType": "rss",
+      "title": "特朗普威胁称若不满伊朗遵守协议情况 美方将恢复打击",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071905031.html",
+      "publishedAt": "2026-06-23T14:15:00.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月17日电 美国总统特朗普表示，如果他不满意伊朗遵守协议的情况，美方将重新对伊朗发起打击。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-168",
+      "sourceType": "rss",
+      "title": "俄驻土耳其大使：基辅的挑衅行为表明其没有能力进行谈判",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071908140.html",
+      "publishedAt": "2026-06-23T14:05:00.000Z",
+      "summary": "俄罗斯驻土耳其大使谢尔盖·韦尔希宁在接受土耳其媒体Yetkin Report采访时表示，基辅方面持续的挑衅行为表明，乌克兰当局没有能力进行谈判。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-169",
+      "sourceType": "rss",
+      "title": "俄外交部：俄罗斯强烈谴责乌军袭击载有白俄罗斯儿童的客车",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071908262.html",
+      "publishedAt": "2026-06-23T14:01:35.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 俄罗斯外交部发言人扎哈罗娃表示，俄罗斯强烈谴责乌军袭击载有白俄罗斯儿童的客车，泽连斯基蓄意将儿童作为预谋袭击的目标。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-170",
+      "sourceType": "rss",
+      "title": "Morocco: The 2030 World Cup is more than sports, it is a national project",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/morocco-the-2030-world-cup-is-more-than-sports-it-is-a-national-project/a-77589339?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T14:01:00.000Z",
+      "summary": "Hosting the 2030 World Cup is more than just a sporting event for Rabat. While the kingdom invests heavily in infrastructure and prestige projects, doubts and social conflicts grow alongside a sense of pride and hope.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-171",
+      "sourceType": "rss",
+      "title": "印尼工商会代表：印尼期待将对俄贸易额翻倍至每年100亿美元",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904896.html",
+      "publishedAt": "2026-06-23T14:00:00.000Z",
+      "summary": "印尼工商会俄印尼合作委员会主席迪迪特·拉塔姆对俄罗斯卫星通讯社表示，印尼期待将对俄贸易额提升一倍甚至两倍，达到每年100亿美元。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-172",
+      "sourceType": "rss",
+      "title": "Diplomats and abuse — chipping at the shield of immunity",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/diplomats-and-abuse-chipping-at-the-shield-of-immunity/a-77575633?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T14:00:00.000Z",
+      "summary": "Domestic workers who were mistreated by diplomats are often denied justice due to their abusers enjoying diplomatic immunity. But court rulings in the UK and Switzerland have paved the way for change.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-173",
+      "sourceType": "rss",
+      "title": "俄罗斯-东盟商务理事会：俄罗斯-东盟之间的贸易额有望增至1000亿美元",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071907168.html",
+      "publishedAt": "2026-06-23T13:53:00.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯-东盟商务理事会主席波利亚科夫对卫星通讯社表示，将俄罗斯与东盟之间的贸易额提高至每年1000亿美元是一个可实现的目标，但目前还难以给出一个时间框架。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-174",
+      "sourceType": "rss",
+      "title": "越南外长：愿为东盟—俄罗斯关系作出积极贡献",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071908017.html",
+      "publishedAt": "2026-06-23T13:46:48.000Z",
+      "summary": "越南外交部长黎怀忠在喀山俄罗斯-东盟峰会期间接受卫星通讯社独家采访时表示，越南愿为东盟与俄罗斯关系发展作出积极贡献。他指出，双方拥有共同根本利益，关系发展潜力巨大。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-175",
+      "sourceType": "rss",
+      "title": "俄人权事务专员：乌军的残暴行径已超越人类的道德底线 这不容辩解",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904776.html",
+      "publishedAt": "2026-06-23T13:45:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 俄罗斯人权事务专员兰特拉托娃表示，乌军的残暴行径超越了人类的道德底线，这不容辩解。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-176",
+      "sourceType": "rss",
+      "title": "克宫：基辅政权实施恐袭 在布良斯克州用无人机袭击校车",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071907697.html",
+      "publishedAt": "2026-06-23T13:43:51.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 俄罗斯总统新闻秘书佩斯科夫表示，基辅政权实施恐怖袭击，用无人机在布良斯克州袭击了一辆儿童足球队搭乘的校车。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-177",
+      "sourceType": "rss",
+      "title": "World Cup 2026: Africa's new era takes shape",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/world-cup-2026-africa-s-new-era-takes-shape/a-77578984?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T13:42:00.000Z",
+      "summary": "From Cape Verde's debut to DR Congo's return, Africa's expanded presence at the 2026 World Cup brings new stories and renewed expectations of success.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-178",
+      "sourceType": "rss",
+      "title": "白俄罗斯卫生部：在布良斯克州无人机袭击事件中有8人受伤 含6名儿童",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071907416.html",
+      "publishedAt": "2026-06-23T13:36:17.000Z",
+      "summary": "俄罗斯卫星通讯社明斯克6月17日电 白俄罗斯卫生部长霍贾耶夫表示，在布良斯克州，一辆大巴遭到乌军袭击，8人受伤，含6名儿童，他们伤情不等。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-179",
+      "sourceType": "rss",
+      "title": "缅甸战略与政策研究所称其创办人去中国仅是为参加学术研讨会 呼吁立即释放",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%BA%9A%E6%B4%B2/20260617-%E7%BC%85%E7%94%B8%E6%88%98%E7%95%A5%E4%B8%8E%E6%94%BF%E7%AD%96%E7%A0%94%E7%A9%B6%E6%89%80%E7%A7%B0%E5%85%B6%E5%88%9B%E5%8A%9E%E4%BA%BA%E5%8E%BB%E4%B8%AD%E5%9B%BD%E4%BB%85%E6%98%AF%E4%B8%BA%E5%8F%82%E5%8A%A0%E5%AD%A6%E6%9C%AF%E7%A0%94%E8%AE%A8%E4%BC%9A-%E5%91%BC%E5%90%81%E7%AB%8B%E5%8D%B3%E9%87%8A%E6%94%BE",
+      "publishedAt": "2026-06-23T13:34:11.000Z",
+      "summary": "一名美籍缅甸问题学者于6月初在中国被拘留，这名学者创办的智库周三表示，他当时前往昆明是为了参加一个学术研讨会，并呼吁将其释放。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-180",
+      "sourceType": "rss",
+      "title": "北约秘书长：北约尚未讨论恢复与俄对话但愿支持欧盟的努力",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904676.html",
+      "publishedAt": "2026-06-23T13:30:00.000Z",
+      "summary": "俄罗斯卫星通讯社布鲁塞尔6月17日电 北约秘书长马克·吕特表示，北约目前尚未在政治层面讨论恢复与俄罗斯的对话，但正密切关注欧盟的谈判进展，并愿意支持此类努力。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-181",
+      "sourceType": "rss",
+      "title": "Iran sends tankers loaded with oil past US military blockade",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cpq37yxexd9o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T13:27:47.000Z",
+      "summary": "Three Iranian tankers loaded with crude oil have passed the US blockade line in the Gulf of Oman, ship-tracking data shows.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-182",
+      "sourceType": "rss",
+      "title": "“今日俄罗斯”媒体集团副总经理：俄中关系是抵制霸权主义的文明联盟",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904461.html",
+      "publishedAt": "2026-06-23T13:15:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 “今日俄罗斯”国际媒体集团副总经理亚历山大·雅科文科在接受卫星通讯社采访时表示，俄中关系具有特殊意义，是抵制任何霸权主义企图的文明联盟。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-183",
+      "sourceType": "rss",
+      "title": "德语媒体：缅甸当权者何以成了中印两国的座上宾",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/德语媒体：缅甸当权者何以成了中印两国的座上宾/a-77590699?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T13:14:00.000Z",
+      "summary": "《日报》发表分析文章称，北京以高规格接待缅甸当权者敏昂莱来访，不仅显示出中国对缅甸现政府的支持，也凸显了缅甸对北京不可或缺的战略意义。《新苏黎世报》文章称，一年前几乎陷入绝境的缅甸军政府，正在中印两国的助力下重返国际舞台。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-184",
+      "sourceType": "rss",
+      "title": "中国如何将北京打造成“新华盛顿”：习近平今几每周迎来一位外国新贵客",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%B8%93%E6%A0%8F%E6%A3%80%E7%B4%A2/%E6%B3%95%E5%9B%BD%E6%8A%A5%E7%BA%B8%E6%91%98%E8%A6%81/20260617-%E4%B8%AD%E5%9B%BD%E5%A6%82%E4%BD%95%E5%B0%86%E5%8C%97%E4%BA%AC%E6%89%93%E9%80%A0%E6%88%90-%E6%96%B0%E5%8D%8E%E7%9B%9B%E9%A1%BF-%E4%B9%A0%E8%BF%91%E5%B9%B3%E4%BB%8A%E5%87%A0%E6%AF%8F%E5%91%A8%E8%BF%8E%E6%9D%A5%E4%B8%80%E4%BD%8D%E5%A4%96%E5%9B%BD%E6%96%B0%E8%B4%B5%E5%AE%A2",
+      "publishedAt": "2026-06-23T13:08:44.000Z",
+      "summary": "大家好，欢迎收听法国报纸摘要。埃维昂峰会进入关键议程，特邀出席的乌克兰总统泽连斯基周二16日与G7领导人共同讨论乌战局势，并与美国总统特朗普举行会谈。特朗普将此次会面形容为“一次非常好的会谈”，并表示俄罗斯应当达成和平协议以结束持续数年的战事，成为周三6月17日出刊的法国主要日报头版或者国际版的头条之一。与此同时《回声报》关注，自特朗普重返白宫和伊朗战争爆发以来，外国领导人纷纷前往北京进行国事访问，并受到中国的盛情接待。在新冠疫情期间备受孤立和批评的中国，正享受着重返世界事务的时刻。但在实质问题上，北京却很少做出让步。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-185",
+      "sourceType": "rss",
+      "title": "世界杯德国队球衣走俏  带“V”字的却断货了",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/世界杯德国队球衣走俏-带-v-字的却断货了/a-77590690?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T13:05:00.000Z",
+      "summary": "德国队在世界杯首场旗开得胜后，德国队的球衣也一路热销。但一个小小的供应链问题，却让一部分球衣断货。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-186",
+      "sourceType": "rss",
+      "title": "Protesters to rally against World Cup sponsor Hyundai before Mexico game",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/football/2026/jun/17/protesters-to-rally-against-world-cup-sponsor-hyundai-before-mexico-game",
+      "publishedAt": "2026-06-23T13:04:58.000Z",
+      "summary": "Focus on business dealings with mining company Guadalajara rally to highlight fate of ‘disappeared’Hyundai will be targeted by protesters at a rally before the Group A game between Mexico and South Korea in Guadalajara on Thursday, due to the World Cup sponsor’s business dealings with the South A...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-187",
+      "sourceType": "rss",
+      "title": "北约秘书长：美国准备继续用欧洲资金向乌克兰出售武器",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904083.html",
+      "publishedAt": "2026-06-23T13:00:00.000Z",
+      "summary": "北约秘书长马克·吕特表示，美国不打算直接向乌克兰提供军事援助，但准备继续用欧洲资金向乌克兰出售武器。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-188",
+      "sourceType": "rss",
+      "title": "西蒙尼扬称仁慈为普京主要特质",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071906591.html",
+      "publishedAt": "2026-06-23T13:00:00.000Z",
+      "summary": "“今日俄罗斯”国际媒体集团（卫星通讯社母公司）和RT电视台总编辑玛格丽塔·西蒙尼扬表示，仁慈是俄罗斯总统弗拉基米尔·普京的主要特质。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-189",
+      "sourceType": "rss",
+      "title": "Bystanders smash windows of private jet to rescue passengers after crash",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cd7wv4144yvo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T12:53:27.000Z",
+      "summary": "One of the six people on board died in the crash, a local official said. The five survivors were taken to hospital and are in a stable condition.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-190",
+      "sourceType": "rss",
+      "title": "未关闭的麦克风揭秘：G7领导人私下都聊什么？",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/未关闭的麦克风揭秘：g7领导人私下都聊什么？/a-77590515?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T12:52:00.000Z",
+      "summary": "本周G7峰会召开，来自全球最富裕国家的领导人齐聚一堂，商讨如何应对当今世界面临的重大难题。不过， 他们私下会聊些什么，会互相开玩笑吗？下面一起来看看。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-191",
+      "sourceType": "rss",
+      "title": "‘Period tax’ on sanitary products to be abolished, says Pakistan minister",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/global-development/2026/jun/17/period-tax-sanitary-products-abolished-pakistan-minister",
+      "publishedAt": "2026-06-23T12:46:15.000Z",
+      "summary": "Campaigners welcome announcement cutting levies on menstrual health items, but say their work to end period poverty is ‘far from over’Pakistan plans to abolish “period tax”, in a victory for young campaigners who had taken the government to court over the charges.Finance minister Muhammad Aurangz...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-192",
+      "sourceType": "rss",
+      "title": "“今日俄罗斯”国际媒体集团总编：中国或能发明出预防人工智能失控的方法",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904321.html",
+      "publishedAt": "2026-06-23T12:46:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 “今日俄罗斯”国际媒体集团和RT电视台总编辑玛格丽塔·西蒙尼扬认为，人工智能如果不加控制地发展，可能会改变和代替人类，但像中国一样掌握高科技技术和理智的国家或能发明出预防这一风险的方法。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-193",
+      "sourceType": "rss",
+      "title": "Iran's hardliners fear being sidelined in US deal",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/iran-s-hardliners-fear-being-sidelined-in-us-deal/a-77589196?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T12:36:00.000Z",
+      "summary": "As an Iran-US memorandum aimed at ending the war moves closer to formal signature, hardline supporters of the Islamic Republic fear losing influence as Iran's politics shift from maximalist defiance to compromise.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-194",
+      "sourceType": "rss",
+      "title": "白俄外交部谴责针对俄布良斯克州载有白俄公民大巴车的袭击",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071906272.html",
+      "publishedAt": "2026-06-23T12:32:44.000Z",
+      "summary": "俄罗斯卫星通讯社明斯克6月17日电 白俄罗斯外交部发言人鲁斯兰·瓦兰科夫表示，白俄外交部坚决谴责对俄罗斯布良斯克州载有白俄罗斯公民的大巴车的袭击事件。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-195",
+      "sourceType": "rss",
+      "title": "北约秘书长：法国核力量不会取代美国的核保护伞",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071903978.html",
+      "publishedAt": "2026-06-23T12:31:00.000Z",
+      "summary": "俄罗斯卫星通讯社布鲁塞尔6月17日电 北约秘书长吕特表示，法国核力量不会被用来取代美国的核保护伞。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-196",
+      "sourceType": "rss",
+      "title": "马来西亚总理：马来西亚对与俄罗斯开展军事装备合作持开放态度",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071903405.html",
+      "publishedAt": "2026-06-23T12:15:00.000Z",
+      "summary": "马来西亚总理安瓦尔·易卜拉欣表示，马来西亚对向该国供应各类俄罗斯军事装备的合作持开放态度。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-197",
+      "sourceType": "rss",
+      "title": "Bolivia signs $20m deal with US to fight drug trafficking, foreign ministry says",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c9w28vzj0q0o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T12:01:04.000Z",
+      "summary": "Under its new president, Bolivia is re-establishing severed ties with the US to combat organised crime.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-198",
+      "sourceType": "rss",
+      "title": "欧媒：内部分歧或使欧盟难以对华采取具体措施",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904198.html",
+      "publishedAt": "2026-06-23T12:01:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 据欧盟新闻网站欧洲动态网报道，由于欧盟内部存在分歧且担忧中国可能采取反制措施，欧盟可能难以就对中国采取具体措施达成一致。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-199",
+      "sourceType": "rss",
+      "title": "一夜爆红后 美国减免手续邀请佛得角门将的母亲",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/一夜爆红后-美国减免手续邀请佛得角门将的母亲/a-77589612?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T12:01:00.000Z",
+      "summary": "在佛得角门将捍卫了球门成为网红之后，美国国务院决定向门将沃齐尼亚的母亲发出邀请，并免去她办理签证的高昂手续费。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-200",
+      "sourceType": "rss",
+      "title": "NATO chief focuses on alliance unity after US alters pledges",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/nato-chief-focuses-on-alliance-unity-after-us-alters-pledges/a-77588556?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T12:00:00.000Z",
+      "summary": "NATO's secretary general went to great lengths to cast a positive light on the alliance ahead of a ministers' meeting. The closest he came to addressing any tension was saying members have \"a lot to talk about.\"",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-201",
+      "sourceType": "rss",
+      "title": "特朗普坚决否认为伊朗建立投资基金的消息",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071905540.html",
+      "publishedAt": "2026-06-23T11:52:34.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月17日电 美国总统特朗普坚决否认了有关美国将在美伊停战协议框架内建立3000亿美元投资基金的消息。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-202",
+      "sourceType": "rss",
+      "title": "越南总理：俄罗斯和东盟在投资发展方面潜力巨大",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071902989.html",
+      "publishedAt": "2026-06-23T11:45:00.000Z",
+      "summary": "越南总理黎明兴在俄罗斯-东盟论坛开幕式上表示，俄罗斯和东盟在投资发展方面有巨大的潜力。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-203",
+      "sourceType": "rss",
+      "title": "马来西亚东盟商界代表：俄罗斯与东盟在数字主权领域合作前景广阔",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071905428.html",
+      "publishedAt": "2026-06-23T11:40:58.000Z",
+      "summary": "马来西亚东盟商业咨询理事会联合主席、马来西亚进出口银行董事长查隆·莫赫扎尼在峰会期间的俄罗斯-东盟商务论坛上向俄罗斯卫星通讯社表示，东盟企业对俄罗斯企业之间的合作前景充满期待，双方在信息技术、智慧城市和金融科技等领域存在诸多合作方向。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-204",
+      "sourceType": "rss",
+      "title": "G7领导人声明：重申反对任何单方面改变台海等现状企图 只应通过对话和平解决",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E5%9B%BD%E9%99%85/20260617-g7%E9%A2%86%E5%AF%BC%E4%BA%BA%E5%A3%B0%E6%98%8E-%E9%87%8D%E7%94%B3%E5%8F%8D%E5%AF%B9%E4%BB%BB%E4%BD%95%E5%8D%95%E6%96%B9%E9%9D%A2%E6%94%B9%E5%8F%98%E5%8F%B0%E6%B5%B7%E7%AD%89%E7%8E%B0%E7%8A%B6%E4%BC%81%E5%9B%BE-%E5%8F%AA%E5%BA%94%E9%80%9A%E8%BF%87%E5%AF%B9%E8%AF%9D%E5%92%8C%E5%B9%B3%E8%A7%A3%E5%86%B3",
+      "publishedAt": "2026-06-23T11:35:39.000Z",
+      "summary": "七国集团峰会15日到17日在法国东部小城埃维昂莱班举办。七国集团领导人在周三公布的“就地缘政治问题”的联合声明中表示，“我们强调建立在法治基础上的自由开放的印度-太平洋的重要性。我们重申反对任何单方面改变现状的企图，特别是以武力或胁迫手段改变东中国海、南中国海和台湾海峡两岸的现状，这些问题只应通过对话和平解决”。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-205",
+      "sourceType": "rss",
+      "title": "德媒：德国海军两艘军舰或被派往霍尔木兹海峡执行任务",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071903873.html",
+      "publishedAt": "2026-06-23T11:30:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 根据德国《明镜》周刊报道，德国海军两艘舰艇可能会参与确保霍尔木兹海峡安全的国际行动。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-206",
+      "sourceType": "rss",
+      "title": "美军计划在澳大利亚建立战备武器库",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%B8%AD%E5%9B%BD/20260617-%E7%BE%8E%E5%86%9B%E8%AE%A1%E5%88%92%E5%9C%A8%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E5%BB%BA%E7%AB%8B%E6%88%98%E5%A4%87%E6%AD%A6%E5%99%A8%E5%BA%93",
+      "publishedAt": "2026-06-23T11:27:27.000Z",
+      "summary": "美国军方计划在澳大利亚东南海岸为其海军陆战队建立一个永久性的战备武器库，该武器库位于大多数中国导弹的射程之外。澳大利亚国防长马尔斯今天表示，此举有助于维护该国的国家安全。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-207",
+      "sourceType": "rss",
+      "title": "俄外长向伊朗外长称支持就缓解中东地区局势达成的共识",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071904576.html",
+      "publishedAt": "2026-06-23T11:19:38.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 据俄罗斯外交部消息，俄外长拉夫罗夫在与伊朗外长阿拉格齐通话时表示，俄方支持在巴基斯坦和卡塔尔斡旋下就缓解中东地区局势达成的共识。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-208",
+      "sourceType": "rss",
+      "title": "俄国防部：俄军解放顿涅茨克人民共和国康斯坦丁诺夫卡96座建筑物",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071903112.html",
+      "publishedAt": "2026-06-23T11:14:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 俄罗斯国防部表示，俄军部队解放了顿涅茨克人民共和国康斯坦丁诺夫卡市96座建筑物，在该市西南地区，俄军仍继续消灭被包围的乌军部队。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-209",
+      "sourceType": "rss",
+      "title": "Germany World Cup shirts run out of letter V",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/germany-world-cup-shirts-run-out-of-letter-v/a-77588243?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T11:04:00.000Z",
+      "summary": "Bad news for fans of Germany players Kai Havertz, Deniz Undav and Aleksandar Pavlovic: the kit makers have run out of the letter V, such is the demand for those names on shirts. But don't worry, more Vs are on the way!",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-210",
+      "sourceType": "rss",
+      "title": "俄罗斯愿与东盟签署自由贸易协定",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071902695.html",
+      "publishedAt": "2026-06-23T11:00:00.000Z",
+      "summary": "俄罗斯经济发展部长马克西姆·列舍特尼科夫表示，俄罗斯愿与东盟国家签署新的自由贸易协定。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-211",
+      "sourceType": "rss",
+      "title": "解放报阐释：习近平治下的中国为何要高调接待缅甸前军头",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%B8%AD%E5%9B%BD/20260617-%E8%A7%A3%E6%94%BE%E6%8A%A5%E9%98%90%E9%87%8A-%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%B2%BB%E4%B8%8B%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%B8%BA%E4%BD%95%E8%A6%81%E9%AB%98%E8%B0%83%E6%8E%A5%E5%BE%85%E7%BC%85%E7%94%B8%E5%89%8D%E5%86%9B%E5%A4%B4",
+      "publishedAt": "2026-06-23T10:59:08.000Z",
+      "summary": "缅甸前军政府首脑现已转身为“民选总统”的敏昂莱，正在对中国展开国事访问。《解放报》亚太版周二16日晚登出由资深记者沃克蓝执笔的文章分析称，中国是缅甸最重要的经济与安全伙伴。这次访问也意味着，北京正在以实际行动为缅甸政权背书。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-212",
+      "sourceType": "rss",
+      "title": "欧洲议会为欧美关税协议开放绿灯",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/欧洲议会为欧美关税协议开放绿灯/a-77588083?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T10:54:00.000Z",
+      "summary": "欧洲议会通过一项决议，为全面实施与美国之间备受争议的关税协议扫清了障碍。大多数出口至美国的欧盟产品将被征收15%的关税；对美国工业品的进口关税则将被取消。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-213",
+      "sourceType": "rss",
+      "title": "伊朗外交部：伊俄外长讨论伊美备忘录",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071902578.html",
+      "publishedAt": "2026-06-23T10:45:00.000Z",
+      "summary": "俄罗斯卫星通讯社德黑兰6月17日电 伊朗外交部发布消息表示，伊朗外长阿拉格齐向俄外长拉夫罗夫介绍了伊美备忘录的相关细节。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-214",
+      "sourceType": "rss",
+      "title": "Ebola and the US patient spotlight global health 'injustice'",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/ebola-and-the-us-patient-spotlight-global-health-injustice/a-77577798?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T10:34:00.000Z",
+      "summary": "The story of the US doctor who survived Ebola with experimental treatment in Germany highlights wider inequities in global health. It also reveals how sharply medical standards can differ between African countries.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-215",
+      "sourceType": "rss",
+      "title": "美媒：特朗普政府并非全员支持美伊协议",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071899551.html",
+      "publishedAt": "2026-06-23T10:30:00.000Z",
+      "summary": "俄罗斯卫星通讯社华盛顿6月17日电 据美国《政治报》援引一位美国政府官员的话报道，美国特朗普政府并非所有高级官员都支持他与伊朗达成的谅解备忘录。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-216",
+      "sourceType": "rss",
+      "title": "South Korea to shrink security buffer zone to North Korea",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/south-korea-to-shrink-security-buffer-zone-to-north-korea/a-77586166?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T10:23:00.000Z",
+      "summary": "South Korea will ease restrictions on roughly 270 square kilometers of land near the border with North Korea. Farmers in the area had long complained of rules that complicated working conditions.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-217",
+      "sourceType": "rss",
+      "title": "俄经济发展部长：去年东盟共接待俄游客280万人次",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071903208.html",
+      "publishedAt": "2026-06-23T10:22:00.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯经济发展部长列舍特尼科夫表示，根据东盟的统计，2025年东盟国家共接待俄罗斯游客280万人次。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-218",
+      "sourceType": "rss",
+      "title": "Norway's crown princess undergoes successful lung transplant, palace says",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c1eyg37qyqjo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T10:15:08.000Z",
+      "summary": "Crown Princess Mette-Marit, who suffered from pulmonary fibrosis, will now spend several weeks recovering in hospital.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-219",
+      "sourceType": "rss",
+      "title": "俄外交部发言人：导弹击中基辅修道院是因为西方提供的过期武器",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071899441.html",
+      "publishedAt": "2026-06-23T10:15:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 俄罗斯外交部发言人扎哈罗娃表示，“爱国者”导弹击中基辅洞窟修道院，是由于西方向乌克兰提供了“积压”武器。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-220",
+      "sourceType": "rss",
+      "title": "菲总统府称中方制裁不会影响防长履行职责 菲海警通报中方已移除浮动平台",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E5%9B%BD%E9%99%85/20260617-%E8%8F%B2%E6%80%BB%E7%BB%9F%E5%BA%9C%E7%A7%B0%E4%B8%AD%E6%96%B9%E5%88%B6%E8%A3%81%E4%B8%8D%E4%BC%9A%E5%BD%B1%E5%93%8D%E8%8F%B2%E9%98%B2%E9%95%BF%E5%B1%A5%E8%A1%8C%E8%81%8C%E8%B4%A3-%E8%8F%B2%E6%B5%B7%E8%AD%A6%E9%80%9A%E6%8A%A5%E4%B8%AD%E6%96%B9%E5%B7%B2%E7%A7%BB%E9%99%A4%E6%B5%AE%E5%8A%A8%E5%B9%B3%E5%8F%B0",
+      "publishedAt": "2026-06-23T10:10:54.000Z",
+      "summary": "菲律宾西菲律宾海国家工作组（NTF-WPS、以下简称工作组）周三证实，自5月下旬以来在马辛洛克浅滩（中方称黄岩岛、西方文献称斯卡伯勒浅滩）潟湖中发现的中国浮动平台已被移除。工作组称，这一结论是基于菲律宾当局当天早些时候进行的最新海域态势感知巡逻。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-221",
+      "sourceType": "rss",
+      "title": "Lululemon apologises after Japanese drum row at Great Wall yoga event",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/media/2026/jun/17/lululemon-apologises-japanese-drum-great-wall-china-yoga-event",
+      "publishedAt": "2026-06-23T10:10:49.000Z",
+      "summary": "Online uproar follows Canadian brand’s use of taiko drum at sponsored festival held to celebrate Chinese cultureThe activewear brand Lululemon has apologised after a promotional event held on the Great Wall of China appeared to mistakenly feature a Japanese drum, prompting an uproar.The Canadian-...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-222",
+      "sourceType": "rss",
+      "title": "世界杯首轮收官：纪录诞生、强队亮相，签证限制阴云笼罩",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%B8%93%E6%A0%8F%E6%A3%80%E7%B4%A2/%E4%BB%8A%E6%97%A5%E4%BD%93%E8%82%B2/20260617-%E4%B8%96%E7%95%8C%E6%9D%AF%E9%A6%96%E8%BD%AE%E6%94%B6%E5%AE%98-%E7%BA%AA%E5%BD%95%E8%AF%9E%E7%94%9F-%E5%BC%BA%E9%98%9F%E4%BA%AE%E7%9B%B8%EF%BC%8C%E7%AD%BE%E8%AF%81%E9%99%90%E5%88%B6%E9%98%B4%E4%BA%91%E7%AC%BC%E7%BD%A9",
+      "publishedAt": "2026-06-23T10:09:58.000Z",
+      "summary": "2026年世界杯小组赛首轮全部结束，多支夺冠热门球队相继亮相，梅西、姆巴佩和哈兰德在首秀中集体爆发。第七个比赛日，葡萄牙队在K组迎来首场比赛，对手是刚果民主共和国。比赛在巴黎时间19时进行。另一场K组比赛中，首次参加世界杯的乌兹别克斯坦队于凌晨4时对阵哥伦比亚队。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-223",
+      "sourceType": "rss",
+      "title": "乌军袭击一辆载有白俄罗斯青年足球运动员的大巴车，致一人死亡",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071902861.html",
+      "publishedAt": "2026-06-23T10:02:40.000Z",
+      "summary": "俄罗斯卫星通讯社布良斯克6月17日电 俄罗斯布良斯克州代理州长科瓦利丘克表示，乌军在俄罗斯布良斯克市附近袭击了一辆载有来自白俄罗斯戈梅利的青年足球运动员的大巴车，造成一名女子死亡，6人受伤。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-224",
+      "sourceType": "rss",
+      "title": "Israel launches fresh strikes on Lebanon despite Trump criticism",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c7vyn17g832o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T10:01:42.000Z",
+      "summary": "Speaking on Tuesday, Trump said Israel's PM Benjamin Netanyahu needed \"to be more responsible with respect to Lebanon\".",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-225",
+      "sourceType": "rss",
+      "title": "俄经济发展部长：俄罗斯与东盟过去十年的贸易额增加58%",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071902227.html",
+      "publishedAt": "2026-06-23T10:00:00.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯经济发展部部长列舍特尼科夫在俄罗斯-东盟商务论坛开幕式上表示，俄罗斯与东盟成员国过去十年的贸易额增加58%，达到210亿美元。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-226",
+      "sourceType": "rss",
+      "title": "'They came with machetes' - deadline looms for migrants to leave South Africa",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cg740l2jpr0o?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T09:56:40.000Z",
+      "summary": "Protesters have set 30 June as the date for all undocumented migrants to leave the country.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-227",
+      "sourceType": "rss",
+      "title": "India: Telegram to challenge government order blocking app",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/india-telegram-to-challenge-government-order-blocking-app/a-77584792?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T09:56:00.000Z",
+      "summary": "Telegram has reportedly challenged the Indian government's order to temporarily block the popular messaging app ahead of the NEET medical entrance exam.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-228",
+      "sourceType": "rss",
+      "title": "Equatorial Guinea government resigns after failing to meet targets",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/c4gy27dyq0ro?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T09:52:52.000Z",
+      "summary": "The vice-president says the government had barely reached 10% of its targets, without specifying them.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-229",
+      "sourceType": "rss",
+      "title": "Germany news: Ministers discuss refugee deportation rules",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/germany-news-ministers-discuss-refugee-deportation-rules/live-77584367?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T09:52:00.000Z",
+      "summary": "Germany's regional interior ministers are holding their biannual conference with immigration, deportations and benefits high on the agenda. Meanwhile, Germany and Poland are marking 35 years of cooperation. DW has more.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-230",
+      "sourceType": "rss",
+      "title": "马来西亚总理：东盟潜力未得到充分发挥 将继续与俄合作",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071902083.html",
+      "publishedAt": "2026-06-23T09:50:00.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 马来西亚总理安瓦尔在俄罗斯-东盟商务论坛开幕式上表示，东盟成员国经济潜力未得到充分发挥，希望与俄罗斯继续合作。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-231",
+      "sourceType": "rss",
+      "title": "郑丽文结束16天访美行程 美国白宫外交圈对其评价有抱负但或许有点天真",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E4%B8%93%E6%A0%8F%E6%A3%80%E7%B4%A2/%E8%81%9A%E7%84%A6%E5%8F%B0%E6%B5%B7/20260617-%E9%83%91%E4%B8%BD%E6%96%87%E7%BB%93%E6%9D%9F16%E5%A4%A9%E8%AE%BF%E7%BE%8E%E8%A1%8C%E7%A8%8B-%E7%BE%8E%E5%9B%BD%E7%99%BD%E5%AE%AB%E5%A4%96%E4%BA%A4%E5%9C%88%E5%AF%B9%E5%85%B6%E8%AF%84%E4%BB%B7%E6%9C%89%E6%8A%B1%E8%B4%9F%E4%BD%86%E6%88%96%E8%AE%B8%E6%9C%89%E7%82%B9%E5%A4%A9%E7%9C%9F",
+      "publishedAt": "2026-06-23T09:46:37.000Z",
+      "summary": "国民党主席郑丽文结束16天历史性访美行程，但国际媒体对郑丽文此行普遍评价不高，英国媒体《BBC》认为此行高开低收，含金量不高。新加坡《海峡时报》报导，华盛顿外交圈对郑丽文此行的普遍评价是，有抱负但或许有点天真，虽有魅力但未打动美国。郑丽文此行访美亮点或许是她获得海外台湾侨民的热烈欢迎。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-232",
+      "sourceType": "rss",
+      "title": "Group planned to attack White House UFC event using snipers and drones, FBI says",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cqx10xlje1lo?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T09:46:31.000Z",
+      "summary": "In newly unsealed court filings, the government says the group allegedly expressed grievances about corruption, the Epstein files, and data centres.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-233",
+      "sourceType": "rss",
+      "title": "美伊停战协议即将签署，黎巴嫩撤军问题成最大变数",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E5%9B%BD%E9%99%85/20260617-%E7%BE%8E%E4%BC%8A%E5%81%9C%E6%88%98%E5%8D%8F%E8%AE%AE%E5%8D%B3%E5%B0%86%E7%AD%BE%E7%BD%B2%EF%BC%8C%E9%BB%8E%E5%B7%B4%E5%AB%A9%E6%92%A4%E5%86%9B%E9%97%AE%E9%A2%98%E6%88%90%E6%9C%80%E5%A4%A7%E5%8F%98%E6%95%B0",
+      "publishedAt": "2026-06-23T09:43:35.000Z",
+      "summary": "美国与伊朗即将签署止战协议，但在协议正式落地前，黎巴嫩问题正成为最大的争议焦点。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-234",
+      "sourceType": "rss",
+      "title": "俄经济发展部长：俄罗斯仍然是东盟稳定的能源供应国",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071901963.html",
+      "publishedAt": "2026-06-23T09:40:00.000Z",
+      "summary": "俄罗斯卫星通讯社喀山6月17日电 俄罗斯经济发展部部长列舍特尼科夫在俄罗斯-东盟商务论坛开幕式上表示，俄罗斯仍然是东盟国家稳定的能源供应国。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-235",
+      "sourceType": "rss",
+      "title": "Vietnam police rescue hundreds of cats stolen for meat by crime ring",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/world/2026/jun/17/vietnam-police-rescue-cats-stolen-meat-animal-crime-ring",
+      "publishedAt": "2026-06-23T09:39:12.000Z",
+      "summary": "Major operation launched after spate of pet thefts in Ho Chi Minh City, according to local mediaPolice in Vietnam have rescued more than 400 cats in a bust of a cat meat crime ring in Ho Chi Minh City, according to animal welfare groups and local media reports.More than 40 cats were reunited with...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-236",
+      "sourceType": "rss",
+      "title": "海事情报公司：三艘伊朗油轮突破美国在波斯湾的封锁",
+      "sourceName": "Sputnik 中文",
+      "sourceUrl": "https://sputniknews.cn/20260617/1071899139.html",
+      "publishedAt": "2026-06-23T09:30:00.000Z",
+      "summary": "俄罗斯卫星通讯社莫斯科6月17日电 据海事情报公司“油轮追踪者”（TankerTrackers.com）消息，三艘载有原油的油轮突破美国海军在波斯湾的封锁，总计装载约480万桶原油。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://sputniknews.cn/export/rss2/archive/index.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-237",
+      "sourceType": "rss",
+      "title": "Is Russia heading for a fuel crisis?",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/is-russia-heading-for-a-fuel-crisis/a-77579542?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T09:28:00.000Z",
+      "summary": "Russia's fuel output is falling after Ukrainian drone strikes on refineries. Seasonal spikes in gasoline and diesel demand could push the system into a deeper crisis, experts say.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-238",
+      "sourceType": "rss",
+      "title": "Why the Williams sisters and other stars are playing longer",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/why-the-williams-sisters-and-other-stars-are-playing-longer/a-75441900?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T09:27:00.000Z",
+      "summary": "More than three decades after they burst onto the tennis scene, Venus and Serena Williams are still playing at the top level. Why are we seeing elite athletes carrying on into their 40s and beyond?",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-239",
+      "sourceType": "rss",
+      "title": "马斯克律师向德国电视二台发警告函 记协发声",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/马斯克律师向德国电视二台发警告函-记协发声/a-77579651?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T09:23:00.000Z",
+      "summary": "马斯克的律师向德国两大公法电视台之一ZDF发出“停止侵害”警告函后，周二，ZDF发布声明证实已删除开场词的相关部分。近日，ZDF播出了一期有关北爱尔兰反移民暴力骚乱的节目，主播在开场词中强调了马斯克的鼓动角色。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-240",
+      "sourceType": "rss",
+      "title": "Bavarian top court rules state spy agency can monitor AfD",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/bavarian-top-court-rules-state-spy-agency-can-monitor-afd/a-77586106?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T09:17:00.000Z",
+      "summary": "Bavaria's regional domestic intelligence agency can monitor the right-wing populist AfD, the state's top court has ruled. Several states are trying to implement similar steps, with the opposition party challenging it.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-241",
+      "sourceType": "rss",
+      "title": "中国和欧盟会爆发贸易战吗？",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E6%AC%A7%E6%B4%B2/20260617-%E4%B8%AD%E5%9B%BD%E5%92%8C%E6%AC%A7%E7%9B%9F%E4%BC%9A%E7%88%86%E5%8F%91%E8%B4%B8%E6%98%93%E6%88%98%E5%90%97",
+      "publishedAt": "2026-06-23T09:15:04.000Z",
+      "summary": "电动汽车、电池、太阳能电池板以及来自拼多多海外版Temu和全球速卖通（AliExpress）等电商平台的产品导致欧盟对华贸易逆差不断扩大，迫使布鲁塞尔寻求保护性措施，引发可能导致贸易战的疑虑。欧洲领导人将于周四召开峰会，预计讨论保护欧洲产业的解决方案。北京方面主张对话，但也表示已做好反制准备。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-242",
+      "sourceType": "rss",
+      "title": "Status quo at Jerusalem's holiest site under threat as Israeli nationalists flout rules",
+      "sourceName": "BBC World",
+      "sourceUrl": "https://www.bbc.com/news/articles/cwy0nlv90jno?at_medium=RSS&at_campaign=rss",
+      "publishedAt": "2026-06-23T09:13:34.000Z",
+      "summary": "Israeli nationalists are increasingly flouting a convention on how faiths share the al-Aqsa mosque compound.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://feeds.bbci.co.uk/news/world/rss.xml"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-243",
+      "sourceType": "rss",
+      "title": "美联邦通信委员会改变政策 允许进口中国新款玩具无人机",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E7%A7%91%E6%8A%80%E4%B8%8E%E6%96%87%E5%8C%96/20260617-%E7%BE%8E%E8%81%94%E9%82%A6%E9%80%9A%E4%BF%A1%E5%A7%94%E5%91%98%E4%BC%9A%E6%94%B9%E5%8F%98%E6%94%BF%E7%AD%96-%E5%85%81%E8%AE%B8%E8%BF%9B%E5%8F%A3%E4%B8%AD%E5%9B%BD%E6%96%B0%E6%AC%BE%E7%8E%A9%E5%85%B7%E6%97%A0%E4%BA%BA%E6%9C%BA",
+      "publishedAt": "2026-06-23T09:12:56.000Z",
+      "summary": "美国联邦通信委员会（FCC）周二表示，将允许进口中国新款玩具无人机。去年12月，FCC曾宣布禁止进口所有外国制造的新款无人机及其关键部件，包括来自大疆创新和道通智能的产品，理由是这些产品对美国国家安全构成不可接受的风险。此后，FCC已允许进口部分新款无人机。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-244",
+      "sourceType": "rss",
+      "title": "媒體：美國暫緩逾百家企業列黑名單 避免美中緊張升溫",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/媒體：美國暫緩逾百家企業列黑名單-避免美中緊張升溫/a-77586133?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T09:10:00.000Z",
+      "summary": "路透社引述消息指出，美國商務部暫未將DeepSeek、長鑫存儲等逾百家已被認定對美有國安風險的企業列入出口管制實體清單。消息人士指出，川普政府此舉意在避免進一步升高美中緊張關係，但也引發外界質疑華府是否削弱了重要的國安管制工具。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-245",
+      "sourceType": "rss",
+      "title": "台湾学者赴肯尼亚参与海洋大会受阻",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/台湾学者赴肯尼亚参与海洋大会受阻/a-77586159?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T09:05:00.000Z",
+      "summary": "由肯尼亚主办的“我们的海洋”国际会议拒绝台湾学者入场，并扣留他们的护照以及手机。台湾陆委会批评中国持续透过外交打压台湾国际参与空间。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-246",
+      "sourceType": "rss",
+      "title": "Seven-year-old Abdiqadir was hit in a US airstrike. Without a $750 operation, he may lose his ability to walk",
+      "sourceName": "The Guardian World",
+      "sourceUrl": "https://www.theguardian.com/global-development/2026/jun/17/boy-injured-us-strike-somalia-ability-walk-operation-abdiqadir-salah-surgery-civilians-november-attack",
+      "publishedAt": "2026-06-23T09:00:27.000Z",
+      "summary": "Abdiqadir Salah was pierced by shrapnel in a bombing that killed 12 in Somalia. But as the US denies civilians were hurt they face no hope of compensationRead more: Killed walking home from school: why did Somali children become targets of US drone strikes?A seven-year-old boy who was riddled wit...",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://www.theguardian.com/world/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-247",
+      "sourceType": "rss",
+      "title": "美暂缓将DeepSeek、长鑫存储等逾100家企业列入出口管制实体清单",
+      "sourceName": "RFI 法广中文",
+      "sourceUrl": "https://www.rfi.fr/cn/%E7%A7%91%E6%8A%80%E4%B8%8E%E6%96%87%E5%8C%96/20260617-%E7%BE%8E%E6%9A%82%E7%BC%93%E5%B0%86deepseek-%E9%95%BF%E9%91%AB%E5%AD%98%E5%82%A8%E7%AD%89%E9%80%BE100%E5%AE%B6%E4%B8%AD%E4%BC%81%E5%88%97%E5%85%A5%E5%87%BA%E5%8F%A3%E7%AE%A1%E5%88%B6%E5%AE%9E%E4%BD%93%E6%B8%85%E5%8D%95",
+      "publishedAt": "2026-06-23T08:45:36.000Z",
+      "summary": "据路透社援引两位知情人士报导称，美国暂缓将中国人工智能初创公司DeepSeek、存储芯片制造商长鑫存储以及其他100多家被列为国家安全风险的公司列入贸易黑名单，此举正值特朗普政府试图避免与北京的紧张关系升级。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://www.rfi.fr/cn/rss"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-248",
+      "sourceType": "rss",
+      "title": "World Cup dreams come true for young German footballers",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/world-cup-dreams-come-true-for-young-german-footballers/a-77566204?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T08:29:00.000Z",
+      "summary": "Three young US college soccer players from Germany have had the opportunity to meet some of their World Cup heroes, as the men's natonal team's base camp is just around the corner.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-249",
+      "sourceType": "rss",
+      "title": "New exhibitions for Anish Kapoor: Art on the edge",
+      "sourceName": "DW English",
+      "sourceUrl": "https://www.dw.com/en/new-exhibitions-for-anish-kapoor-art-on-the-edge/a-77580647?maca=en-rss-en-all-1573-rdf",
+      "publishedAt": "2026-06-23T08:13:00.000Z",
+      "summary": "His art challenges our perception: Forms vanish and perspectives shift. Anish Kapoor leads the viewer to the edge of the abyss — and sometimes, even beyond. Two new exhibitions revisit his work.",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "en",
+        "feedUrl": "https://rss.dw.com/rdf/rss-en-all"
+      }
+    },
+    {
+      "id": "intl-2026-06-24-250",
+      "sourceType": "rss",
+      "title": "炼油厂屡遭攻击 俄罗斯会出现油荒吗？",
+      "sourceName": "DW 德国之声中文",
+      "sourceUrl": "https://www.dw.com/zh/炼油厂屡遭攻击-俄罗斯会出现油荒吗？/a-77579673?maca=chi-rss-chi-all-1127-xml-atom",
+      "publishedAt": "2026-06-23T08:00:00.000Z",
+      "summary": "受乌克兰对炼油厂的无人机袭击的影响，俄罗斯的燃料产量正在下降。专家评估，汽油和柴油需求的季节性激增可能会引发能源危机。",
+      "retrievalMetadata": {
+        "collectedAt": "2026-06-24T06:17:43.000Z",
+        "language": "zh",
+        "feedUrl": "https://rss.dw.com/atom/rss-chi-all"
+      }
+    }
+  ]
+}

@@ -49,18 +49,34 @@ const PO_CHART_THEME = {
 
 function Panel({ title, subtitle, error, empty, span = 4, children }) {
   return (
-    <section className="po-panel console-section" data-span={span}>
-      <header className="po-panel-head">
-        <h2>{title}</h2>
+    <div className="po-tile" data-span={span}>
+      <header className="po-tile-head">
+        <h3>{title}</h3>
         {subtitle ? <span>{subtitle}</span> : null}
       </header>
       {error ? (
-        <p className="po-panel-state is-error">数据加载失败:{error}</p>
+        <p className="po-tile-state is-error">数据加载失败:{error}</p>
       ) : empty ? (
-        <p className="po-panel-state">暂无数据</p>
+        <p className="po-tile-state">暂无数据</p>
       ) : (
         children
       )}
+    </div>
+  )
+}
+
+/**
+ * Band — 语义分组容器:小写灰标签 + 1px hairline + 12 列子栅格。
+ * 是 v3 控制台分区视觉范式的核心:把"11 张白卡"重构为 3 个 band。
+ */
+function Band({ label, latin, children }) {
+  return (
+    <section className="po-band" data-band={latin}>
+      <span className="po-band-label">
+        {label}
+        <span className="po-band-label-latin">{latin}</span>
+      </span>
+      <div className="po-band-grid">{children}</div>
     </section>
   )
 }
@@ -106,11 +122,113 @@ function KpiTile({ label, value, icon, sparkPoints, sparkColor }) {
   )
 }
 
-function KpiBar({ data, error, weeklyPoints }) {
+/**
+ * 预警徽标 — KPI rail 末端的常驻态告警入口。
+ * 三态:idle(0/0) / warn(>0/0) / major(major>0)。点击就地展开 popover。
+ */
+function AlertBadge({ warnings, error }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    if (!open) return
+    function onDown(e) {
+      if (!ref.current?.contains(e.target)) setOpen(false)
+    }
+    function onKey(e) {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  if (error) {
+    return (
+      <button
+        type="button"
+        className="po-alert-badge"
+        data-state="warn"
+        title={`预警加载失败:${error}`}
+        aria-label="预警加载失败"
+      >
+        预警 ?
+      </button>
+    )
+  }
+
+  const total = Number(warnings?.warningTotal ?? 0)
+  const major = Number(warnings?.majorTotal ?? 0)
+  const state = major > 0 ? 'major' : total > 0 ? 'warn' : 'idle'
+  const text =
+    state === 'major' ? `重大 ${major}` : state === 'warn' ? `预警 ${total}` : '当前无预警'
+
+  const topWords = warnings?.topWords ?? []
+
   return (
-    <section className="po-panel console-section po-kpi-bar" data-span="8">
+    <div ref={ref} style={{ position: 'relative' }}>
+      <button
+        type="button"
+        className="po-alert-badge"
+        data-state={state}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        aria-label={text}
+        onClick={() => setOpen((v) => !v)}
+      >
+        {text}
+      </button>
+      {open ? (
+        <div className="po-alert-popover" role="dialog" aria-label="预警概览">
+          <div className="po-alert-popover-counts">
+            <span className={state === 'major' ? 'is-major' : ''}>
+              重大预警 <strong>{major}</strong>
+            </span>
+            <span>
+              预警总量 <strong>{total}</strong>
+            </span>
+          </div>
+          {topWords.length > 0 ? (
+            <div className="po-wordcloud">
+              {topWords.map((w, i) => (
+                <span
+                  key={w.word}
+                  style={{
+                    fontSize: `${0.8 + Math.min(i === 0 ? 0.6 : 0.4 / (i + 1), 0.6)}rem`,
+                  }}
+                >
+                  {w.word}
+                </span>
+              ))}
+            </div>
+          ) : (
+            <p className="po-tile-state">当前无关键词</p>
+          )}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
+/**
+ * KPI rail — 顶部横条:3 KPI tile + 7d 态势 mini + 预警徽标。
+ * 取代 v2 的 KpiBar 与「预警概览」独立 Panel。
+ */
+function KpiRail({ data, error, weeklyPoints, warnings, warningsError }) {
+  const weeklyTotal = useMemo(() => {
+    if (!Array.isArray(weeklyPoints)) return 0
+    return weeklyPoints.reduce((s, p) => s + (Number(p?.count) || 0), 0)
+  }, [weeklyPoints])
+
+  return (
+    <section className="po-rail">
       {error ? (
-        <p className="po-panel-state is-error">KPI 加载失败:{error}</p>
+        <p className="po-tile-state is-error" style={{ gridColumn: '1 / -1' }}>
+          KPI 加载失败:{error}
+        </p>
       ) : (
         <>
           <KpiTile
@@ -148,6 +266,14 @@ function KpiBar({ data, error, weeklyPoints }) {
             sparkPoints={weeklyPoints}
             sparkColor="#86909c"
           />
+          <div className="po-rail-mini" aria-label="近 7 天态势">
+            <span className="po-rail-mini-label">近 7 天 · 总量</span>
+            <span className="po-rail-mini-value">{weeklyTotal.toLocaleString('zh-CN')}</span>
+            {weeklyPoints && weeklyPoints.length > 0 ? (
+              <Sparkline points={weeklyPoints} color={PO_CHART_THEME.primary} label="7d 趋势" w={140} h={20} />
+            ) : null}
+          </div>
+          <AlertBadge warnings={warnings} error={warningsError} />
         </>
       )}
     </section>
@@ -232,20 +358,52 @@ function Heatmap({ rows }) {
 }
 
 /**
+ * 监听元素宽度变化(ResizeObserver),用于把固定 viewBox 的 SVG 真正响应到容器宽度。
+ * SSR 安全:服务端返回 fallback 宽度。
+ */
+function useElementWidth(ref, fallback = 520) {
+  const [width, setWidth] = useState(fallback)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    if (typeof ResizeObserver === 'undefined') {
+      setWidth(el.getBoundingClientRect().width || fallback)
+      return
+    }
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width
+      if (w && Math.abs(w - width) > 0.5) setWidth(w)
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref])
+  return width
+}
+
+/**
  * 情感 × 时间堆叠面积图 — 7 天 × 5 模态。
  * 一张图同时回答:① 趋势走向 ② 情感构成 ③ 日均比例。
- * 纯 SVG;mousemove 二分查找日期 + React state 显示 tooltip。
+ * v3 交互:① 容器宽度真响应(ResizeObserver) ② 可点击图例切换情感聚焦
+ *         ③ hover 十字线 + 各情感分量小圆点 ④ 键盘左右切换 hover 日期
  */
-function StackedSentimentArea({ data, width = 520, height = 220 }) {
+function StackedSentimentArea({ data, height = 220 }) {
   const [hover, setHover] = useState(null)
+  const [focused, setFocused] = useState(null) // 单击图例聚焦的情感模态
+  const wrapRef = useRef(null)
   const svgRef = useRef(null)
+  const width = useElementWidth(wrapRef, 520)
 
   if (!Array.isArray(data) || data.length === 0) {
-    return <p className="po-panel-state">暂无数据</p>
+    return (
+      <div ref={wrapRef}>
+        <p className="po-tile-state">暂无数据</p>
+      </div>
+    )
   }
 
-  const padding = { top: 16, right: 28, bottom: 24, left: 36 }
-  const innerW = width - padding.left - padding.right
+  const padding = { top: 16, right: 20, bottom: 24, left: 36 }
+  const innerW = Math.max(80, width - padding.left - padding.right)
   const innerH = height - padding.top - padding.bottom
 
   const stackGen = d3stack().keys(EMOTION_LABELS)
@@ -271,7 +429,7 @@ function StackedSentimentArea({ data, width = 520, height = 220 }) {
   function onMove(e) {
     const rect = svgRef.current?.getBoundingClientRect()
     if (!rect) return
-    const x = e.clientX - rect.left - padding.left
+    const x = ((e.clientX - rect.left) / rect.width) * width - padding.left
     if (x < 0 || x > innerW) {
       setHover(null)
       return
@@ -280,20 +438,55 @@ function StackedSentimentArea({ data, width = 520, height = 220 }) {
       data.length - 1,
       Math.max(0, Math.round((x / innerW) * (data.length - 1))),
     )
-    setHover({ idx, x: xCenter(data[idx]) + padding.left })
+    setHover({ idx })
   }
 
+  function onKeyDown(e) {
+    if (!data.length) return
+    if (e.key === 'ArrowRight') {
+      setHover((h) => ({ idx: Math.min(data.length - 1, (h?.idx ?? -1) + 1) }))
+      e.preventDefault()
+    } else if (e.key === 'ArrowLeft') {
+      setHover((h) => ({ idx: Math.max(0, (h?.idx ?? data.length) - 1) }))
+      e.preventDefault()
+    } else if (e.key === 'Escape') {
+      setHover(null)
+    }
+  }
+
+  const hoverX = hover ? xCenter(data[hover.idx]) : null
+  const tooltipLeft = hoverX != null ? Math.min(width - 160, hoverX + padding.left + 8) : 0
+
   return (
-    <div className="po-stack-area">
+    <div className="po-stack-area" ref={wrapRef}>
+      <ul className="po-stack-legend" role="toolbar" aria-label="情感图例(单击聚焦)">
+        {EMOTION_LABELS.map((k) => (
+          <li key={k}>
+            <button
+              type="button"
+              className={`po-stack-legend-chip${focused && focused !== k ? ' is-dim' : ''}${focused === k ? ' is-on' : ''}`}
+              onClick={() => setFocused((f) => (f === k ? null : k))}
+              aria-pressed={focused === k}
+              title={focused === k ? `已聚焦 ${k},再次点击取消` : `仅显示 ${k}`}
+            >
+              <span className="po-stack-legend-dot" style={{ background: EMOTION_COLORS[k] }} />
+              {k}
+            </button>
+          </li>
+        ))}
+      </ul>
       <svg
         ref={svgRef}
         viewBox={`0 0 ${width} ${height}`}
         width="100%"
         height={height}
+        preserveAspectRatio="none"
         role="img"
         aria-label="情感 × 时间堆叠面积"
+        tabIndex={0}
         onMouseMove={onMove}
         onMouseLeave={() => setHover(null)}
+        onKeyDown={onKeyDown}
       >
         <g transform={`translate(${padding.left},${padding.top})`}>
           {/* Y grid */}
@@ -306,9 +499,18 @@ function StackedSentimentArea({ data, width = 520, height = 220 }) {
             </g>
           ))}
           {/* areas */}
-          {series.map((s) => (
-            <path key={s.key} d={areaGen(s)} fill={EMOTION_COLORS[s.key]} opacity="0.85" />
-          ))}
+          {series.map((s) => {
+            const dimmed = focused && focused !== s.key
+            return (
+              <path
+                key={s.key}
+                d={areaGen(s)}
+                fill={EMOTION_COLORS[s.key]}
+                opacity={dimmed ? 0.12 : focused === s.key ? 1 : 0.85}
+                style={{ transition: 'opacity 200ms ease' }}
+              />
+            )
+          })}
           {/* avg dashed line */}
           <line
             x1={0}
@@ -334,34 +536,51 @@ function StackedSentimentArea({ data, width = 520, height = 220 }) {
               {d.date}
             </text>
           ))}
-          {/* hover marker */}
+          {/* hover crosshair + dots */}
           {hover ? (
-            <line
-              x1={hover.x - padding.left}
-              x2={hover.x - padding.left}
-              y1={0}
-              y2={innerH}
-              stroke="#1d2129"
-              strokeOpacity="0.2"
-            />
+            <>
+              <line
+                x1={hoverX}
+                x2={hoverX}
+                y1={0}
+                y2={innerH}
+                stroke="#1d2129"
+                strokeOpacity="0.25"
+              />
+              {series.map((s) => {
+                const segment = s[hover.idx]
+                if (!segment) return null
+                const dimmed = focused && focused !== s.key
+                return (
+                  <circle
+                    key={s.key}
+                    cx={hoverX}
+                    cy={yScale(segment[1])}
+                    r={dimmed ? 0 : 3}
+                    fill="#fff"
+                    stroke={EMOTION_COLORS[s.key]}
+                    strokeWidth="1.5"
+                  />
+                )
+              })}
+            </>
           ) : null}
         </g>
       </svg>
       {hover ? (
         <div
+          className="po-stack-tooltip"
           style={{
-            position: 'absolute',
-            left: Math.min(width - 160, hover.x + 4),
+            left: tooltipLeft,
             top: 8,
             ...PO_CHART_THEME.tooltipStyle,
             background: '#fff',
             padding: '6px 10px',
-            pointerEvents: 'none',
           }}
         >
           <div style={{ fontWeight: 600, marginBottom: 4 }}>{data[hover.idx].date}</div>
           {EMOTION_LABELS.map((k) => (
-            <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11 }}>
+            <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, opacity: focused && focused !== k ? 0.35 : 1 }}>
               <span
                 style={{
                   width: 8,
@@ -389,7 +608,7 @@ function StackedSentimentArea({ data, width = 520, height = 220 }) {
  */
 function MediaSentimentPercentBar({ rows }) {
   if (!Array.isArray(rows) || rows.length === 0) {
-    return <p className="po-panel-state">暂无数据</p>
+    return <p className="po-tile-state">暂无数据</p>
   }
   const data = rows.map((r) => {
     const total = EMOTION_LABELS.reduce((s, k) => s + (r[k] ?? 0), 0)
@@ -426,37 +645,60 @@ function MediaSentimentPercentBar({ rows }) {
  * 色 = blueScale(count),字色 = contrastTextOn(bg);keyboard Tab 可达。
  */
 function HourlyMediaHeat({ rows, hourlyLabels }) {
+  const [hover, setHover] = useState(null) // { row, col }
   if (!Array.isArray(rows) || rows.length === 0) {
-    return <p className="po-panel-state">暂无数据</p>
+    return <p className="po-tile-state">暂无数据</p>
   }
   const max = Math.max(1, ...rows.flatMap((r) => r.hours))
   const scale = blueScale(max)
   const labels = hourlyLabels ?? rows[0]?.hours.map((_, i) => `${String(i * 2).padStart(2, '0')}时`)
   return (
-    <div className="po-hourly-heat" role="table" aria-label="今日分时 × 媒体热力">
+    <div
+      className="po-hourly-heat"
+      role="table"
+      aria-label="今日分时 × 媒体热力"
+      onMouseLeave={() => setHover(null)}
+      data-active-col={hover?.col ?? ''}
+    >
       <div className="po-hourly-heat-head" role="row">
         <span />
-        {labels.map((l) => (
-          <span key={l} role="columnheader">
+        {labels.map((l, i) => (
+          <span
+            key={l}
+            role="columnheader"
+            className={hover?.col === i ? 'is-active' : ''}
+          >
             {l}
           </span>
         ))}
       </div>
-      {rows.map((row) => (
-        <div className="po-hourly-heat-row" role="row" key={row.media}>
-          <span className="po-hourly-heat-axis" role="rowheader" title={row.media}>
+      {rows.map((row, rIdx) => (
+        <div
+          className={`po-hourly-heat-row${hover?.row === rIdx ? ' is-active' : ''}`}
+          role="row"
+          key={row.media}
+        >
+          <span
+            className={`po-hourly-heat-axis${hover?.row === rIdx ? ' is-active' : ''}`}
+            role="rowheader"
+            title={row.media}
+          >
             {row.media}
           </span>
           {row.hours.map((v, i) => {
             const bg = scale(v)
+            const active = hover?.row === rIdx || hover?.col === i
             return (
               <span
                 key={i}
                 role="cell"
                 tabIndex={0}
-                className="po-hourly-heat-cell"
+                className={`po-hourly-heat-cell${active ? ' is-active' : ''}${hover?.row === rIdx && hover?.col === i ? ' is-focus' : ''}`}
                 style={{ background: bg, color: contrastTextOn(bg) }}
                 title={`${row.media} · ${labels[i] ?? i}:${v}`}
+                onMouseEnter={() => setHover({ row: rIdx, col: i })}
+                onFocus={() => setHover({ row: rIdx, col: i })}
+                onBlur={() => setHover(null)}
               >
                 {v > 0 ? v : ''}
               </span>
@@ -615,17 +857,25 @@ export function PublicOpinionOverviewDashboard() {
     return (
       <div className="po-dashboard">
         <div className="po-overview-main">
-          <div className="po-overview-grid">
-            <section className="po-panel console-section po-skeleton" data-span="8" style={{ minHeight: 68 }} />
-            {[8, 4, 4, 4, 4, 8].map((span, i) => (
-              <section
-                key={i}
-                className="po-panel console-section po-skeleton"
-                data-span={span}
-                style={{ minHeight: span === 8 ? 220 : 200 }}
-              />
-            ))}
-          </div>
+          <section className="po-rail po-skeleton" style={{ minHeight: 68 }} />
+          {['态势', '结构', '热点'].map((label) => (
+            <section className="po-band" key={label}>
+              <span className="po-band-label">
+                {label}
+                <span className="po-band-label-latin">loading</span>
+              </span>
+              <div className="po-band-grid">
+                {[8, 4, 4].map((span, i) => (
+                  <div
+                    key={i}
+                    className="po-tile po-skeleton"
+                    data-span={span}
+                    style={{ minHeight: 200 }}
+                  />
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
         <aside className="po-overview-aside">
           <section className="po-panel console-section po-skeleton" style={{ minHeight: 480 }} />
@@ -683,13 +933,19 @@ export function PublicOpinionOverviewDashboard() {
   return (
     <div className="po-dashboard">
       <div className="po-overview-main">
-        <div className="po-overview-grid">
-          <KpiBar data={payload.kpis} error={errors.kpis} weeklyPoints={weekly?.points} />
+        <KpiRail
+          data={payload.kpis}
+          error={errors.kpis}
+          weeklyPoints={weekly?.points}
+          warnings={warnings}
+          warningsError={errors.warnings}
+        />
 
+        <Band label="态势" latin="trend">
           <Panel
             title="情感 × 时间趋势"
             subtitle="近 7 天 · 5 模态堆叠"
-            span="8"
+            span="12"
             error={errors.weeklyTrend}
             empty={Array.isArray(weeklySentiment) && weeklySentiment.length === 0}
           >
@@ -699,7 +955,7 @@ export function PublicOpinionOverviewDashboard() {
           <Panel
             title="今日分时 × 媒体"
             subtitle="12 桶 × 平台"
-            span="8"
+            span="12"
             error={errors.todayHourly}
             empty={Array.isArray(todayHourlyByMedia) && todayHourlyByMedia.length === 0}
           >
@@ -707,41 +963,53 @@ export function PublicOpinionOverviewDashboard() {
               <HourlyMediaHeat rows={todayHourlyByMedia} hourlyLabels={hourlyLabels} />
             ) : null}
           </Panel>
+        </Band>
 
+        <Band label="结构" latin="composition">
           <Panel
-            title="今日平台分布"
-            subtitle="今日各平台信息量"
-            span="4"
-            error={errors.todayPlatformShare}
-            empty={todayPlatform && todayPlatform.length === 0}
+            title="媒体 × 情感矩阵"
+            subtitle="近 7 天 · 各平台情感构成"
+            span="6"
+            error={errors.mediaSentimentMatrix}
+            empty={matrix && matrix.length === 0}
           >
-            {todayPlatform ? (
-              <ResponsiveContainer width="100%" height={200}>
-                <BarChart data={platformTop} layout="vertical" margin={{ top: 8, right: 16, left: 24, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke={PO_CHART_THEME.grid} horizontal={false} />
-                  <XAxis type="number" allowDecimals={false} tick={PO_CHART_THEME.axisTick} />
-                  <YAxis type="category" dataKey="media" width={70} tick={PO_CHART_THEME.axisTick} />
-                  <Tooltip contentStyle={PO_CHART_THEME.tooltipStyle} />
-                  <Bar dataKey="count" name="信息量" radius={[0, 4, 4, 0]}>
-                    {platformTop.map((entry, i) => (
-                      <Cell key={entry.media} fill={MEDIA_COLORS[i % MEDIA_COLORS.length]} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-            ) : null}
+            {matrix ? <Heatmap rows={matrix} /> : null}
           </Panel>
 
           <Panel
             title="媒体 × 情感百分比"
             subtitle="各平台情感占比"
-            span="4"
+            span="6"
             error={errors.mediaSentimentMatrix}
             empty={matrix && matrix.length === 0}
           >
             {matrix ? <MediaSentimentPercentBar rows={matrix} /> : null}
           </Panel>
 
+          <Panel
+            title="情感分布"
+            subtitle="近 7 天 · 5 模态"
+            span="12"
+            error={errors.sentimentDistribution}
+            empty={sentiment && sentimentTotal === 0}
+          >
+            {sentiment ? (
+              <div className="po-mini-donut-row">
+                {sentiment.map((entry) => (
+                  <MiniDonut
+                    key={entry.label}
+                    label={entry.label}
+                    value={entry.count}
+                    total={sentimentTotal}
+                    color={EMOTION_COLORS[entry.label] ?? '#98a2b3'}
+                  />
+                ))}
+              </div>
+            ) : null}
+          </Panel>
+        </Band>
+
+        <Band label="热点" latin="hot spots">
           <Panel
             title="媒体来源占比"
             subtitle="近 7 天 · Top 6"
@@ -788,67 +1056,30 @@ export function PublicOpinionOverviewDashboard() {
             ) : null}
           </Panel>
 
-          <Panel title="预警概览" subtitle="近 7 天" span="4" error={errors.warnings}>
-            {warnings ? (
-              <div className="po-warning">
-                <div className="po-warning-cards">
-                  <div className="po-warning-card">
-                    <span>预警总量</span>
-                    <strong>{warnings.warningTotal}</strong>
-                  </div>
-                  <div className="po-warning-card is-major">
-                    <span>重大预警</span>
-                    <strong>{warnings.majorTotal}</strong>
-                  </div>
-                </div>
-                {warnings.topWords.length > 0 ? (
-                  <div className="po-wordcloud">
-                    {warnings.topWords.map((w, i) => (
-                      <span key={w.word} style={{ fontSize: `${0.8 + Math.min(i === 0 ? 0.6 : 0.4 / (i + 1), 0.6)}rem` }}>
-                        {w.word}
-                      </span>
+          <Panel
+            title="今日平台分布"
+            subtitle="今日各平台信息量"
+            span="4"
+            error={errors.todayPlatformShare}
+            empty={todayPlatform && todayPlatform.length === 0}
+          >
+            {todayPlatform ? (
+              <ResponsiveContainer width="100%" height={200}>
+                <BarChart data={platformTop} layout="vertical" margin={{ top: 8, right: 16, left: 24, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke={PO_CHART_THEME.grid} horizontal={false} />
+                  <XAxis type="number" allowDecimals={false} tick={PO_CHART_THEME.axisTick} />
+                  <YAxis type="category" dataKey="media" width={70} tick={PO_CHART_THEME.axisTick} />
+                  <Tooltip contentStyle={PO_CHART_THEME.tooltipStyle} />
+                  <Bar dataKey="count" name="信息量" radius={[0, 4, 4, 0]}>
+                    {platformTop.map((entry, i) => (
+                      <Cell key={entry.media} fill={MEDIA_COLORS[i % MEDIA_COLORS.length]} />
                     ))}
-                  </div>
-                ) : (
-                  <p className="po-panel-state">当前无预警</p>
-                )}
-              </div>
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
             ) : null}
           </Panel>
-
-          <Panel
-            title="媒体 × 情感矩阵"
-            subtitle="近 7 天 · 各平台情感构成"
-            span="8"
-            error={errors.mediaSentimentMatrix}
-            empty={matrix && matrix.length === 0}
-          >
-            {matrix ? <Heatmap rows={matrix} /> : null}
-          </Panel>
-
-          {/* 保留情感分布 5 模态环作为可选回看(空间允许) */}
-          <Panel
-            title="情感分布"
-            subtitle="近 7 天"
-            span="8"
-            error={errors.sentimentDistribution}
-            empty={sentiment && sentimentTotal === 0}
-          >
-            {sentiment ? (
-              <div className="po-mini-donut-row">
-                {sentiment.map((entry) => (
-                  <MiniDonut
-                    key={entry.label}
-                    label={entry.label}
-                    value={entry.count}
-                    total={sentimentTotal}
-                    color={EMOTION_COLORS[entry.label] ?? '#98a2b3'}
-                  />
-                ))}
-              </div>
-            ) : null}
-          </Panel>
-        </div>
+        </Band>
       </div>
 
       <aside className="po-overview-aside">
@@ -865,9 +1096,9 @@ export function PublicOpinionOverviewDashboard() {
             <FeedChips items={latest} selected={feedFilter} onSelect={setFeedFilter} />
           </div>
           {errors.latestNews ? (
-            <p className="po-panel-state is-error">信息流加载失败:{errors.latestNews}</p>
+            <p className="po-tile-state is-error">信息流加载失败:{errors.latestNews}</p>
           ) : filteredLatest.length === 0 ? (
-            <p className="po-panel-state">暂无数据</p>
+            <p className="po-tile-state">暂无数据</p>
           ) : (
             <ul className="po-feed" aria-live="polite">
               {filteredLatest.map((item, i) => (

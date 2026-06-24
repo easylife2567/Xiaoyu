@@ -915,21 +915,24 @@ input {
 
 /* 舆情总览看板 */
 .po-dashboard {
-  /* v2: 双列网格(左 8 分析,右 4 sticky 信息流);≤1280 塌单列 */
+  /* v3: 双列网格(左 8 分析,右 4 sticky 信息流);≤1280 塌单列 */
   display: grid;
   grid-template-columns: 8fr 4fr;
-  gap: var(--po-gap, 12px);
+  gap: var(--po-gap, 10px);
   align-items: start;
-  padding: var(--po-pad, 12px) 18px 22px;
+  padding: var(--po-pad, 10px) 18px 22px;
   min-height: 0;
   overflow-y: auto;
   font-variant-numeric: tabular-nums;
-  /* v2 中等密度 token */
-  --po-pad: 12px;
-  --po-gap: 12px;
-  --po-panel-radius: 10px;
-  --po-title-size: 13px;
-  --po-subtitle-size: 11px;
+  /* v3 控制台分区密度 token(在 v2 基础上整体下调一档) */
+  --po-pad: 10px;
+  --po-gap: 10px;
+  --po-panel-radius: 8px;
+  --po-title-size: 12px;
+  --po-subtitle-size: 10.5px;
+  --po-band-label-size: 10.5px;
+  --po-band-label-tracking: 0.06em;
+  --po-tile-hover-bg: var(--color-bg-hover);
 }
 
 .po-overview-main {
@@ -941,12 +944,13 @@ input {
 
 .po-overview-aside {
   position: sticky;
-  top: 84px;
-  max-height: calc(100vh - 96px);
+  /* v3: 头部与左侧 KPI rail 顶部基线对齐(top: 0,相对 .po-dashboard 滚动容器内坐标) */
+  top: 0;
+  max-height: calc(100vh - var(--shell-topbar-height, 56px) - 24px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--po-gap, 12px);
+  gap: var(--po-gap, 10px);
   min-width: 0;
 }
 
@@ -1710,6 +1714,87 @@ input {
 /* ─── v2 StackedSentimentArea / HourlyMediaHeat 容器 ─── */
 .po-stack-area {
   position: relative;
+  width: 100%;
+}
+
+.po-stack-area svg {
+  display: block;
+  width: 100%;
+  cursor: crosshair;
+}
+
+.po-stack-area svg:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.po-stack-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0;
+}
+
+.po-stack-legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 8px;
+  border: 1px solid var(--color-divider);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, opacity 160ms ease;
+}
+
+.po-stack-legend-chip:hover {
+  background: var(--color-bg-hover);
+}
+
+.po-stack-legend-chip:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.po-stack-legend-chip.is-on {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.po-stack-legend-chip.is-dim {
+  opacity: 0.45;
+}
+
+.po-stack-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.po-stack-tooltip {
+  position: absolute;
+  pointer-events: none;
+  min-width: 140px;
+  z-index: 4;
+}
+
+/* 热力图(矩阵)交互:活动行/列高亮 */
+.po-heatmap-cell {
+  transition: transform 140ms ease, box-shadow 140ms ease, outline-color 140ms ease;
+}
+.po-heatmap-cell:hover,
+.po-heatmap-cell:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  z-index: 2;
 }
 
 .po-hourly-heat {
@@ -1723,6 +1808,12 @@ input {
   grid-template-columns: 64px repeat(12, 1fr);
   gap: 2px;
   align-items: center;
+  transition: background-color 140ms ease;
+  border-radius: 4px;
+}
+
+.po-hourly-heat-row.is-active {
+  background: var(--color-bg-hover);
 }
 
 .po-hourly-heat-axis {
@@ -1732,6 +1823,12 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: color 140ms ease, font-weight 140ms ease;
+}
+
+.po-hourly-heat-axis.is-active {
+  color: var(--color-title);
+  font-weight: 600;
 }
 
 .po-hourly-heat-cell {
@@ -1741,12 +1838,30 @@ input {
   border-radius: 3px;
   font-size: 0.68rem;
   font-variant-numeric: tabular-nums;
-  cursor: default;
+  cursor: pointer;
+  transition: outline-color 140ms ease, opacity 140ms ease, transform 140ms ease;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+}
+
+.po-hourly-heat-cell.is-active {
+  outline-color: rgba(22, 119, 255, 0.45);
+}
+
+.po-hourly-heat-cell.is-focus {
+  outline-color: var(--color-primary);
+  transform: scale(1.04);
+  z-index: 1;
 }
 
 .po-hourly-heat-cell:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 1px;
+}
+
+/* hover 时:同行同列以外的格子稍微淡化,让活动十字更突出 */
+.po-hourly-heat:hover .po-hourly-heat-cell:not(.is-active) {
+  opacity: 0.7;
 }
 
 .po-hourly-heat-head {
@@ -1760,6 +1875,41 @@ input {
 
 .po-hourly-heat-head span {
   text-align: center;
+  transition: color 140ms ease, font-weight 140ms ease;
+}
+
+.po-hourly-heat-head span.is-active {
+  color: var(--color-title);
+  font-weight: 600;
+}
+
+/* 排行行:hover 反馈 + 序号变主色 */
+.po-rank-row {
+  border-radius: 6px;
+  transition: background-color 140ms ease;
+}
+.po-rank-row:hover {
+  background: var(--color-bg-hover);
+}
+.po-rank-row:hover .po-rank-num {
+  color: var(--color-primary);
+}
+.po-rank-row:hover .po-rank-name {
+  color: var(--color-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .po-stack-area svg,
+  .po-stack-legend-chip,
+  .po-heatmap-cell,
+  .po-hourly-heat-cell,
+  .po-hourly-heat-row,
+  .po-rank-row {
+    transition: none;
+  }
+  .po-hourly-heat-cell.is-focus {
+    transform: none;
+  }
 }
 
 /* ─── v2 MediaSentimentPercentBar 容器(recharts 内置样式即可) ─── */
@@ -1794,6 +1944,287 @@ input {
   .po-mini-donut-fg {
     animation: none;
   }
+}
+
+/* ─── v3 控制台分区(KPI rail + Band + Tile + Alert badge) ─── */
+
+/* KPI rail — 顶部横条:3 KPI tile + 1 态势 mini + 1 预警徽标,横跨主分析区 */
+.po-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto auto;
+  align-items: center;
+  gap: var(--po-gap, 10px);
+  padding: 10px 12px;
+  border-radius: var(--po-panel-radius, 8px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  /* rail 自身不再算入 band,直接占满 .po-overview-grid 第一行 */
+  grid-column: 1 / -1;
+}
+
+.po-rail .po-kpi-tile {
+  min-width: 0;
+}
+
+.po-rail-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 8px 0 12px;
+  border-left: 1px solid var(--color-divider);
+  align-self: stretch;
+  justify-content: center;
+  min-width: 0;
+}
+
+.po-rail-mini-label {
+  font-size: var(--po-subtitle-size, 10.5px);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.po-rail-mini-value {
+  font-size: 14px;
+  color: var(--color-title);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.po-rail-mini .po-kpi-spark {
+  display: block;
+}
+
+/* 预警徽标:三态(无 / 普通 / 重大) */
+.po-alert-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--po-subtitle-size, 10.5px);
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.po-alert-badge:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.po-alert-badge[data-state='idle'] {
+  border-color: var(--color-divider);
+}
+
+.po-alert-badge[data-state='idle']::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #86909c;
+}
+
+.po-alert-badge[data-state='warn'] {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.po-alert-badge[data-state='major'] {
+  color: #fff;
+  background: #f53f3f;
+  border-color: #f53f3f;
+}
+
+.po-alert-badge[data-state='major']::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  animation: po-alert-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes po-alert-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .po-alert-badge[data-state='major']::before {
+    animation: none;
+  }
+  .po-alert-badge {
+    transition: none;
+  }
+}
+
+/* 预警弹层 — 锚定在 rail 末端,向下展开 */
+.po-alert-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 240px;
+  max-width: 320px;
+  padding: 12px 14px;
+  border-radius: var(--po-panel-radius, 8px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 12;
+}
+
+.po-alert-popover-counts {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 8px;
+  font-size: var(--po-subtitle-size, 10.5px);
+  color: var(--color-text-secondary);
+}
+
+.po-alert-popover-counts strong {
+  font-size: 14px;
+  color: var(--color-title);
+  margin-left: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.po-alert-popover-counts .is-major strong {
+  color: var(--color-danger);
+}
+
+/* Band — 语义分组:小写灰标签 + 1px hairline + 12 列子栅格 */
+.po-band {
+  position: relative;
+  padding-top: var(--po-pad, 10px);
+}
+
+.po-band + .po-band {
+  margin-top: 4px;
+}
+
+.po-band-label {
+  display: block;
+  padding-top: 6px;
+  margin-bottom: 8px;
+  border-top: 1px solid var(--color-divider);
+  font-size: var(--po-band-label-size, 10.5px);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--po-band-label-tracking, 0.06em);
+  line-height: 1.4;
+}
+
+.po-band-label .po-band-label-latin {
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-left: 6px;
+}
+
+.po-band-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--po-gap, 10px);
+}
+
+.po-band-grid > [data-span='4'] { grid-column: span 4; }
+.po-band-grid > [data-span='6'] { grid-column: span 6; }
+.po-band-grid > [data-span='8'] { grid-column: span 8; }
+.po-band-grid > [data-span='12'] { grid-column: 1 / -1; }
+
+@media (max-width: 1280px) {
+  .po-band-grid > [data-span='4'] { grid-column: span 6; }
+  .po-band-grid > [data-span='6'] { grid-column: span 6; }
+  .po-band-grid > [data-span='8'] { grid-column: 1 / -1; }
+}
+
+@media (max-width: 1080px) {
+  .po-band-grid > [data-span] {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Tile — 无边框图表槽:band 内的图表容器 */
+.po-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: var(--po-panel-radius, 8px);
+  border: 0;
+  background: transparent;
+  transition: background-color 180ms ease;
+  min-height: 200px;
+}
+
+.po-tile:hover {
+  background: var(--po-tile-hover-bg, var(--color-bg-hover));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .po-tile {
+    transition: none;
+  }
+}
+
+.po-tile-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 18px;
+}
+
+.po-tile-head h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: var(--po-title-size, 12px);
+  color: var(--color-title);
+  font-weight: 600;
+}
+
+.po-tile-head h3::before {
+  content: '';
+  width: 3px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.po-tile-head span {
+  color: var(--color-text-secondary);
+  font-size: var(--po-subtitle-size, 10.5px);
+  letter-spacing: 0.02em;
+}
+
+.po-tile-state {
+  margin: auto 0;
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.po-tile-state.is-error {
+  color: var(--color-danger);
+}
+
+.po-tile.po-skeleton {
+  background: linear-gradient(90deg, var(--color-bg-hover) 25%, var(--color-divider) 37%, var(--color-bg-hover) 63%);
+  background-size: 400% 100%;
+  animation: po-shimmer 1.4s ease infinite;
+}
+
+/* aside feed 头部上下边距与 KPI rail 顶部对齐(rail 自身 padding-top 10px) */
+.po-overview-aside > .po-panel,
+.po-overview-aside > .po-tile {
+  padding: 10px 12px;
 }
 
 .console-section header {

@@ -28,7 +28,8 @@ test('CSS aside 使用 sticky + 内部滚动', () => {
   const aside = cssText.match(/\.po-overview-aside\s*\{([^}]*)\}/)?.[1] ?? ''
   assert.match(aside, /position:\s*sticky/)
   assert.match(aside, /overflow-y:\s*auto/)
-  assert.match(aside, /top:\s*84px/)
+  // v3:aside top 从 84px 降为 0(与 KPI rail 顶部基线对齐)
+  assert.match(aside, /top:\s*0/)
 })
 
 test('CSS 含 v2 中等密度 token(--po-pad / --po-gap / --po-panel-radius)', () => {
@@ -64,10 +65,9 @@ test('看板组件含 v2 新图组件定义', () => {
 })
 
 test('看板组件含 v2 双列结构 + 信息流升级', () => {
-  // 双列结构
+  // 双列结构(v2/v3 共同保留 main+aside;v3 已用 Band 取代 .po-overview-grid 顶层栅格)
   assert.match(dashText, /className="po-overview-main"/)
   assert.match(dashText, /className="po-overview-aside"/)
-  assert.match(dashText, /className="po-overview-grid"/)
   // 信息流升级
   assert.match(dashText, /function FeedChips\(/)
   assert.match(dashText, /po-feed-emo-bar/)

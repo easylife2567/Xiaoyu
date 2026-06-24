@@ -63,7 +63,8 @@ test('看板组件使用 MiniDonut / Heatmap / StackedSentimentArea / HourlyMedi
   assert.match(dashText, /function MiniDonut\(/)
   assert.match(dashText, /function Heatmap\(/)
   assert.match(dashText, /function RankRow\(/)
-  assert.match(dashText, /function KpiBar\(/)
+  // v3:KpiBar → KpiRail(单行 7 KPI tile + Sparkline + AlertBadge)
+  assert.match(dashText, /function KpiRail\(/)
   assert.match(dashText, /function StackedSentimentArea\(/)
   assert.match(dashText, /function HourlyMediaHeat\(/)
   // 情感分布渲染 5 个 MiniDonut(由 sentiment.map 驱动)
@@ -77,11 +78,12 @@ test('情感 5 模态保留语义色序(正面绿→负面红)', () => {
   assert.match(dashText, /负面:\s*'#f53f3f'/)
 })
 
-test('SSR 加载态使用密度化栅格 + data-span 骨架(v2:po-overview-grid)', () => {
+test('SSR 加载态使用密度化骨架(v3:po-rail + 3 个 po-band + data-span 子卡)', () => {
   const html = renderToStaticMarkup(PublicOpinionOverviewPage())
   assert.match(html, /class="po-dashboard"/)
-  // v2 双列布局:左 main 用 .po-overview-grid,右 aside sticky
-  assert.match(html, /po-overview-grid|po-grid-12/)
+  // v3 双列骨架:左 main = po-rail + 3 个 po-band(态势/结构/热点),右 aside sticky
+  assert.match(html, /class="po-rail po-skeleton"/)
+  assert.match(html, /class="po-band"/)
   assert.match(html, /data-span="(4|8|12)"/)
   assert.match(html, /主导航/)
 })

@@ -75,7 +75,6 @@ test('既有扁平分组条目不带可折叠交互(chevron/aria-expanded 仅属
 
 const publicOpinionPages = [
   ['每日舆情', DailySummaryPage],
-  ['正负面舆情', DailyPolarityPage],
   ['趋势与占比', DailyTrendsPage],
   ['今日情感分析', SentimentTodayPage],
   ['任意时间段情感分析', SentimentRangePage],
@@ -96,5 +95,14 @@ test('舆情总览页呈现数据看板(不再是功能建设中占位)', () => 
   assert.match(html, /舆情总览/)
   assert.match(html, /主导航/)
   assert.match(html, /po-dashboard/)
+  assert.doesNotMatch(html, /功能建设中/)
+})
+
+test('正负面舆情页呈现分析页(不再是功能建设中占位)', () => {
+  const html = renderToStaticMarkup(DailyPolarityPage())
+  assert.match(html, /正负面舆情/)
+  assert.match(html, /主导航/)
+  // 渲染 DailyPolarityBoard 容器,不再是 placeholder-state
+  assert.match(html, /po-polarity-shell/)
   assert.doesNotMatch(html, /功能建设中/)
 })

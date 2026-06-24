@@ -3385,6 +3385,835 @@ input {
   }
 }
 
+/* ===================================================================
+   每日舆情 / 正负面舆情 (DailyPolarityBoard)
+   - 单列布局 (与总览的双列 .po-dashboard 不同)
+   - 复用 .po-band / .po-band-label / .po-tile-state 既有节奏
+   - 复用 5 模态情感色板;不引入新色板与外框样式
+   =================================================================== */
+
+.po-polarity-shell {
+  --po-pad: 12px;
+  --po-gap: 12px;
+  --po-panel-radius: 8px;
+  --po-title-size: 12px;
+  --po-subtitle-size: 10.5px;
+  --po-band-label-size: 10.5px;
+  --po-band-label-tracking: 0.06em;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: var(--po-pad) 18px 28px;
+  flex: 1 1 0;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+/* —— 顶部:日期范围 + 下载入口 —— */
+.po-polarity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.po-polarity-range {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-divider);
+  border-radius: 8px;
+}
+
+.po-polarity-range-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.po-polarity-range-btn:hover {
+  background: var(--color-bg-hover);
+}
+
+.po-polarity-range-btn.is-active {
+  background: #e7f0ff;
+  color: #1677ff;
+}
+
+.po-polarity-range-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+  padding-left: 8px;
+  border-left: 1px solid var(--color-divider);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.po-polarity-range-custom input[type='date'] {
+  font: inherit;
+  padding: 4px 6px;
+  border: 1px solid var(--color-divider);
+  border-radius: 4px;
+  background: var(--color-bg-card);
+}
+
+.po-polarity-range-display {
+  margin-left: 10px;
+  font-size: 11.5px;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.po-polarity-header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.po-polarity-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #1677ff;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.po-polarity-download:hover {
+  background: #0e5fd6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(22, 119, 255, 0.25);
+}
+
+.po-polarity-download:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(22, 119, 255, 0.15);
+}
+
+.po-polarity-download.is-loading {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.po-polarity-download-spinner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  animation: po-spin 700ms linear infinite;
+}
+
+@keyframes po-spin {
+  to { transform: rotate(360deg); }
+}
+
+.po-polarity-download-error {
+  color: #f53f3f;
+  font-size: 11.5px;
+}
+
+/* —— 概览段:3 KPI 色块 + 8px 占比横条 —— */
+.po-polarity-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) minmax(180px, 1.4fr);
+  gap: var(--po-gap);
+  align-items: stretch;
+  padding: 12px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--po-panel-radius);
+}
+
+.po-polarity-summary.is-loading,
+.po-polarity-summary.is-error,
+.po-polarity-summary.is-empty {
+  grid-template-columns: 1fr;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  padding: 18px;
+}
+
+.po-polarity-summary.is-error {
+  color: #f53f3f;
+}
+
+.po-polarity-kpi-skel,
+.po-polarity-strip-skel {
+  height: 56px;
+  background: linear-gradient(90deg, #f2f3f5 0%, #fafbfc 50%, #f2f3f5 100%);
+  background-size: 200% 100%;
+  animation: po-polarity-shimmer 1.6s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+.po-polarity-strip-skel {
+  height: 8px;
+  margin-top: 12px;
+}
+
+@keyframes po-polarity-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.po-polarity-kpi {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border-left: 3px solid var(--kpi-color, #86909c);
+  border-radius: 4px;
+  background: var(--kpi-bg, transparent);
+}
+
+.po-polarity-kpi[data-tone='pos'] {
+  --kpi-color: #00b42a;
+  --kpi-bg: rgba(0, 180, 42, 0.04);
+}
+
+.po-polarity-kpi[data-tone='neu'] {
+  --kpi-color: #86909c;
+  --kpi-bg: rgba(134, 144, 156, 0.05);
+}
+
+.po-polarity-kpi[data-tone='neg'] {
+  --kpi-color: #f53f3f;
+  --kpi-bg: rgba(245, 63, 63, 0.04);
+}
+
+.po-polarity-kpi-dot {
+  grid-row: span 2;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--kpi-color);
+  align-self: center;
+}
+
+.po-polarity-kpi-value {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1d2129;
+  line-height: 1.1;
+}
+
+.po-polarity-kpi-label {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.po-polarity-kpi-ratio {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 12px;
+  color: var(--kpi-color);
+  font-weight: 600;
+}
+
+.po-polarity-strip {
+  position: relative;
+  align-self: center;
+  display: flex;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--color-bg-hover);
+  cursor: help;
+}
+
+.po-polarity-strip-seg[data-tone='pos'] { background: #00b42a; }
+.po-polarity-strip-seg[data-tone='neu'] { background: #86909c; }
+.po-polarity-strip-seg[data-tone='neg'] { background: #f53f3f; }
+
+.po-polarity-strip-popover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--color-divider);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  font-size: 11.5px;
+}
+
+.po-polarity-strip:hover .po-polarity-strip-popover,
+.po-polarity-strip:focus-within .po-polarity-strip-popover {
+  display: flex;
+}
+
+.po-polarity-strip-row {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.po-polarity-strip-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.po-polarity-strip-name {
+  color: #1d2129;
+}
+
+.po-polarity-strip-count {
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* —— 筛选段 —— */
+.po-polarity-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.po-polarity-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.po-polarity-chip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  height: 28px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-divider);
+  border-radius: 16px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease,
+    transform 120ms ease, box-shadow 160ms ease;
+}
+
+.po-polarity-chip:hover {
+  background: var(--color-bg-hover);
+  color: #1d2129;
+  border-color: rgba(22, 119, 255, 0.4);
+}
+
+.po-polarity-chip:active {
+  transform: scale(0.96);
+}
+
+.po-polarity-chip.is-active {
+  background: #1677ff;
+  border-color: #1677ff;
+  color: #fff;
+  box-shadow: 0 1px 4px rgba(22, 119, 255, 0.3);
+}
+
+.po-polarity-chip-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  margin-left: -2px;
+}
+
+.po-polarity-chip:not(.is-active) .po-polarity-chip-logo svg {
+  opacity: 0.8;
+}
+
+.po-polarity-chip.is-active .po-polarity-chip-logo {
+  color: #fff !important;
+}
+
+.po-polarity-chip.is-active .po-polarity-chip-logo svg {
+  color: #fff !important;
+}
+
+.po-polarity-chip-count {
+  font-style: normal;
+  font-size: 11px;
+  padding: 0 6px;
+  border-radius: 8px;
+  background: rgba(134, 144, 156, 0.15);
+  color: var(--color-text-secondary);
+  min-width: 18px;
+  text-align: center;
+}
+
+.po-polarity-chip.is-active .po-polarity-chip-count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+/* —— 信息流段:工具条 + 表格 + 分页器 —— */
+.po-polarity-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 4px 10px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.po-polarity-toolbar-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.po-polarity-toolbar-btn {
+  appearance: none;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-divider);
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.po-polarity-toolbar-btn:hover {
+  background: var(--color-bg-hover);
+}
+
+.po-polarity-toolbar-spacer {
+  flex: 1;
+}
+
+.po-polarity-toolbar-meta {
+  color: var(--color-text-secondary);
+}
+
+/* —— 排序下拉 —— */
+.po-polarity-toolbar-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.po-polarity-toolbar-sort select {
+  appearance: none;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-divider);
+  border-radius: 4px;
+  padding: 3px 22px 3px 8px;
+  font-size: 12px;
+  color: #1d2129;
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--color-text-secondary) 50%),
+    linear-gradient(135deg, var(--color-text-secondary) 50%, transparent 50%);
+  background-position:
+    calc(100% - 11px) 50%,
+    calc(100% - 6px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.po-polarity-toolbar-sort select:hover {
+  border-color: #1677ff;
+}
+
+/* —— 行级选择浮动操作栏 —— */
+.po-polarity-selection-bar {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  margin: 0 0 -1px;
+  background: linear-gradient(180deg, #e7f0ff 0%, #f5f9ff 100%);
+  border: 1px solid #c6daff;
+  border-radius: var(--po-panel-radius);
+  color: #0e5fd6;
+  font-size: 12px;
+  animation: po-polarity-slidein 220ms ease;
+}
+
+@keyframes po-polarity-slidein {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.po-polarity-selection-count strong {
+  font-weight: 600;
+  color: #1d2129;
+  margin: 0 2px;
+}
+
+.po-polarity-selection-spacer {
+  flex: 1;
+}
+
+.po-polarity-selection-btn {
+  appearance: none;
+  background: #1677ff;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 160ms ease, transform 120ms ease;
+}
+
+.po-polarity-selection-btn:hover {
+  background: #0e5fd6;
+  transform: translateY(-1px);
+}
+
+.po-polarity-selection-btn.is-ghost {
+  background: transparent;
+  color: #1677ff;
+  border: 1px solid #c6daff;
+}
+
+.po-polarity-selection-btn.is-ghost:hover {
+  background: rgba(22, 119, 255, 0.08);
+  color: #0e5fd6;
+}
+
+.po-polarity-table {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--po-panel-radius);
+  overflow: hidden;
+}
+
+.po-polarity-table.is-loading {
+  padding: 12px;
+  gap: 10px;
+}
+
+.po-polarity-row-skel {
+  height: 56px;
+  background: linear-gradient(90deg, #f2f3f5 0%, #fafbfc 50%, #f2f3f5 100%);
+  background-size: 200% 100%;
+  animation: po-polarity-shimmer 1.6s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.po-polarity-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px 140px 56px 18px 1fr 120px 130px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px 10px 18px;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: 12.5px;
+  transition: background 160ms ease, transform 180ms ease;
+  animation: po-polarity-rowin 280ms ease backwards;
+}
+
+.po-polarity-row:nth-child(1) { animation-delay: 0ms; }
+.po-polarity-row:nth-child(2) { animation-delay: 30ms; }
+.po-polarity-row:nth-child(3) { animation-delay: 60ms; }
+.po-polarity-row:nth-child(4) { animation-delay: 90ms; }
+.po-polarity-row:nth-child(5) { animation-delay: 120ms; }
+.po-polarity-row:nth-child(6) { animation-delay: 140ms; }
+.po-polarity-row:nth-child(7) { animation-delay: 160ms; }
+.po-polarity-row:nth-child(8) { animation-delay: 180ms; }
+.po-polarity-row:nth-child(9) { animation-delay: 200ms; }
+.po-polarity-row:nth-child(10) { animation-delay: 220ms; }
+
+@keyframes po-polarity-rowin {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.po-polarity-row::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--row-emotion-color, #86909c);
+}
+
+.po-polarity-row:last-child {
+  border-bottom: 0;
+}
+
+.po-polarity-row:hover {
+  background: var(--color-bg-hover);
+}
+
+.po-polarity-row.is-selected {
+  background: rgba(22, 119, 255, 0.06);
+}
+
+.po-polarity-row[data-risk='true']::before {
+  width: 5px;
+}
+
+.po-polarity-row-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.po-polarity-row-platform {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px 3px 6px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.po-polarity-row-platform:hover {
+  background: var(--color-bg-hover);
+  color: #1d2129;
+  border-color: var(--color-divider);
+}
+
+.po-polarity-row-platform-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.po-polarity-row-platform-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.po-polarity-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 8px;
+  height: 20px;
+  font-size: 11px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.po-polarity-row-risk {
+  color: #f53f3f;
+  font-size: 13px;
+  text-align: center;
+}
+
+.po-polarity-row-risk-placeholder {
+  display: inline-block;
+  width: 18px;
+}
+
+.po-polarity-row-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.po-polarity-row-title > a {
+  color: #1d2129;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.po-polarity-row-title > a:hover {
+  color: #1677ff;
+  text-decoration: underline;
+}
+
+.po-polarity-row-title-empty {
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.po-polarity-row-source {
+  font-size: 11px;
+  color: #1677ff;
+  text-decoration: none;
+}
+
+.po-polarity-row-source:hover {
+  text-decoration: underline;
+}
+
+.po-polarity-row-keyword {
+  appearance: none;
+  border: 0;
+  font-size: 11.5px;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-hover);
+  padding: 2px 8px;
+  border-radius: 10px;
+  justify-self: start;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.po-polarity-row-keyword:hover {
+  background: rgba(22, 119, 255, 0.12);
+  color: #1677ff;
+}
+
+.po-polarity-row-keyword-placeholder {
+  display: inline-block;
+}
+
+.po-polarity-row-time {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.po-polarity-pager {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 10px 4px 2px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.po-polarity-pager button {
+  appearance: none;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-divider);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.po-polarity-pager button:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+  color: #1d2129;
+}
+
+.po-polarity-pager button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.po-polarity-pager-info {
+  font-variant-numeric: tabular-nums;
+}
+
+/* —— 响应式:窄屏列折叠 —— */
+@media (max-width: 960px) {
+  .po-polarity-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .po-polarity-summary .po-polarity-strip {
+    grid-column: 1 / -1;
+  }
+  .po-polarity-row {
+    grid-template-columns: 28px 1fr auto;
+    grid-template-areas:
+      'check title time'
+      'platform meta meta';
+    row-gap: 4px;
+  }
+  .po-polarity-row-check { grid-area: check; }
+  .po-polarity-row-title { grid-area: title; }
+  .po-polarity-row-time { grid-area: time; }
+  .po-polarity-row-platform { grid-area: platform; }
+  .po-polarity-row .po-polarity-badge,
+  .po-polarity-row .po-polarity-row-risk,
+  .po-polarity-row .po-polarity-row-risk-placeholder,
+  .po-polarity-row .po-polarity-row-keyword,
+  .po-polarity-row .po-polarity-row-keyword-placeholder {
+    grid-area: meta;
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .po-polarity-chip,
+  .po-polarity-download,
+  .po-polarity-range-btn,
+  .po-polarity-row,
+  .po-polarity-selection-bar,
+  .po-polarity-selection-btn,
+  .po-polarity-row-platform,
+  .po-polarity-row-keyword {
+    transition: none !important;
+    animation: none !important;
+  }
+  .po-polarity-kpi-skel,
+  .po-polarity-strip-skel,
+  .po-polarity-row-skel,
+  .po-polarity-download-spinner {
+    animation: none !important;
+    background: var(--color-bg-hover) !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

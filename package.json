@@ -9,9 +9,11 @@
     "test:translation-processing": "node --import tsx --test --test-concurrency=1 apps/web/tests/translation-processing-*.test.js",
     "build": "npm --workspace apps/web run build",
     "roll-fixture": "node scripts/daily-report/roll-fixture.mjs",
-    "collect-pool": "node scripts/daily-report/collect-pool.mjs"
+    "collect-pool": "node scripts/daily-report/collect-pool.mjs",
+    "spec": "openspec"
   },
   "devDependencies": {
+    "@fission-ai/openspec": "^1.4.1",
     "tsx": "^4.22.1"
   }
 }

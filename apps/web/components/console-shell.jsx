@@ -25,7 +25,7 @@ const navigationGroups = [
         icon: 'po-daily',
         children: [
           { slug: 'po-daily-polarity', href: '/public-opinion/daily/polarity', title: '正负面舆情' },
-          { slug: 'po-daily-summary', href: '/public-opinion/daily', title: '每日舆情' },
+          { slug: 'po-daily-summary', href: '/public-opinion/daily/today', title: '每日舆情' },
           { slug: 'po-daily-trends', href: '/public-opinion/daily/trends', title: '趋势与占比' },
         ],
       },

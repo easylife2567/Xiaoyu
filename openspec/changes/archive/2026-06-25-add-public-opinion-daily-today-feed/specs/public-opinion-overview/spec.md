@@ -1,36 +1,4 @@
-# public-opinion-overview Specification
-
-## Purpose
-TBD - created by archiving change add-public-opinion-overview-nav. Update Purpose after archive.
-## Requirements
-### Requirement: 舆情速览模块作为独立导航分组与工作台并列且持续可见
-
-系统 SHALL 在控制台左侧 sidebar 中提供一个名为「舆情速览」的导航分组,与既有的「工作台」「管理」分组并列展示。该分组 SHALL 受 `workbench-shell-ux` 的「关键导航持续可见」契约约束——无论主内容区加载何种尺寸的内容,「舆情速览」分组 SHALL 始终保留在 sidebar 中可见(必要时通过 sidebar 自身的局部滚动访问),而非随主内容滚动消失。
-
-#### Scenario: 用户在任意页面查看 sidebar
-
-- **WHEN** 用户打开控制台任意页面(工作台总览、翻译工作台、日报工作台、舆情页面等)
-- **THEN** sidebar 中 SHALL 同时存在「工作台」分组与「舆情速览」分组
-- **AND** 「舆情速览」分组 SHALL 与「工作台」「管理」处于同一层级(均为顶层分组标题)
-- **AND** 两组之间不存在功能耦合——切换工作台不改变舆情速览分组的存在与可见性
-
-#### Scenario: 主内容区内容超出视口高度
-
-- **WHEN** 主内容区(如候选池)内容高度超过视口
-- **THEN** 「舆情速览」分组 SHALL 仍可在 sidebar 中访问(随 sidebar 局部滚动而非文档滚动)
-- **AND** 主内容滚动 SHALL NOT 导致「舆情速览」分组被滚出屏幕
-
-### Requirement: 舆情速览模块的信息架构
-
-系统 SHALL 按以下层级组织「舆情速览」分组的导航条目:一个独立的模块首页条目「舆情总览」,以及两个可折叠子分组「每日舆情」与「情感倾向」。「每日舆情」子分组 SHALL 包含「正负面舆情」「每日舆情」「趋势与占比」三个子条目;「情感倾向」子分组 SHALL 包含「今日情感分析」「任意时间段情感分析」两个子条目。
-
-#### Scenario: 用户展开舆情速览分组查看结构
-
-- **WHEN** 用户查看「舆情速览」分组
-- **THEN** 分组顶部 SHALL 展示独立条目「舆情总览」
-- **AND** 其下 SHALL 展示可折叠子分组「每日舆情」与「情感倾向」
-- **AND** 「每日舆情」展开后 SHALL 依次展示「正负面舆情」「每日舆情」「趋势与占比」
-- **AND** 「情感倾向」展开后 SHALL 依次展示「今日情感分析」「任意时间段情感分析」
+## MODIFIED Requirements
 
 ### Requirement: 每个舆情导航条目落到稳定路由的占位页
 
@@ -74,4 +42,3 @@ TBD - created by archiving change add-public-opinion-overview-nav. Update Purpos
 - **WHEN** 后续 change 为某条目填充真实分析内容
 - **THEN** 该条目的路由与导航 slug SHALL 保持与本 capability 约定一致
 - **AND** 仅页面正文从占位空状态替换为真实内容,导航结构不变
-
